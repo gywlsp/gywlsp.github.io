@@ -1,8 +1,10 @@
 
 import React from 'react';
-import { BLACK } from "../../constants/colors";
 
-export default function HeartIcon({ style = {}, fill = BLACK }) {
+import { IconProps } from './icons';
+import { BLACK } from "src/constants/colors";
+
+export default function HeartIcon({ style = {}, fill = BLACK }: IconProps) {
     return (
         <svg style={{
             width: '2rem',
