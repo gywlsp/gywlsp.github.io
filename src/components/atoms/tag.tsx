@@ -18,7 +18,7 @@ function Tag({ title }: TagProps) {
 export default React.memo(Tag);
 
 const Wrapper = styled.div`
-    padding: 0.6rem 0.8rem;
+    padding: 0.8rem 1rem;
     background-color: ${LIGHT_PURPLE};
     border-radius: 0.4rem;
     margin-right: 0.8rem;
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
 
 const P = styled.p`
     color: ${BLACK};
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: 500;
     margin: 0;
 `;

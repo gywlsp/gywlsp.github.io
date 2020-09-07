@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import { BLACK, LIGHT_GREY } from 'src/constants/colors';
 import { Tag } from 'src/components/atoms';
 
-
 function PostPreviewCard({ excerpt, fields, frontmatter }) {
     const { date, description, tags, title } = frontmatter;
 
@@ -14,12 +13,13 @@ function PostPreviewCard({ excerpt, fields, frontmatter }) {
         <Wrapper key={fields.slug}>
             <header>
                 <H2>
-                    <StyledLink to={fields.slug}>
-                        {title || fields.slug}
-                    </StyledLink>
+                    <StyledLink to={fields.slug}>{title || fields.slug}</StyledLink>
                 </H2>
                 <Row>
-                    {tags.map(tag => <Tag title={tag} />)}</Row>
+                    {tags.map((tag) => (
+                        <Tag title={tag} />
+                    ))}
+                </Row>
             </header>
             <section>
                 <P
@@ -41,28 +41,28 @@ const Wrapper = styled.article`
 `;
 
 const StyledLink = styled(Link)`
-    box-shadow: none;
-    text-decoration: none;
-    color: ${BLACK};
+  box-shadow: none;
+  text-decoration: none;
+  color: ${BLACK};
 `;
 
 const H2 = styled.h2`
-    margin: 0.8rem 0;
-    font-size: 1.6rem;
+  margin: 1.2rem 0;
+  font-size: 2rem;
 `;
 
 const Row = styled.div`
-    display: flex;
+  display: flex;
 `;
 
 const P = styled.p`
-    color: ${BLACK};
-    font-weight: 400;
-    font-size: 1rem;
-    margin: 1rem 0 0.4rem;
+  color: ${BLACK};
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin: 1.4rem 0 1.2rem;
 `;
 
 const Small = styled.small`
-    font-weight: 300;
-    font-size: 1rem;
+  font-weight: 300;
+  font-size: 1.4rem;
 `;
