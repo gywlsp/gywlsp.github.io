@@ -1,7 +1,7 @@
 ---
-title: baekjoon-1074
-date: '2015-05-28T22:40:32.169Z'
-description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+title: '백준 1074번 Z - javascript'
+date: '2020-09-02T23:23:00+00:00'
+description: '안녕하세요! 이 글은 백준 1074번 Z를 풀이합니다. 자바스크립트(javascript)로 코드를 작성하였으며, 문제 링크는 다음과 같습니다. https://www.acmicpc.net/problem/1074 안녕하세요! 이 글은 백준 1074번 Z를 풀이합니다. 자바스크립트(javascript)로 코드를 작성하였으며, 문제 링크는 다음과 같습니다. https://www.acmicpc.net/problem/1074 안녕하세요! 이 글은 백준 1074번 Z를 풀이합니다. 자바스크립트(javascript)로 코드를 작성하였으며, 문제 링크는 다음과 같습니다. https://www.acmicpc.net/problem/1074 안녕하세요! 이 글은 백준 1074번 Z를 풀이합니다. 자바스크립트(javascript)로 코드를 작성하였으며, 문제 링크는 다음과 같습니다. https://www.acmicpc.net/problem/1074'
 tags: ['Javascript', 'Algorithm']
 ---
 

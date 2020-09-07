@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 import Logo from './logo';
 import Profile from './profile';
-import HeartIcon from '../../../assets/icon/heart';
-import { BLACK, LIGHT_GREY } from '../../../constants/colors';
+import HeartIcon from 'src/assets/icon/heart';
+import { BLACK, LIGHT_GREY } from 'src/constants/colors';
 
 
 export type GNBProps = {

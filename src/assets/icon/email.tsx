@@ -1,7 +1,9 @@
 import React from 'react';
-import { BLACK } from "../../constants/colors";
 
-export default function EmailIcon({ style = {}, fill = BLACK }) {
+import { IconProps } from './icons';
+import { BLACK } from "src/constants/colors";
+
+export default function EmailIcon({ style = {}, fill = BLACK }: IconProps) {
     return (
         <svg
             style={{

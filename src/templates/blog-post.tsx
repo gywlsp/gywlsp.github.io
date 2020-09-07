@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Bio from '../components/bio';
-import Layout from '../components/templates/layout';
-import SEO from '../components/seo';
+import Bio from 'src/components/bio';
+import Layout from 'src/components/templates/layout';
+import SEO from 'src/components/seo';
 
 function BlogPostTemplate({ data, pageContext, location }) {
   const post = data.markdownRemark;

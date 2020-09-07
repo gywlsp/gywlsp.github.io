@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { Img } from '../../atoms';
+import { Img } from 'src/components/atoms';
 
 export default function Logo() {
   return (
