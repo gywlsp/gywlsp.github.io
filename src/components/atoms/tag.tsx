@@ -7,13 +7,15 @@ export type TagProps = {
     title: string;
 };
 
-export default function Tag({ title }: TagProps) {
+function Tag({ title }: TagProps) {
     return (
         <Wrapper>
             <P>{title}</P>
         </Wrapper>
     )
 }
+
+export default React.memo(Tag);
 
 const Wrapper = styled.div`
     padding: 0.6rem 0.8rem;
