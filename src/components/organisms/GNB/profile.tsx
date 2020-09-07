@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import EmailIcon from '../../../assets/icon/email';
-import { Img } from '../../atoms';
-import { BLACK } from '../../../constants/colors';
+import EmailIcon from 'src/assets/icon/email';
+import { Img } from 'src/components/atoms';
+import { BLACK } from 'src/constants/colors';
 
 export default function Profile() {
     return (

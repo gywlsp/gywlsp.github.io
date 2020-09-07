@@ -1,7 +1,7 @@
 import React, { ReactChild } from 'react';
 import styled from 'styled-components';
 
-import GNB from '../organisms/GNB';
+import GNB from 'src/components/organisms/GNB';
 
 export type LayoutProps = {
   children: ReactChild;
