@@ -2,7 +2,7 @@
 title: javascript
 date: '2015-05-01T22:12:03.284Z'
 description: 'Hello World'
-tags: ['Javascript', 'Algorithm']
+tags: ['Javascript']
 ---
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
