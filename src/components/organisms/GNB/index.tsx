@@ -9,12 +9,13 @@ import { BLACK, LIGHT_GREY } from 'src/constants/colors';
 
 
 export type GNBProps = {
+  pathname: string;
   selectedTag?: string;
 };
 
 const TAG_LIST = ['ALL', 'Javascript', 'Algorithm', 'React'];
 
-function GNB({ selectedTag }) {
+function GNB({ selectedTag, pathname }: GNBProps) {
   return (
     <Wrapper id="GNB">
       <Logo />
@@ -22,10 +23,14 @@ function GNB({ selectedTag }) {
       <Ul>
         {TAG_LIST.map((tag) => (
           <Li key={tag}>
-            <NavLink to={tag === 'ALL' ? '/' : `/?tag=${tag}`}>
+              <NavLink to={tag === 'ALL' ? '/posts' : `/posts/?tag=${tag}`}>
               <HeartIcon
                 style={{ width: '16px', height: '16px', marginRight: '12px' }}
-                fill={tag === selectedTag ? BLACK : LIGHT_GREY}
+                  fill={
+                    pathname?.includes('/posts') && tag === selectedTag
+                      ? BLACK
+                      : LIGHT_GREY
+                  }
               />
               <P>{tag}</P>
             </NavLink>
