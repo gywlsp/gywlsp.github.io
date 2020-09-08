@@ -8,19 +8,19 @@ import PostPreviewCard from 'src/components/organisms/post/preview';
 import withLocation from 'src/withLocation';
 
 function PostsPage({ data, location, search }) {
-    const posts = data.allMarkdownRemark.edges;
-    const { tag } = search;
+  const posts = data.allMarkdownRemark.edges;
+  const { tag } = search;
 
-    return (
-        <Layout selectedTag={tag || 'ALL'} pathname={location.pathname}>
-            <SEO title="Posts" />
-            {posts
-                .filter(({ node }) =>
-                    tag ? node.frontmatter.tags?.includes(tag) : true
-                )
-                .map(({ node }) => <PostPreviewCard key={JSON.stringify(node)} {...node} />)}
-        </Layout>
-    );
+  return (
+    <Layout selectedTag={tag || 'ALL'} pathname={location.pathname}>
+      <SEO title="posts" />
+      {posts
+        .filter(({ node }) =>
+          tag ? node.frontmatter.tags?.includes(tag) : true
+        )
+        .map(({ node }) => <PostPreviewCard key={JSON.stringify(node)} {...node} />)}
+    </Layout>
+  );
 }
 
 export default withLocation(PostsPage);

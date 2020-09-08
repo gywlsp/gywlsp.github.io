@@ -7,14 +7,14 @@ import SEO from 'src/components/seo';
 import withLocation from 'src/withLocation';
 
 function ProjectsPage({ data, location, search }) {
-    const posts = data.allMarkdownRemark.edges;
-    const { tag } = search;
+  const posts = data.allMarkdownRemark.edges;
+  const { tag } = search;
 
-    return (
-        <Layout selectedTag={tag || 'ALL'} pathname={location.pathname}>
-            <SEO title="Projects" />
-        </Layout>
-    );
+  return (
+    <Layout selectedTag={tag || 'ALL'} pathname={location.pathname}>
+      <SEO title="projects" />
+    </Layout>
+  );
 }
 
 export default withLocation(ProjectsPage);

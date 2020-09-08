@@ -6,18 +6,18 @@ import SEO from 'src/components/seo';
 
 import withLocation from 'src/withLocation';
 
-function HomePage({ data, location, search }) {
+function MainPage({ data, location, search }) {
   const posts = data.allMarkdownRemark.edges;
   const { tag } = search;
 
   return (
     <Layout selectedTag={tag || 'ALL'} pathname={location.pathname}>
-      <SEO title="Home" />
+      <SEO title="main" />
     </Layout>
   );
 }
 
-export default withLocation(HomePage);
+export default withLocation(MainPage);
 
 export const pageQuery = graphql`
   query {
