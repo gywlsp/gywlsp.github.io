@@ -9,6 +9,7 @@ import { BLACK } from 'src/constants/colors';
 export default function Profile() {
     return (
         <Wrapper>
+            <P>박효진 (@gywlsp)</P>
             <A href="mailto:gywls517@gmail.com" title="Email">
                 <EmailIcon
                     style={{ width: '20px', height: '15px', marginRight: '8px' }}
@@ -22,18 +23,6 @@ export default function Profile() {
                     height="18px"
                 />
             </A>
-            <P>
-                <Link
-                    style={{
-                        boxShadow: `none`,
-                        color: `inherit`,
-                        textDecoration: `none`
-                    }}
-                    to={`/`}
-                >
-                    ABOUT ME ＞
-                </Link>
-            </P>
         </Wrapper>
     );
 }
@@ -42,7 +31,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 4px;
-  margin-bottom: 60px;
+  margin-bottom: 48px;
 `;
 
 const P = styled.p`
@@ -50,7 +39,7 @@ const P = styled.p`
   font-size: 16px;
   color: ${BLACK};
   font-weight: 700;
-  margin-left: auto;
+  margin-right: auto;
   line-height: 1.5;
 `;
 
