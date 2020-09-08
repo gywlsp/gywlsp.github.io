@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import moment from 'moment';
 import styled from 'styled-components';
 
-import { BLACK, LIGHT_GREY } from 'src/constants/colors';
+import { BLACK, LIGHT_GREY, MIDDLE_GREY } from 'src/constants/colors';
 import { Tag } from 'src/components/atoms';
 
 function PostPreviewCard({ excerpt, fields, frontmatter }) {
@@ -63,6 +63,7 @@ const P = styled.p`
 `;
 
 const Small = styled.small`
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.4rem;
+  color: ${MIDDLE_GREY};
 `;
