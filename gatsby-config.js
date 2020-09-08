@@ -1,15 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `gywlsp devlog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`
+      name: `박효진 (@gywlsp)`,
+      summary: `서울에 거주하는 프론트엔드 개발자입니다. 23살 대학생이며 주력 언어는 javascript입니다.`
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
-    social: {
-      twitter: `kylemathews`
-    }
+    description: `서울에 거주하는 프론트엔드 개발자입니다. 23살 대학생이며 주력 언어는 javascript입니다.`,
+    siteUrl: `https://gywlsp.github.io/`
   },
   plugins: [
     {
@@ -66,7 +63,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`
+        icon: `content/assets/favicon.png`
       }
     },
     `gatsby-plugin-react-helmet`,
