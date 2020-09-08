@@ -7,7 +7,6 @@ import Profile from './profile';
 import HeartIcon from 'src/assets/icon/heart';
 import { BLACK, LIGHT_GREY } from 'src/constants/colors';
 
-
 export type GNBProps = {
   pathname: string;
   selectedTag?: string;
@@ -20,27 +19,43 @@ function GNB({ selectedTag, pathname }: GNBProps) {
     <Wrapper id="GNB">
       <Logo />
       <Profile />
-      <Ul>
-        {TAG_LIST.map((tag) => (
-          <Li key={tag}>
+      <Ul isPrimary={true}>
+        <Li>
+          <NavLink to="/">
+            <Category>ABOUT ME</Category>
+          </NavLink>
+        </Li>
+        <Li>
+          <NavLink to="/posts">
+            <Category>POSTS</Category>
+          </NavLink>
+        </Li>
+        <Ul isPrimary={false}>
+          {TAG_LIST.map((tag) => (
+            <Li key={tag}>
               <NavLink to={tag === 'ALL' ? '/posts' : `/posts/?tag=${tag}`}>
-              <HeartIcon
-                style={{ width: '16px', height: '16px', marginRight: '12px' }}
+                <HeartIcon
+                  style={{ width: '16px', height: '16px', marginRight: '12px' }}
                   fill={
                     pathname?.includes('/posts') && tag === selectedTag
                       ? BLACK
                       : LIGHT_GREY
                   }
-              />
-              <P>{tag}</P>
-            </NavLink>
-          </Li>
-        ))}
+                />
+                <P>{tag}</P>
+              </NavLink>
+            </Li>
+          ))}
+        </Ul>
+        <Li>
+          <NavLink to="/projects">
+            <Category>PROJECTS</Category>
+          </NavLink>
+        </Li>
       </Ul>
     </Wrapper>
   );
 }
-
 
 export default React.memo(GNB);
 
@@ -54,15 +69,13 @@ const Wrapper = styled.nav`
   padding: 24px 30px;
 `;
 
-const Ul = styled.ul`
-  padding-left: 4px;
-  margin-bottom: 20px;
+const Ul = styled.ul<{ isPrimary: boolean }>`
+  padding-left: ${(props) => (props.isPrimary ? '0' : '20px')};
+  margin-bottom: 36px;
   list-style-type: none;
 `;
 
 const Li = styled.li`
-  font-size: 20px;
-  fontweight: 400;
   margin-bottom: 16px;
 `;
 
@@ -72,6 +85,13 @@ const NavLink = styled(Link)`
   text-decoration: none;
   display: flex;
   align-items: center;
+`;
+
+const Category = styled.p`
+  margin: 0;
+  font-size: 24px;
+  color: ${BLACK};
+  font-weight: 700;
 `;
 
 const P = styled.p`
