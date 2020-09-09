@@ -1,5 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@font-face {
+  font-family: 'Liberation Mono';
+  src: url(../../static/fonts/LiberationMono.woff) format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  src: url(../../static/fonts/SFMono.woff) format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'paybooc-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff')
+    format('woff');
+}
 
 * {
   box-sizing: border-box;
@@ -104,7 +121,7 @@ p {
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   html {
-    font-size: 14px;
+    font-size: 13.5px;
   }
 }
 
@@ -115,7 +132,7 @@ p {
 
 @media (min-width: 768px) and (max-width: 1024px) {
   html {
-    font-size: 14px;
+    font-size: 13.5px;
   }
 }
 
@@ -126,7 +143,7 @@ p {
 
 @media (min-width: 1025px) {
   html {
-    font-size: 14.5px;
+    font-size: 13.5px;
   }
 }
 
