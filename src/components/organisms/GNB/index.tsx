@@ -4,8 +4,7 @@ import styled from 'styled-components';
 
 import Logo from './logo';
 import Profile from './profile';
-import HeartIcon from 'src/assets/icon/heart';
-import { BLACK, LIGHT_GREY } from 'src/constants/colors';
+import { BLACK, WHITE, LIGHT_BLUE, BLUE } from 'src/constants/colors';
 
 export type GNBProps = {
   pathname: string;
@@ -34,13 +33,8 @@ function GNB({ selectedTag, pathname }: GNBProps) {
           {TAG_LIST.map((tag) => (
             <Li key={tag}>
               <NavLink to={tag === 'ALL' ? '/posts' : `/posts/?tag=${tag}`}>
-                <HeartIcon
-                  style={{ width: '16px', height: '16px', marginRight: '12px' }}
-                  fill={
-                    pathname?.includes('/posts') && tag === selectedTag
-                      ? BLACK
-                      : LIGHT_GREY
-                  }
+                <Circle
+                  isSelected={pathname?.includes('/posts') && tag === selectedTag}
                 />
                 <P>{tag}</P>
               </NavLink>
@@ -65,7 +59,7 @@ const Wrapper = styled.nav`
   position: sticky;
   top: 0;
   overflow-y: auto;
-  background-color: #8f91a9;
+  background-color: ${LIGHT_BLUE};
   padding: 24px 30px;
 `;
 
@@ -99,4 +93,12 @@ const P = styled.p`
   font-size: 20px;
   color: ${BLACK};
   font-weight: 700;
+`;
+
+const Circle = styled.div<{ isSelected: boolean }>`
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  margin-right: 12px;
+  background-color: ${props => props.isSelected ? BLUE : WHITE};
 `;
