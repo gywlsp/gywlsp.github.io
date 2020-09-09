@@ -27,7 +27,12 @@ const Wrapper = styled.div`
 `;
 
 const Main = styled.main`
-  flex: 1;
+  width: calc(100% - 260px);
   padding: 3rem;
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 1.6rem;
+  }
+  max-width: 1280px;
   min-height: 100vh;
 `;
