@@ -2,9 +2,24 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { Img } from 'src/components/atoms';
+import { useStaticQuery, graphql } from 'gatsby';
+import Image from 'gatsby-image';
+
 
 export default function Logo() {
+
+  const { avatar } = useStaticQuery(graphql`
+  query ProfileQuery {
+    avatar: file(absolutePath: { regex: "/cyder.png/" }) {
+      childImageSharp {
+        fluid(maxWidth: 320) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`);
+
   return (
     <Link
       style={{
@@ -15,14 +30,8 @@ export default function Logo() {
       to={`/`}
     >
       <Wrapper>
-        <Img
-          src="https://avatars1.githubusercontent.com/u/47051596?s=460&u=5770a571dd6d4be00d7839e04fc9715d390d0714&v=4"
-          width="80px"
-          height="80px"
-          alt="profile_image"
-          circle
-        />
-        <BlogName>gywlsp devlog</BlogName>
+        <Image style={{ width: '72px' }} fluid={avatar.childImageSharp.fluid} className="logo" />
+        <BlogName>사이다<br />데브-로그</BlogName>
       </Wrapper>
     </Link>
   );
@@ -30,14 +39,16 @@ export default function Logo() {
 
 const Wrapper = styled.div`
   display: flex;
+  align-items: flex-end;
   flex: 1;
   margin-bottom: 24px;
 `;
 
 const BlogName = styled.p`
   margin: 0;
-  margin-left: 20px;
-  font-size: 28px;
-  font-family: 'Permanent Marker', cursive;
+  font-size: 24px;
+  font-family: 'paybooc-Bold';
+  margin-left: 12px;
+  margin-bottom: 8px;
   color: #202020;
 `;

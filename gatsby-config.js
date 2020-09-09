@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `gywlsp devlog`,
+    title: `사이다 데브로그`,
     author: {
       name: `박효진 (@gywlsp)`,
       summary: `서울에 거주하는 프론트엔드 개발자입니다. 23살 대학생이며 주력 언어는 javascript입니다.`
@@ -63,7 +63,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/favicon.png`
+        icon: `content/assets/cyder.png`
       }
     },
     `gatsby-plugin-react-helmet`,
