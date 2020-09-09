@@ -4,3 +4,7 @@ export const GREYISH_PURPLE = '#8F91A9';
 export const LIGHT_PURPLE = '#E0E2F5';
 export const LIGHT_GREY = '#C6C6C6';
 export const MIDDLE_GREY = '#999';
+export const LIGHT_BLUE = '#D2EFFF';
+export const SKY_BLUE = '#00b2ff';
+export const BLUE = '#0162B5';
+export const POINT_BLUE = '#004DFF';
