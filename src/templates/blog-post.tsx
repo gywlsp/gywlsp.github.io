@@ -6,7 +6,12 @@ import styled from 'styled-components';
 import Layout from 'src/components/templates/layout';
 import Bio from 'src/components/bio';
 import SEO from 'src/components/seo';
-import { MIDDLE_GREY, BLACK } from 'src/constants/colors';
+import {
+  MIDDLE_GREY,
+  BLACK,
+  BLUE,
+  WHITE,
+} from 'src/constants/colors';
 
 function BlogPostTemplate({ data, pageContext, location }) {
   const post = data.markdownRemark;
@@ -18,30 +23,34 @@ function BlogPostTemplate({ data, pageContext, location }) {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
+      <Article>
         <header>
-          <H1
-          >
-            {post.frontmatter.title}
-          </H1>
+          <H1>{post.frontmatter.title}</H1>
           <Row>
-            <StyledLink to='/'>
-              <Name>
-                박효진 (@gywlsp)
-            </Name>
+            {post.frontmatter.tags.map((tag) => (
+              <TagWrapper>
+                <Tag>{tag}</Tag>
+              </TagWrapper>
+            ))}
+          </Row>
+          <Row>
+            <StyledLink to="/">
+              <Name>박효진 (@gywlsp)</Name>
             </StyledLink>
-            <Date
-            >
+            <Date>
               {moment(post.frontmatter.date).format('YYYY년 MM월 DD일')}
             </Date>
           </Row>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section
+          className="postContents"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
         <hr />
         <footer>
           <Bio />
         </footer>
-      </article>
+      </Article>
 
       <nav>
         <ul
@@ -69,7 +78,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
           </li>
         </ul>
       </nav>
-    </Layout >
+    </Layout>
   );
 }
 
@@ -96,30 +105,47 @@ export const pageQuery = graphql`
   }
 `;
 
+const Article = styled.article`
+  flex: 1;
+`;
+
 const H1 = styled.h1`
-  margin-bottom: 0.8rem;
-  font-size: 2.8rem;
+  && {
+    margin-bottom: 0.8rem;
+    font-size: 2.8rem;
+  }
 `;
 
 const Row = styled.div`
-  display:flex;
+  display: flex;
   align-items: baseline;
 `;
 
 const Name = styled.p`
-font-size: 1.4rem;
-font-weight: 500;
-margin-right: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-right: 1.2rem;
 `;
 
 const Date = styled.p`
   font-size: 1.4rem;
   font-weight: 400;
-  color: ${MIDDLE_GREY}
+  color: ${MIDDLE_GREY};
 `;
 
 const StyledLink = styled(Link)`
   box-shadow: none;
   text-decoration: none;
-  color: ${BLACK}
+  color: ${BLACK};
+`;
+
+const TagWrapper = styled.div`
+  padding: 0.4rem 0.8rem;
+  background-color: ${BLUE};
+`;
+
+const Tag = styled.p`
+  font-size: 1.4rem;
+  color: ${WHITE};
+  margin: 0;
 `;
