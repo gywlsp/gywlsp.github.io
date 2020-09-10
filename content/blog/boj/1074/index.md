@@ -2,7 +2,8 @@
 title: '백준 1074번 Z :: 사이다 데브로그'
 date: '2020-09-09T11:00:00+00:00'
 description: 'Hello World'
-tags: ['javascript']
+tags: ['Javascript', 'Algorithm']
+thumbnail: 'boj_1074.png'
 ---
 
 #Header1
@@ -59,8 +60,6 @@ _`string`_
 안녕하세용가리
 
 ---
-
-![이미지](./salty_egg.jpg)
 
 ---
 
