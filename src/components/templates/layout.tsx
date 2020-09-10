@@ -1,7 +1,8 @@
-import React, { ReactChild } from 'react';
+import React, { useState, ReactChild } from 'react';
 import styled from 'styled-components';
 
 import GNB from 'src/components/organisms/GNB';
+import GHeader from '../organisms/GHeader';
 
 export type LayoutProps = {
   pathname: string;
@@ -10,9 +11,14 @@ export type LayoutProps = {
 };
 
 function Layout({ pathname, children, selectedTag }) {
+  const [isMobileGNBOpen, setMobileGNBOpen] = useState(false);
+
+  const toggleMobileGNBOpen = (open: boolean) => () => setMobileGNBOpen(open);
+
   return (
     <Wrapper>
-      <GNB {...{ pathname, selectedTag }} />
+      <GNB {...{ pathname, selectedTag, isMobileGNBOpen, onClose: toggleMobileGNBOpen(false) }} />
+      <GHeader onMobileGNBOpen={toggleMobileGNBOpen(true)} />
       <Main>{children}</Main>
     </Wrapper>
   );
@@ -32,6 +38,7 @@ const Main = styled.main`
   @media (max-width: 767px) {
     width: 100%;
     padding: 1.6rem;
+    margin-top: 6rem;
   }
   max-width: 1280px;
   min-height: 100vh;
