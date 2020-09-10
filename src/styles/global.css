@@ -31,6 +31,10 @@ p {
   line-height: 1.5;
 }
 
+a {
+  color: #1b60ff;
+}
+
 @media (max-width: 252px) {
   html {
     font-size: 7px;
@@ -144,11 +148,5 @@ p {
 @media (min-width: 1025px) {
   html {
     font-size: 13.5px;
-  }
-}
-
-@media (max-width: 767px) {
-  #GNB {
-    display: none;
   }
 }
