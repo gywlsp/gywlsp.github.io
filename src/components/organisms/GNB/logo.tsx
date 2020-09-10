@@ -25,13 +25,18 @@ export default function Logo() {
       style={{
         boxShadow: `none`,
         color: `inherit`,
-        textDecoration: `none`
+        textDecoration: `none`,
+        alignSelf: 'center',
+        marginRight: '0.8rem'
       }}
       to={`/`}
     >
       <Wrapper>
         <Image style={{ width: '72px' }} fluid={avatar.childImageSharp.fluid} className="logo" />
-        <BlogName>사이다<br />데브-로그</BlogName>
+        <NameWrapper>
+          <Kor>사이다<br />데브-로그</Kor>
+          <Eng>CIDER DEVLOG</Eng>
+        </NameWrapper>
       </Wrapper>
     </Link>
   );
@@ -41,14 +46,24 @@ const Wrapper = styled.div`
   display: flex;
   align-items: flex-end;
   flex: 1;
+  margin-left: 4px;
   margin-bottom: 24px;
 `;
 
-const BlogName = styled.p`
+const NameWrapper = styled.div`
+  margin-left: 12px;
+`;
+
+const Kor = styled.p`
   margin: 0;
   font-size: 24px;
   font-family: 'paybooc-Bold';
-  margin-left: 12px;
-  margin-bottom: 8px;
+  margin-bottom: 2px;
   color: #202020;
+`;
+
+const Eng = styled.p`
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0px;
 `;

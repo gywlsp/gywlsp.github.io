@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
@@ -9,68 +9,114 @@ import { BLACK, WHITE, LIGHT_BLUE, BLUE } from 'src/constants/colors';
 export type GNBProps = {
   pathname: string;
   selectedTag?: string;
+  isMobileGNBOpen: boolean;
+  onClose: () => void;
 };
 
-const TAG_LIST = ['ALL', 'Javascript', 'Algorithm', 'React'];
+const TAG_LIST = ['ALL', 'Javascript', 'Algorithm'];
 
-function GNB({ selectedTag, pathname }: GNBProps) {
+function GNB({ selectedTag, pathname, isMobileGNBOpen, onClose }: GNBProps) {
+  useEffect(() => { onClose(); }, [selectedTag]);
+
+  const right = isMobileGNBOpen ? '0' : '100vw';
+
   return (
-    <Wrapper id="GNB">
-      <Logo />
-      <Profile />
-      <Ul isPrimary={true}>
-        <Li>
-          <NavLink to="/">
-            <Category>ABOUT ME</Category>
-          </NavLink>
-        </Li>
-        <Li>
-          <NavLink to="/posts">
-            <Category>POSTS</Category>
-          </NavLink>
-        </Li>
-        <Ul isPrimary={false}>
-          {TAG_LIST.map((tag) => (
-            <Li key={tag}>
-              <NavLink to={tag === 'ALL' ? '/posts' : `/posts/?tag=${tag}`}>
-                <Circle
-                  isSelected={pathname?.includes('/posts') && tag === selectedTag}
-                />
-                <P>{tag}</P>
+    <OverlayWrapper isMobileGNBOpen={isMobileGNBOpen} style={{ right }}>
+      <Wrapper id="GNB" isMobileGNBOpen={isMobileGNBOpen} style={{ right }}>
+        <Logo />
+        <Profile />
+        <ListWrapper>
+          <Ul isPrimary={true}>
+            <Li>
+              <NavLink to="/">
+                <Category>ABOUT ME</Category>
               </NavLink>
             </Li>
-          ))}
-        </Ul>
-        <Li>
-          <NavLink to="/projects">
-            <Category>PROJECTS</Category>
-          </NavLink>
-        </Li>
-      </Ul>
-    </Wrapper>
+            <Li>
+              <NavLink to="/posts">
+                <Category>POSTS</Category>
+              </NavLink>
+            </Li>
+            <Ul isPrimary={false}>
+              {TAG_LIST.map((tag) => (
+                <Li key={tag}>
+                  <NavLink to={tag === 'ALL' ? '/posts' : `/posts?tag=${tag}`}>
+                    <Circle
+                      isSelected={
+                        pathname?.includes('/posts') && tag === selectedTag
+                      }
+                    />
+                    <Tag>{tag}</Tag>
+                  </NavLink>
+                </Li>
+              ))}
+            </Ul>
+            <Li>
+              <NavLink to="/projects">
+                <Category>PROJECTS</Category>
+              </NavLink>
+            </Li>
+          </Ul>
+        </ListWrapper>
+      </Wrapper>
+      <Overlay onClick={onClose} />
+    </OverlayWrapper>
   );
 }
 
 export default React.memo(GNB);
 
-const Wrapper = styled.nav`
+const OverlayWrapper = styled.div<{ isMobileGNBOpen: boolean }>`
+  @media (max-width: 767px) {
+    display: flex;
+    flex: 1 0 auto;
+    width: 100%;
+    height: ${props => props.isMobileGNBOpen ? '100vh' : 'auto'};
+    z-index: 999;
+    overflowx: auto;
+    position: fixed;
+    outline: 0;
+    transition: right 0.3s ease-out;
+  }
+`;
+
+const Overlay = styled.div`
+  flex: 1;
+`;
+
+const ListWrapper = styled.div`
+  width: 200px;
+`;
+
+const Wrapper = styled.nav<{ isMobileGNBOpen: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 260px;
   height: 100vh;
+  padding: 4rem 0 2.4rem;
   position: sticky;
-  top: 0;
-  overflow-y: auto;
+  overflow-x: hidden;
+  @media (max-width: 767px) {
+    z-index: 9999;
+    padding-top: 6rem;
+    ${(props) =>
+    !props.isMobileGNBOpen && `display: none;`}
+  }
+  @media (min-width: 768px) {
+    top: 0;
+  }
   background-color: ${LIGHT_BLUE};
-  padding: 24px 30px;
 `;
 
 const Ul = styled.ul<{ isPrimary: boolean }>`
   padding-left: ${(props) => (props.isPrimary ? '0' : '20px')};
-  margin-bottom: 36px;
+  margin-bottom: 2rem;
   list-style-type: none;
 `;
 
 const Li = styled.li`
-  margin-bottom: 16px;
+  margin-bottom: 1.2rem;
 `;
 
 const NavLink = styled(Link)`
@@ -83,16 +129,16 @@ const NavLink = styled(Link)`
 
 const Category = styled.p`
   margin: 0;
-  font-size: 24px;
+  font-size: 1.8rem;
   color: ${BLACK};
-  font-weight: 700;
+  font-weight: 600;
 `;
 
-const P = styled.p`
+const Tag = styled.p`
   margin: 0;
-  font-size: 20px;
+  font-size: 1.6rem;
   color: ${BLACK};
-  font-weight: 700;
+  font-weight: 500;
 `;
 
 const Circle = styled.div<{ isSelected: boolean }>`
@@ -100,5 +146,6 @@ const Circle = styled.div<{ isSelected: boolean }>`
   height: 12px;
   border-radius: 999px;
   margin-right: 12px;
-  background-color: ${props => props.isSelected ? BLUE : WHITE};
+  background-color: ${(props) => (props.isSelected ? BLUE : WHITE)};
+  border: 0.1rem solid ${BLUE};
 `;
