@@ -2,10 +2,6 @@
   font-size: 1.4rem;
 }
 
-.postContents a {
-  text-decoration: none;
-}
-
 .postContents p {
   margin-left: 0;
   margin-right: 0;
@@ -166,7 +162,7 @@ span.token.class-name {
 
 code[class*='language-'],
 span.token.builtin {
-  color: #0162b5;
+  color: #4d8fca;
 }
 
 .postContents .gatsby-highlight > pre *::selection {
@@ -174,12 +170,12 @@ span.token.builtin {
 }
 
 span.token.function {
-  color: #00b2ff;
+  color: #624dca;
 }
 
 span.token.punctuation,
 span.token.operator {
-  color: #999;
+  color: #666;
   background-color: transparent;
 }
 
