@@ -1,18 +1,17 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import EmailIcon from 'src/assets/icon/email';
 import { Img } from 'src/components/atoms';
 import { BLACK } from 'src/constants/colors';
+import MailIcon from 'src/assets/icon/mail';
 
 export default function Profile() {
     return (
         <Wrapper>
-            <P>박효진 (@gywlsp)</P>
+            <P><strong>박효진</strong> (@gywlsp)</P>
             <A href="mailto:gywls517@gmail.com" title="Email">
-                <EmailIcon
-                    style={{ width: '20px', height: '15px', marginRight: '8px' }}
+                <MailIcon
+                    style={{ width: '18px', height: '18px', marginRight: '8px' }}
                 />
             </A>
             <A href="https://github.com/gywlsp" title="Github">
@@ -29,18 +28,18 @@ export default function Profile() {
 
 const Wrapper = styled.div`
   display: flex;
-  align-items: center;
-  padding: 4px;
-  margin-bottom: 48px;
+  align-items: flex-end;
+  padding: 0.2rem 0 0.4rem;
+  width: 200px;
+  margin-bottom: 2rem;
 `;
 
 const P = styled.p`
   margin: 0;
   font-size: 16px;
   color: ${BLACK};
-  font-weight: 700;
+  font-weight: 500;
   margin-right: auto;
-  line-height: 1.5;
 `;
 
 const A = styled.a`
