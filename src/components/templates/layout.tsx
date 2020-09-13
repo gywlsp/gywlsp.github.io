@@ -17,7 +17,14 @@ function Layout({ pathname, children, selectedTag }) {
 
   return (
     <Wrapper>
-      <GNB {...{ pathname, selectedTag, isMobileGNBOpen, onClose: toggleMobileGNBOpen(false) }} />
+      <GNB
+        {...{
+          pathname,
+          selectedTag,
+          isMobileGNBOpen,
+          onClose: toggleMobileGNBOpen(false)
+        }}
+      />
       <GHeader onMobileGNBOpen={toggleMobileGNBOpen(true)} />
       <Main>{children}</Main>
     </Wrapper>
@@ -33,13 +40,15 @@ const Wrapper = styled.div`
 `;
 
 const Main = styled.main`
-  width: calc(100% - 260px);
-  padding: 3rem;
+  width: calc(100% - 520px);
+  min-height: 100vh;
+  padding: 4.2rem 3rem;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: calc(100% - 260px);
+  }
   @media (max-width: 767px) {
     width: 100%;
-    padding: 1.6rem;
+    padding: 2rem 1.6rem;
     margin-top: 6rem;
   }
-  max-width: 1280px;
-  min-height: 100vh;
 `;
