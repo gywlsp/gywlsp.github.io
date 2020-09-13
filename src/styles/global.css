@@ -33,6 +33,7 @@ p {
 
 a {
   color: #1b60ff;
+  text-decoration: none;
 }
 
 @media (max-width: 252px) {
