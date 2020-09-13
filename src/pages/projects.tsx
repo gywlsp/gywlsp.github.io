@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from 'src/components/templates/layout';
-import SEO from 'src/components/seo';
+import SEO from 'src/components/templates/seo';
 
 import withLocation from 'src/withLocation';
 
@@ -17,7 +17,7 @@ function ProjectsPage({ data, location, search }) {
   );
 }
 
-export default withLocation(ProjectsPage);
+export default withLocation(React.memo(ProjectsPage));
 
 export const pageQuery = graphql`
   query {
