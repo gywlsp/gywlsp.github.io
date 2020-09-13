@@ -32,6 +32,8 @@ function GHeader({ onMobileGNBOpen }: GHeaderProps) {
   );
 }
 
+export default React.memo(GHeader);
+
 const Wrapper = styled.header`
   display: flex;
   align-items: center;
