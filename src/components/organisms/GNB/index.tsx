@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import Logo from './logo';
 import Profile from './profile';
-import { BLACK, WHITE, LIGHT_BLUE, BLUE } from 'src/constants/colors';
+import { BLACK, WHITE, LIGHT_BLUE, BLUE, MIDDLE_GREY } from 'src/constants/colors';
 
 export type GNBProps = {
   pathname: string;
@@ -102,6 +102,7 @@ const Wrapper = styled.nav<{ isMobileGNBOpen: boolean }>`
     padding-top: 6rem;
     ${(props) =>
     !props.isMobileGNBOpen && `display: none;`}
+    box-shadow: 2px 0 2px -2px ${MIDDLE_GREY};
   }
   @media (min-width: 768px) {
     top: 0;
