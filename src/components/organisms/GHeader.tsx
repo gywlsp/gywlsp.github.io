@@ -1,27 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import Image from 'gatsby-image';
+import { Link } from 'gatsby';
 
-import { WHITE } from 'src/constants/colors';
 import HamburgerIcon from 'src/assets/icon/hamburger';
+import { Img } from '../atoms';
+import { WHITE } from 'src/constants/colors';
 
 export type GHeaderProps = {
   onMobileGNBOpen: () => void;
 };
 
-export default function GHeader({ onMobileGNBOpen }: GHeaderProps) {
-  const { avatar } = useStaticQuery(graphql`
-    query GHeaderLogoQuery {
-      avatar: file(absolutePath: { regex: "/cyder.png/" }) {
-        childImageSharp {
-          fluid(maxWidth: 320) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
+function GHeader({ onMobileGNBOpen }: GHeaderProps) {
 
   return (
     <Wrapper>
@@ -36,11 +25,8 @@ export default function GHeader({ onMobileGNBOpen }: GHeaderProps) {
         }}
         to={`/`}
       >
-        <Image
-          style={{ width: '2.8rem' }}
-          fluid={avatar.childImageSharp.fluid}
-          className="logo"
-        /></Link>
+        <Img src="/images/logo.svg" width="2.8rem" alt="logo" />
+      </Link>
       <Space />
     </Wrapper>
   );
