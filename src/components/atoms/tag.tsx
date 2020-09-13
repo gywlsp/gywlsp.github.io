@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
-import { LIGHT_PURPLE, BLACK } from 'src/constants/colors';
+import { BLUE, WHITE } from 'src/constants/colors';
 
 export type TagProps = {
     title: string;
@@ -9,24 +10,26 @@ export type TagProps = {
 
 function Tag({ title }: TagProps) {
     return (
-        <Wrapper>
-            <P>{title}</P>
-        </Wrapper>
+        <Link to={`/posts?tag=${title}`}>
+            <Wrapper>
+                <P>{title}</P>
+            </Wrapper>
+        </Link>
     )
 }
 
 export default React.memo(Tag);
 
 const Wrapper = styled.div`
-    padding: 0.8rem 1rem;
-    background-color: ${LIGHT_PURPLE};
-    border-radius: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    background-color: ${BLUE};
     margin-right: 0.8rem;
+    margin-bottom: 0.8rem;
 `;
 
 const P = styled.p`
-    color: ${BLACK};
-    font-size: 1.4rem;
+    color: ${WHITE};
+    font-size: 1.2rem;
     font-weight: 500;
     margin: 0;
 `;
