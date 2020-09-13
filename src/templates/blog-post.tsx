@@ -66,6 +66,16 @@ function BlogPostTemplate({ data, pageContext, location }) {
               {moment(post.frontmatter.date).format('YYYY년 MM월 DD일')}
             </Date>
           </Row>
+          <Image
+            fluid={thumbnail.childImageSharp.fluid}
+            style={{
+              width: '80%',
+              height: 'auto',
+              objectFit: 'cover',
+              margin: '0.8rem auto 2.4rem',
+              border: `0.1px solid ${LIGHT_GREY}`
+            }}
+          />
         </header>
         <section
           className="postContents"
@@ -128,6 +138,13 @@ export const pageQuery = graphql`
         date
         description
         tags
+        thumbnail {
+          childImageSharp {
+            fluid(maxWidth: 1200) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
