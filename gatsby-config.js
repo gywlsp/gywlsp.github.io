@@ -1,27 +1,27 @@
 module.exports = {
   siteMetadata: {
-    title: `사이다 데브로그`,
+    title: `사이다 데브로그 CIDER DEVLOG`,
     author: {
       name: `박효진 (@gywlsp)`,
-      summary: `서울에 거주하는 프론트엔드 개발자입니다. 23살 대학생이며 주력 언어는 javascript입니다.`
+      summary: `이화여자대학교에서 컴퓨터공학을 배우고 있는 23살 대학생입니다.`,
     },
-    description: `서울에 거주하는 프론트엔드 개발자입니다. 23살 대학생이며 주력 언어는 javascript입니다.`,
-    siteUrl: `https://gywlsp.github.io/`
+    description: `사이다 데브로그 CIDER DEVLOG :: gywlsp dev blog`,
+    siteUrl: `https://gywlsp.github.io/`,
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
-        name: `blog`
-      }
+        name: `blog`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
-        name: `assets`
-      }
+        name: `assets`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -30,20 +30,20 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590
-            }
+              maxWidth: 590,
+            },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`
-            }
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`
-        ]
-      }
+          `gatsby-remark-smartypants`,
+        ],
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -51,7 +51,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
-      }
+      },
     },
     `gatsby-plugin-feed`,
     {
@@ -63,17 +63,17 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/cyder.png`
-      }
+        icon: `content/assets/cyder.png`,
+      },
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
     'gatsby-plugin-root-import',
     {
-      resolve: `gatsby-plugin-styled-components`
-    }
+      resolve: `gatsby-plugin-styled-components`,
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-  ]
+  ],
 };
