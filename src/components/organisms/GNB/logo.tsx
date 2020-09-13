@@ -2,23 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { useStaticQuery, graphql } from 'gatsby';
-import Image from 'gatsby-image';
+import { Img } from 'src/components/atoms';
 
 
 export default function Logo() {
-
-  const { avatar } = useStaticQuery(graphql`
-  query ProfileQuery {
-    avatar: file(absolutePath: { regex: "/cyder.png/" }) {
-      childImageSharp {
-        fluid(maxWidth: 320) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`);
 
   return (
     <Link
@@ -32,7 +19,7 @@ export default function Logo() {
       to={`/`}
     >
       <Wrapper>
-        <Image style={{ width: '72px' }} fluid={avatar.childImageSharp.fluid} className="logo" />
+        <Img src="/images/logo.svg" width="72px" alt="logo" />
         <NameWrapper>
           <Kor>사이다<br />데브-로그</Kor>
           <Eng>CIDER DEVLOG</Eng>
