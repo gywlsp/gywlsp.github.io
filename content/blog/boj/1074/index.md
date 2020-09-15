@@ -1,7 +1,7 @@
 ---
 title: '백준 1074번 Z - javascript :: 사이다 데브로그'
 date: '2020-09-09T11:00:00+00:00'
-description: 'Hello World'
+description: '백준 1074번 문제 Z를 javascript로 풀이하는 글입니다.'
 tags: ['Javascript', 'Algorithm']
 thumbnail: 'boj_1074.png'
 ---
