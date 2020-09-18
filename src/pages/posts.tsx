@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import withLocation from 'src/withLocation';
 import Layout from 'src/components/templates/layout';
 import SEO from 'src/components/templates/seo';
-import PostPreviewCard from 'src/components/molecules/post/preview';
+import PostPreviewCard from 'src/components/molecules/post-card/preview';
 import { BLUE } from 'src/constants/colors';
 
 function PostsPage({ data, location, search }) {
