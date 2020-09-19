@@ -12,6 +12,7 @@ import {
   BLACK,
   LIGHT_GREY,
 } from 'src/constants/colors';
+import ContextPostCard from 'src/components/molecules/post-card/context';
 
 function BlogPostTemplate({ data, pageContext, location }) {
   const post = data.markdownRemark;
@@ -86,32 +87,14 @@ function BlogPostTemplate({ data, pageContext, location }) {
           {/* <Bio /> */}
         </footer>
       </Article>
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+      <ContextWrapper>
+        {next && (
+          <ContextPostCard type="next" {...next} />
+        )}
+        {previous && (
+          <ContextPostCard type="previous" {...previous} />
+        )}
+      </ContextWrapper>
     </Layout>
   );
 }
@@ -183,4 +166,11 @@ const StyledLink = styled(Link)`
   box-shadow: none;
   text-decoration: none;
   color: ${BLACK};
+`;
+
+const ContextWrapper = styled.div`
+  display: flex;
+  flex-flow: row-reverse wrap;
+  justify-content: space-between;
+  margin: 2rem 0;
 `;
