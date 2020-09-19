@@ -5,20 +5,16 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import React from 'react';
+import styled from 'styled-components';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 
-const Bio = () => {
+import { Img } from './atoms';
+import { BLACK } from 'src/constants/colors';
+
+export default function Bio() {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-        childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
       site {
         siteMetadata {
           author {
@@ -28,32 +24,43 @@ const Bio = () => {
         }
       }
     }
-  `)
+  `);
 
-  const { author } = data.site.siteMetadata
+  const { author } = data.site.siteMetadata;
   return (
-    <div
-      style={{
-        display: `flex`,
-      }}
-    >
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author.name}
-        style={{
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
-        }}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
+    <Wrapper to="/about-me">
+      <Img
+        src="/images/profile-image.jpeg"
+        width="10rem"
+        height="10rem"
+        alt="profile-image"
+        circle
+        cover
+        style={{ marginRight: '2rem' }}
       />
-      <p>
-        Written by <strong>{author.name}</strong> {author.summary}
-      </p>
-    </div>
-  )
+      <P>
+        <strong>{author.name}</strong>
+        <br />
+        EWHA. W. UNIV. CSE 18
+        <br />
+        FRONT-END DEVELOPER
+        <br />
+      </P>
+    </Wrapper>
+  );
 }
 
-export default Bio
+const Wrapper = styled(Link)`
+  box-shadow: none;
+  text-decoration: none;
+  color: ${BLACK};
+  display: flex;
+  flex: 1;
+  margin: 2.8rem 0;
+  align-items: center;
+`;
+
+const P = styled.p`
+  font-size: 1.6rem;
+  margin: 0;
+`;
