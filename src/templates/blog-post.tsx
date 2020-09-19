@@ -6,6 +6,7 @@ import moment from 'moment';
 
 import Layout from 'src/components/templates/layout';
 import SEO, { getSchemaOrgJSONLD } from 'src/components/templates/seo';
+import Bio from 'src/components/bio';
 import { Tag } from 'src/components/atoms';
 import {
   MIDDLE_GREY,
@@ -84,7 +85,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
         />
         <hr />
         <footer>
-          {/* <Bio /> */}
+          <Bio />
         </footer>
       </Article>
       <ContextWrapper>
