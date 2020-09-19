@@ -9,41 +9,41 @@ import { BLACK, BLUE, LIGHT_BLUE } from 'src/constants/colors';
 export type ContextType = 'previous' | 'next';
 
 export type ContextPostCardProps = {
-    type: ContextType;
-    fields: {
-        slug: string;
-    };
-    frontmatter: {
-        title: string;
-    };
+  type: ContextType;
+  fields: {
+    slug: string;
+  };
+  frontmatter: {
+    title: string;
+  };
 };
 
 export default function ContextPostCard({
-    type,
-    fields,
-    frontmatter,
+  type,
+  fields,
+  frontmatter,
 }: ContextPostCardProps) {
-    return (
-        <Wrapper to={fields.slug}>
-            {type === 'previous' && (
-                <Circle style={{ marginRight: '1.2rem' }}>
-                    <ArrowLeftIcon />
-                </Circle>
-            )}
-            <div>
-                <Label>{type === 'previous' ? '이전' : '다음'} 포스트</Label>
-                <Title>{frontmatter.title}</Title>
-            </div>
-            {type === 'next' && (
-                <Circle style={{ marginLeft: '1.2rem' }}>
-                    <ArrowRightIcon />
-                </Circle>
-            )}
-        </Wrapper>
-    );
+  return (
+    <Wrapper to={fields.slug} type={type}>
+      {type === 'previous' && (
+        <Circle style={{ marginRight: '1.2rem' }}>
+          <ArrowLeftIcon />
+        </Circle>
+      )}
+      <div>
+        <Label>{type === 'previous' ? '이전' : '다음'} 포스트</Label>
+        <Title>{frontmatter.title}</Title>
+      </div>
+      {type === 'next' && (
+        <Circle style={{ marginLeft: '1.2rem' }}>
+          <ArrowRightIcon />
+        </Circle>
+      )}
+    </Wrapper>
+  );
 }
 
-const Wrapper = styled(Link)`
+const Wrapper = styled(Link) <{ type: ContextType }>`
   box-shadow: none;
   text-decoration: none;
   display: flex;
@@ -51,6 +51,7 @@ const Wrapper = styled(Link)`
   justify-content: space-between;
   padding: 2rem;
   background-color: ${LIGHT_BLUE};
+  ${props => props.type === "previous" ? "margin-right: auto" : "margin-left: auto"};
   margin-bottom: 1.2rem;
   @media (max-width: 1499px) {
     width: 100%;
