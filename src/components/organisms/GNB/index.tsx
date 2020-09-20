@@ -51,11 +51,6 @@ function GNB({ selectedTag, pathname, isMobileGNBOpen, onClose }: GNBProps) {
                 </Li>
               ))}
             </Ul>
-            <Li>
-              <NavLink to="/projects">
-                <Category>PROJECTS</Category>
-              </NavLink>
-            </Li>
           </Ul>
         </ListWrapper>
       </Wrapper>
@@ -117,7 +112,7 @@ const Ul = styled.ul<{ isPrimary: boolean }>`
 `;
 
 const Li = styled.li`
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.8rem;
 `;
 
 const NavLink = styled(Link)`
