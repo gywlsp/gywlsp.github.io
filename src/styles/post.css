@@ -120,7 +120,7 @@ h6 {
 
 .postContents u {
   text-decoration: none;
-  color: #00b2ff;
+  color: #1b60ff;
 }
 
 .postContents em {
@@ -189,4 +189,8 @@ span.token.comment {
 span.token.string {
   color: #ca9d86;
   background: none !important;
+}
+
+.postContents a {
+  text-decoration: underline;
 }
