@@ -24,7 +24,7 @@ function PostPreviewCard({
   excerpt,
   fields,
   frontmatter,
-  thumbnail
+  thumbnail,
 }: PostPreviewCardProps) {
   const { date, tags, title } = frontmatter;
 
@@ -38,7 +38,7 @@ function PostPreviewCard({
           objectFit: 'cover',
           backgroundColor: '#fff',
           marginBottom: '1.2rem',
-          border: `0.1px solid ${LIGHT_GREY}`
+          border: `0.1px solid ${LIGHT_GREY}`,
         }}
       />
       <Title>{title || fields.slug}</Title>
@@ -78,7 +78,10 @@ const Title = styled.p`
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
   margin-bottom: 0.8rem;
 `;
 
