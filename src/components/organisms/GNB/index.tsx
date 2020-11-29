@@ -4,7 +4,13 @@ import styled from 'styled-components';
 
 import Logo from './logo';
 import Profile from './profile';
-import { BLACK, WHITE, LIGHT_BLUE, BLUE, MIDDLE_GREY } from 'src/constants/colors';
+import {
+  BLACK,
+  WHITE,
+  LIGHT_BLUE,
+  BLUE,
+  MIDDLE_GREY,
+} from 'src/constants/colors';
 
 export type GNBProps = {
   pathname: string;
@@ -13,10 +19,12 @@ export type GNBProps = {
   onClose: () => void;
 };
 
-const TAG_LIST = ['ALL', 'Javascript', 'Algorithm'];
+const TAG_LIST = ['ALL', 'Javascript', 'Algorithm', 'React', 'React Native'];
 
 function GNB({ selectedTag, pathname, isMobileGNBOpen, onClose }: GNBProps) {
-  useEffect(() => { onClose(); }, [selectedTag]);
+  useEffect(() => {
+    onClose();
+  }, [selectedTag]);
 
   const right = isMobileGNBOpen ? '0' : '100vw';
 
@@ -66,7 +74,7 @@ const OverlayWrapper = styled.div<{ isMobileGNBOpen: boolean }>`
     display: flex;
     flex: 1 0 auto;
     width: 100%;
-    height: ${props => props.isMobileGNBOpen ? '100vh' : 'auto'};
+    height: ${(props) => (props.isMobileGNBOpen ? '100vh' : 'auto')};
     z-index: 999;
     overflowx: auto;
     position: fixed;
@@ -95,8 +103,7 @@ const Wrapper = styled.nav<{ isMobileGNBOpen: boolean }>`
   @media (max-width: 767px) {
     z-index: 9999;
     padding-top: 6rem;
-    ${(props) =>
-    !props.isMobileGNBOpen && `display: none;`}
+    ${(props) => !props.isMobileGNBOpen && `display: none;`}
     box-shadow: 2px 0 2px -2px ${MIDDLE_GREY};
   }
   @media (min-width: 768px) {
