@@ -21,7 +21,7 @@ export type PostPreviewCardProps = {
 };
 
 function PostPreviewCard({
-  excerpt,
+  //excerpt,
   fields,
   frontmatter,
   thumbnail,
@@ -47,7 +47,6 @@ function PostPreviewCard({
           <Tag key={tag} title={tag} />
         ))}
       </Row>
-      <Excerpt>{excerpt}</Excerpt>
       <Small>{moment(date).format('YYYY.MM.DD')}</Small>
     </Wrapper>
   );
@@ -85,21 +84,6 @@ const Title = styled.p`
   margin-bottom: 0.8rem;
 `;
 
-const Excerpt = styled.p`
-  margin: 0;
-  font-size: 1.4rem;
-  font-weight: 400;
-  margin-bottom: 0.8rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  word-wrap: break-word;
-  line-height: 1.4em;
-  height: 4.2em;
-`;
-
 const Row = styled.div`
   display: flex;
 `;
@@ -108,4 +92,5 @@ const Small = styled.small`
   font-weight: 400;
   font-size: 1.4rem;
   color: ${MIDDLE_GREY};
+  margin-top: 0.8rem;
 `;
