@@ -36,11 +36,6 @@ function GNB({ selectedTag, pathname, isMobileGNBOpen, onClose }: GNBProps) {
         <ListWrapper>
           <Ul isPrimary={true}>
             <Li>
-              <NavLink to="/">
-                <Category>ABOUT ME</Category>
-              </NavLink>
-            </Li>
-            <Li>
               <NavLink to="/posts">
                 <Category>POSTS</Category>
               </NavLink>

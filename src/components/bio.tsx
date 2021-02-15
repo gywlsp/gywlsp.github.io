@@ -28,7 +28,7 @@ export default function Bio() {
 
   const { author } = data.site.siteMetadata;
   return (
-    <Wrapper to="/about-me">
+    <Wrapper>
       <Img
         src="/images/profile-image.jpeg"
         width="10rem"
@@ -50,7 +50,7 @@ export default function Bio() {
   );
 }
 
-const Wrapper = styled(Link)`
+const Wrapper = styled.div`
   box-shadow: none;
   text-decoration: none;
   color: ${BLACK};
