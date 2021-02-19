@@ -16,7 +16,7 @@ export default function Logo() {
         alignSelf: 'center',
         marginRight: '0.8rem'
       }}
-      to={`/`}
+      to="/"
     >
       <Wrapper>
         <Img src="/images/logo.svg" width="72px" alt="logo" />

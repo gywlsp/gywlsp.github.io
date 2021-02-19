@@ -23,7 +23,7 @@ function GHeader({ onMobileGNBOpen }: GHeaderProps) {
           color: `inherit`,
           textDecoration: `none`
         }}
-        to={`/`}
+        to="/"
       >
         <Img src="/images/logo.svg" width="2.8rem" alt="logo" />
       </Link>
