@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { MDXProvider } from '@mdx-js/react';
 
-import AboutMeMd from 'src/contents/about-me.md';
+import AboutMeMd from 'src/contents/about-me.mdx';
 
 export default function AboutMe() {
   return (
