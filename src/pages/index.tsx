@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from "gatsby"
+import { Link } from 'gatsby';
 import { graphql } from 'gatsby';
 
 import Layout from 'src/components/templates/layout';
 import SEO from 'src/components/templates/seo';
+import AboutMe from 'src/components/organisms/about-me';
 import PostPreviewCard from 'src/components/molecules/post-card/preview';
 import ChevronRightIcon from 'src/assets/icon/chevron/right';
 
@@ -16,6 +17,7 @@ function MainPage({ data, location }) {
   return (
     <Layout selectedTag="ALL" pathname={location.pathname}>
       <SEO title="main" />
+      <AboutMe/>
       <Row>
         <PageTitle>RECENT POSTS</PageTitle>
         <Link to="/posts">
@@ -75,7 +77,7 @@ const Row = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 0.8rem;
+  margin: 2rem 0 0.8rem;
 `;
 
 const PageTitle = styled.p`
