@@ -77,59 +77,39 @@ export const getSchemaOrgJSONLD = ({
   image,
   description,
   datePublished,
-  siteTitle,
-  siteUrl,
-}) => [
-    {
-      '@context': 'http://schema.org',
-      '@type': 'WebSite',
-      url,
-      name: title,
-      alternateName: siteTitle,
-    },
-    {
-      '@context': 'https://khalilstemmler.com',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          item: {
-            '@id': url,
-            name: title,
-            image,
-          },
-        },
-      ],
-    },
-    {
-      '@context': 'https://khalilstemmler.com',
-      '@type': 'BlogPosting',
-      url,
-      name: title,
-      alternateName: siteTitle,
-      headline: title,
-      image: {
-        '@type': 'ImageObject',
-        url: image,
-      },
-      description,
-      author: {
-        '@type': 'Person',
-        name: 'Park Hyo Jin',
-      },
-      publisher: {
-        '@type': 'Organization',
-        url: 'https://khalilstemmler.com',
-        logo: 'https://gywlsp.github.io/images/logo.svg',
-        name: 'Park Hyo Jin',
-      },
-      mainEntityOfPage: {
-        '@type': 'WebSite',
-        '@id': siteUrl,
-      },
-      datePublished,
-    },
-  ];
+}) => ({
+  '@context': 'http://schema.org',
+  '@type': 'BlogPosting',
+  image: {
+    '@type': 'ImageObject',
+    url: image,
+  },
+  url,
+  dateCreated: datePublished,
+  datePublished,
+  dateModified: datePublished,
+  headline: `${title} | 사이다 데브로그`,
+  name: `${title} | 사이다 데브로그`,
+  description,
+  keywords: [
+    'Lite:true',
+    'Elevated:false',
+    'LockedPostSource:LOCKED_POST_SOURCE_NONE',
+    'LayerCake:0',
+  ],
+  author: {
+    '@type': 'Person',
+    name: 'Park Hyo Jin',
+    url: 'https://gywlsp.github.io',
+  },
+  creator: ['Park Hyo Jin'],
+  publisher: {
+    '@type': 'Person',
+    url: 'https://gywlsp.github.io',
+    logo: 'https://gywlsp.github.io/images/logo.svg',
+    name: 'Park Hyo Jin',
+  },
+  mainEntityOfPage: url,
+});
 
 export default SEO;
