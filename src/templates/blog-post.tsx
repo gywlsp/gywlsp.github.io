@@ -7,13 +7,10 @@ import moment from 'moment';
 import Layout from 'src/components/templates/layout';
 import SEO, { getSchemaOrgJSONLD } from 'src/components/templates/seo';
 import Bio from 'src/components/bio';
-import { Tag } from 'src/components/atoms';
-import {
-  MIDDLE_GREY,
-  BLACK,
-  LIGHT_GREY,
-} from 'src/constants/colors';
 import ContextPostCard from 'src/components/molecules/post-card/context';
+import Utterances from 'src/components/organisms/utterances';
+import { Tag } from 'src/components/atoms';
+import { MIDDLE_GREY, BLACK, LIGHT_GREY } from 'src/constants/colors';
 
 function BlogPostTemplate({ data, pageContext, location }) {
   const post = data.markdownRemark;
@@ -75,7 +72,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
               height: 'auto',
               objectFit: 'cover',
               margin: '0.8rem auto 2.4rem',
-              border: `0.1px solid ${LIGHT_GREY}`
+              border: `0.1px solid ${LIGHT_GREY}`,
             }}
           />
         </header>
@@ -89,13 +86,10 @@ function BlogPostTemplate({ data, pageContext, location }) {
         </footer>
       </Article>
       <ContextWrapper>
-        {next && (
-          <ContextPostCard type="next" {...next} />
-        )}
-        {previous && (
-          <ContextPostCard type="previous" {...previous} />
-        )}
+        {next && <ContextPostCard type="next" {...next} />}
+        {previous && <ContextPostCard type="previous" {...previous} />}
       </ContextWrapper>
+      <Utterances repo="gywlsp/blog-comments" />
     </Layout>
   );
 }
@@ -173,5 +167,5 @@ const ContextWrapper = styled.div`
   display: flex;
   flex-flow: row-reverse wrap;
   justify-content: space-between;
-  margin: 2rem 0;
+  margin-top: 2rem;
 `;
