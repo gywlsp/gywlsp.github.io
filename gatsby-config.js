@@ -63,11 +63,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `사이다 데브로그 CIDER DEVLOG`,
+        short_name: `CiderDevlog`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#FFF`,
+        theme_color: `#D2EFFF`,
         display: `minimal-ui`,
         icon: `content/assets/cyder.png`,
       },
