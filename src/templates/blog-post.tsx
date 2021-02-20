@@ -14,12 +14,11 @@ import { MIDDLE_GREY, BLACK, LIGHT_GREY } from 'src/constants/colors';
 
 function BlogPostTemplate({ data, pageContext, location }) {
   const post = data.markdownRemark;
-  const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
 
-  const { excerpt } = post;
-  const { slug } = post.fields;
-  const { title, date, thumbnail } = post.frontmatter;
+  const { excerpt, fields, frontmatter } = post;
+  const { slug } = fields;
+  const { title, date, thumbnail } = frontmatter;
   const url = `${data.site.siteMetadata.siteUrl}${slug}`;
   const image = thumbnail.childImageSharp.fluid.src;
 
@@ -29,8 +28,6 @@ function BlogPostTemplate({ data, pageContext, location }) {
     image,
     description: excerpt,
     datePublished: date,
-    siteTitle,
-    siteUrl: data.site.siteMetadata.siteUrl,
   });
 
   return (
