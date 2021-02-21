@@ -13,6 +13,10 @@
   margin-bottom: 1.75rem;
 }
 
+.postContents p img {
+  max-width: 100%;
+}
+
 .postContents blockquote {
   margin-left: 0rem;
   margin-right: 1.75rem;
