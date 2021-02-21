@@ -1,5 +1,5 @@
 ---
-title: '백준 6603번 로또 - javascript :: 사이다 데브로그'
+title: '백준 6603번 로또 - javascript'
 date: '2020-09-16T04:10:50+00:00'
 description: '백준 6603번 문제 로또를 javascript로 풀이하는 글입니다.'
 tags: ['Javascript', 'Algorithm']

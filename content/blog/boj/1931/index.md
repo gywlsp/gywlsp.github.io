@@ -1,5 +1,5 @@
 ---
-title: '백준 1931번 회의실 배정 - javascript :: 사이다 데브로그'
+title: '백준 1931번 회의실 배정 - javascript'
 date: '2021-02-17T00:31:17+00:00'
 description: '백준 1931번 회의실 배정을 풀이하는 글입니다.'
 tags: ['Javascript', 'Algorithm']

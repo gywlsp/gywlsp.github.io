@@ -1,5 +1,5 @@
 ---
-title: '백준 2504번 괄호의 값 - javascript :: 사이다 데브로그'
+title: '백준 2504번 괄호의 값 - javascript'
 date: '2020-09-15T10:58:45+00:00'
 description: '백준 2504번 문제 괄호의 값을 javascript로 풀이하는 글입니다.'
 tags: ['Javascript', 'Algorithm']

@@ -1,5 +1,5 @@
 ---
-title: '백준 1463번 1로 만들기 - javascript :: 사이다 데브로그'
+title: '백준 1463번 1로 만들기 - javascript'
 date: '2020-12-03T09:29:53+00:00'
 description: '백준 1463번 1로 만들기를 풀이하는 글입니다.'
 tags: ['Javascript', 'Algorithm']

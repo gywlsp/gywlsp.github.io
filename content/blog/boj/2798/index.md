@@ -1,5 +1,5 @@
 ---
-title: '백준 2798번 블랙잭 - javascript :: 사이다 데브로그'
+title: '백준 2798번 블랙잭 - javascript'
 date: '2020-11-24T13:48:20+00:00'
 description: '백준 2798번 블랙잭을 풀이하는 글입니다.'
 tags: ['Javascript', 'Algorithm']
