@@ -34,7 +34,6 @@ function PostPreviewCard({
         fluid={thumbnail}
         style={{
           width: '100%',
-          height: '16rem',
           objectFit: 'cover',
           backgroundColor: '#fff',
           marginBottom: '1.2rem',
