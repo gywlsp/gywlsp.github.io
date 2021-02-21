@@ -1,5 +1,5 @@
 ---
-title: '백준 2751번 수 정렬하기 2 - javascript'
+title: '백준 2751번 수 정렬하기 2 - node.js'
 date: '2020-09-30T10:23:23+00:00'
 description: '백준 2751번 수 정렬하기 2를 javascript로 풀이하는 글입니다.'
 tags: ['Javascript', 'Algorithm']

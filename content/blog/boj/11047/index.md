@@ -1,5 +1,5 @@
 ---
-title: '백준 11047번 동전 0 - javascript'
+title: '백준 11047번 동전 0 - node.js'
 date: '2021-02-17T15:36:36+00:00'
 description: '백준 11047번 동전 0을 풀이하는 글입니다.'
 tags: ['Javascript', 'Algorithm']

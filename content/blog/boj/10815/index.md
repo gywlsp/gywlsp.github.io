@@ -1,5 +1,5 @@
 ---
-title: '백준 10815번 숫자 카드 - javascript'
+title: '백준 10815번 숫자 카드 - node.js'
 date: '2020-09-29T14:05:02+00:00'
 description: '백준 10815번 문제 숫자 카드를 javascript로 풀이하는 글입니다.'
 tags: ['Javascript', 'Algorithm', 'Binary Search']

@@ -1,5 +1,5 @@
 ---
-title: '백준 1026번 보물 - javascript'
+title: '백준 1026번 보물 - node.js'
 date: '2020-09-30T09:52:22+00:00'
 description: '백준 1026번 문제 보물을 javascript로 풀이하는 글입니다.'
 tags: ['Javascript', 'Algorithm']
