@@ -42,6 +42,5 @@ export const Ul = styled.ul`
 
 export const Li = styled.li`
   font-size: 1.4rem;
-  font-weight: 500;
   margin-bottom: 0.4rem;
 `;

@@ -38,7 +38,6 @@ const P = styled.p`
   margin: 0;
   font-size: 16px;
   color: ${BLACK};
-  font-weight: 500;
   margin-right: auto;
 `;
 

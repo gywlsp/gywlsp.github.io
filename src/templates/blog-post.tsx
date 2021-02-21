@@ -144,7 +144,6 @@ const Row = styled.div`
 
 const Name = styled.p`
   font-size: 1.4rem;
-  font-weight: 500;
   margin-right: 1.2rem;
 `;
 

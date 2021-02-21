@@ -136,7 +136,6 @@ const Tag = styled.p`
   margin: 0;
   font-size: 1.6rem;
   color: ${BLACK};
-  font-weight: 500;
 `;
 
 const Circle = styled.div<{ isSelected: boolean }>`

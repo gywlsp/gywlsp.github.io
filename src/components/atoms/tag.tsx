@@ -30,6 +30,5 @@ const Wrapper = styled.div`
 const P = styled.p`
     color: ${WHITE};
     font-size: 1.2rem;
-    font-weight: 500;
     margin: 0;
 `;

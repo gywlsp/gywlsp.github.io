@@ -51,6 +51,5 @@ const Kor = styled.p`
 
 const Eng = styled.p`
   font-size: 18px;
-  font-weight: 500;
   margin: 0px;
 `;
