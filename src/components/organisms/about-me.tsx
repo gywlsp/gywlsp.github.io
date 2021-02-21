@@ -22,11 +22,14 @@ export default function AboutMe() {
 
 export const H1 = styled.h1`
   font-size: 2.4rem;
-  margin: 1.6rem 0;
+  margin: 0;
+  margin-bottom: 1.6rem;
 `;
 
-export const H2 = styled.h1`
+export const H2 = styled.h2`
   font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
   margin-bottom: 0.8rem;
 `;
 
@@ -38,6 +41,8 @@ export const Img = styled.img`
 
 export const Ul = styled.ul`
   padding-inline-start: 3.2rem;
+  margin: 0;
+  margin-bottom: 1.2rem;
 `;
 
 export const Li = styled.li`
