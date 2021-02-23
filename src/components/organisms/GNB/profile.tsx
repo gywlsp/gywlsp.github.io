@@ -14,7 +14,7 @@ export default function Profile() {
                     style={{ width: '18px', height: '18px', marginRight: '8px' }}
                 />
             </A>
-            <A href="https://github.com/gywlsp" title="Github">
+            <A href="https://github.com/gywlsp" title="Github" target="_blank">
                 <Img
                     src="https://github.githubassets.com/favicons/favicon.svg"
                     alt="github"
