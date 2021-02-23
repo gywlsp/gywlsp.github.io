@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import GNB from 'src/components/organisms/GNB';
 import GHeader from '../organisms/GHeader';
+import ScrollToTopButton from '../atoms/buttons/scroll-to-top';
 
 export type LayoutProps = {
   pathname: string;
@@ -22,11 +23,14 @@ function Layout({ pathname, children, selectedTag }) {
           pathname,
           selectedTag,
           isMobileGNBOpen,
-          onClose: toggleMobileGNBOpen(false)
+          onClose: toggleMobileGNBOpen(false),
         }}
       />
       <GHeader onMobileGNBOpen={toggleMobileGNBOpen(true)} />
-      <Main>{children}</Main>
+      <Main>
+        {children}
+        <ScrollToTopButton />
+      </Main>
     </Wrapper>
   );
 }
