@@ -43,6 +43,7 @@ const TitleWrapper = styled.div`
 
 const Title = styled.h1`
   margin: 0;
+  margin-bottom: 0.2rem;
   font-family: 'paybooc-Bold';
   font-size: 1.8rem;
 `;
