@@ -5,5 +5,5 @@ export const MIDDLE_GREY = '#999';
 export const LIGHT_BLUE = '#D2EFFF';
 export const SKY_BLUE = '#00b2ff';
 export const BLUE = '#4D8FCA';
-export const POINT_BLUE = '#004DFF';
+export const POINT_BLUE = '#1b60ff';
 export const NAVY = '#001D80';
