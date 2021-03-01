@@ -6,7 +6,8 @@ import { graphql } from 'gatsby';
 import Layout from 'src/components/templates/layout';
 import SEO from 'src/components/templates/seo';
 import AboutMe from 'src/components/organisms/about-me';
-import PostPreviewCard from 'src/components/molecules/post-card/preview';
+import HorizontalScrollable from 'src/components/atoms/horizontal-scrollable';
+import PostPreviewCardSmall from 'src/components/molecules/post-card/preview/small';
 import ChevronRightIcon from 'src/assets/icon/chevron/right';
 
 import withLocation from 'src/withLocation';
@@ -17,22 +18,22 @@ function MainPage({ data, location }) {
   return (
     <Layout selectedTag="ALL" pathname={location.pathname}>
       <SEO title="main" />
-      <AboutMe/>
+      <AboutMe />
       <Row>
-        <PageTitle>RECENT POSTS</PageTitle>
+        <SectionTitle>RECENT POSTS</SectionTitle>
         <Link to="/posts">
           <ChevronRightIcon />
         </Link>
       </Row>
-      <PostsWrapper>
+      <HorizontalScrollable>
         {posts.map(({ node }) => (
-          <PostPreviewCard
+          <PostPreviewCardSmall
             key={JSON.stringify(node)}
             {...node}
             thumbnail={node.frontmatter.thumbnail?.childImageSharp.fluid}
           />
         ))}
-      </PostsWrapper>
+      </HorizontalScrollable>
     </Layout>
   );
 }
@@ -80,20 +81,9 @@ const Row = styled.div`
   margin: 2rem 0 0.8rem;
 `;
 
-const PageTitle = styled.p`
+const SectionTitle = styled.p`
   margin: 0;
-  font-size: 2.8rem;
+  margin-bottom: 0.4rem;
+  font-size: 2.4rem;
   font-weight: 700;
-`;
-
-const A = styled.a`
-  margin: 0;
-  text-decoration: none;
-`;
-
-const PostsWrapper = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  width: 100%;
 `;
