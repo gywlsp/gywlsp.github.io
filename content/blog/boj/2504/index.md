@@ -2,7 +2,7 @@
 title: '백준 2504번 괄호의 값 - node.js'
 date: '2020-09-15T10:58:45+00:00'
 description: '백준 2504번 문제 괄호의 값을 javascript로 풀이하는 글입니다.'
-tags: ['백준', '알고리즘','Javascript', '스택']
+tags: ['백준','Javascript', '스택']
 thumbnail: 'boj_2504.png'
 ---
 

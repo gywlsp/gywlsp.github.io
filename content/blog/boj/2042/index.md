@@ -2,7 +2,7 @@
 title: '백준 2042번 구간 합 구하기 - node.js'
 date: '2021-02-23T13:21:24+00:00'
 description: '백준 2042번 구간 합 구하기를 javascript로 풀이하는 글입니다.'
-tags: ['백준', '알고리즘','Javascript', '세그먼트트리']
+tags: ['백준','Javascript', '세그먼트트리']
 thumbnail: 'boj_2042.png'
 ---
 

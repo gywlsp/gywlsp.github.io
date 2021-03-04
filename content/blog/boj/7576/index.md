@@ -2,7 +2,7 @@
 title: '백준 7576번 토마토 - node.js'
 date: '2021-03-02T06:59:11+00:00'
 description: '백준 7576번 토마토를 풀이하는 글입니다.'
-tags: ['백준', '알고리즘','Javascript', '그래프', 'BFS']
+tags: ['백준','Javascript', '그래프', 'BFS']
 thumbnail: 'boj_7576.png'
 ---
 

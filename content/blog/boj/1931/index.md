@@ -2,7 +2,7 @@
 title: '백준 1931번 회의실 배정 - node.js'
 date: '2021-02-17T00:31:17+00:00'
 description: '백준 1931번 회의실 배정을 풀이하는 글입니다.'
-tags: ['백준', '알고리즘','Javascript', '그리디', '정렬']
+tags: ['백준','Javascript', '그리디', '정렬']
 thumbnail: 'boj_1931.png'
 ---
 

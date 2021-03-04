@@ -2,7 +2,7 @@
 title: '백준 5639번 이진검색트리 - node.js'
 date: '2021-02-21T07:02:53+00:00'
 description: '백준 5639번 이진검색트리를 javascript로 풀이하는 글입니다.'
-tags: ['백준', '알고리즘','Javascript', '트리']
+tags: ['백준','Javascript', '트리']
 thumbnail: 'boj_5639.png'
 ---
 > 이 글은 [백준 5639 이진검색트리](https://www.acmicpc.net/problem/5639)를 풀이한다. 알고리즘은 javascript로 구현하였다.

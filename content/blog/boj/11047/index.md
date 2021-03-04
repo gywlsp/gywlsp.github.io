@@ -2,7 +2,7 @@
 title: '백준 11047번 동전 0 - node.js'
 date: '2021-02-17T15:36:36+00:00'
 description: '백준 11047번 동전 0을 풀이하는 글입니다.'
-tags: ['백준', '알고리즘','Javascript', '그리디']
+tags: ['백준','Javascript', '그리디']
 thumbnail: 'boj_11047.png'
 ---
 

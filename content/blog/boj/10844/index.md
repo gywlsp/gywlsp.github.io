@@ -2,7 +2,7 @@
 title: '백준 10844번 쉬운 계단 수 - node.js'
 date: '2021-03-04T00:19:32+00:00'
 description: '백준 10844번 문제 쉬운 계단 수를 javascript로 풀이하는 글입니다.'
-tags: ['백준', '알고리즘','Javascript', 'DP']
+tags: ['백준','Javascript', 'DP']
 thumbnail: 'boj_10844.png'
 ---
 
