@@ -4,12 +4,13 @@ import styled from 'styled-components';
 import GNB from 'src/components/organisms/GNB';
 import GHeader from '../organisms/GHeader';
 import ScrollToTopButton from '../atoms/buttons/scroll-to-top';
+import { WHITE, LIGHT_BLUE } from 'src/constants/colors';
 
 export type LayoutProps = {
   pathname: string;
   children: ReactNode | ReactNodeArray;
   selectedTag?: string;
-  tags: {tag: string, totalCount: number}[];
+  tags: { tag: string; totalCount: number }[];
 };
 
 function Layout({ pathname, children, tags, selectedTag }: LayoutProps) {
@@ -19,6 +20,11 @@ function Layout({ pathname, children, tags, selectedTag }: LayoutProps) {
 
   return (
     <Wrapper>
+      <GHeader onMobileGNBOpen={toggleMobileGNBOpen(true)} />
+      <Main>
+        {children}
+        <ScrollToTopButton />
+      </Main>
       <GNB
         {...{
           pathname,
@@ -28,11 +34,6 @@ function Layout({ pathname, children, tags, selectedTag }: LayoutProps) {
           onClose: toggleMobileGNBOpen(false),
         }}
       />
-      <GHeader onMobileGNBOpen={toggleMobileGNBOpen(true)} />
-      <Main>
-        {children}
-        <ScrollToTopButton />
-      </Main>
     </Wrapper>
   );
 }
@@ -43,18 +44,24 @@ const Wrapper = styled.div`
   display: flex;
   width: 100%;
   min-height: 100vh;
+  padding: 4rem 32px;
+  background-color: ${LIGHT_BLUE};
+  @media (max-width: 767px) {
+    padding: 0;
+  }
 `;
 
 const Main = styled.main`
-  width: calc(100% - 520px);
+  position: relative;
+  width: calc(100% - 260px - 1.6rem);
   min-height: 100vh;
-  padding: 4.2rem 3rem;
-  @media (min-width: 768px) and (max-width: 1024px) {
-    width: calc(100% - 260px);
-  }
+  padding: 3.6rem 3rem;
+  margin-right: 1.2rem;
+  background-color: ${WHITE};
   @media (max-width: 767px) {
     width: 100%;
     padding: 2rem 1.6rem;
     margin-top: 6rem;
+    margin-right: 0;
   }
 `;
