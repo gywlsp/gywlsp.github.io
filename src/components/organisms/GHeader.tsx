@@ -14,9 +14,6 @@ function GHeader({ onMobileGNBOpen }: GHeaderProps) {
 
   return (
     <Wrapper>
-      <Button onClick={onMobileGNBOpen}>
-        <HamburgerIcon style={{ width: '3rem', height: '3rem' }} />
-      </Button>
       <Link
         style={{
           boxShadow: `none`,
@@ -27,7 +24,9 @@ function GHeader({ onMobileGNBOpen }: GHeaderProps) {
       >
         <Img src="/images/logo.svg" width="2.8rem" alt="logo" />
       </Link>
-      <Space />
+      <Button onClick={onMobileGNBOpen}>
+        <HamburgerIcon style={{ width: '2.6rem', height: '2.6rem' }} />
+      </Button>
     </Wrapper>
   );
 }
@@ -39,8 +38,9 @@ const Wrapper = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  height: 6rem;
+  height: 6.4rem;
   position: fixed;
+  left: 0;
   top: 0;
   width: 100%;
   z-index: 100;
@@ -49,11 +49,6 @@ const Wrapper = styled.header`
   }
   background-color: ${WHITE};
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 6px 0px;
-`;
-
-const Space = styled.div`
-  width: 3rem;
-  height: 3rem;
 `;
 
 const Button = styled.button`
