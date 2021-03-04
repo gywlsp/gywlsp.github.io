@@ -2,26 +2,25 @@ import React, { useEffect } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import Logo from './logo';
-import Profile from './profile';
-import {
-  BLACK,
-  WHITE,
-  LIGHT_BLUE,
-  BLUE,
-  MIDDLE_GREY,
-  NAVY
-} from 'src/constants/colors';
+import Header from './header';
+import TagsSection from './tags-section';
+import { WHITE, MIDDLE_GREY } from 'src/constants/colors';
 
 export type GNBProps = {
   pathname: string;
-  tags: {tag: string, totalCount: number}[];
+  tags: { tag: string; totalCount: number }[];
   selectedTag?: string;
   isMobileGNBOpen: boolean;
   onClose: () => void;
 };
 
-function GNB({ tags, selectedTag, pathname, isMobileGNBOpen, onClose }: GNBProps) {
+function GNB({
+  tags,
+  selectedTag,
+  pathname,
+  isMobileGNBOpen,
+  onClose,
+}: GNBProps) {
   useEffect(() => {
     onClose();
   }, [selectedTag]);
@@ -31,31 +30,13 @@ function GNB({ tags, selectedTag, pathname, isMobileGNBOpen, onClose }: GNBProps
   return (
     <OverlayWrapper isMobileGNBOpen={isMobileGNBOpen} style={{ right }}>
       <Wrapper id="GNB" isMobileGNBOpen={isMobileGNBOpen} style={{ right }}>
-        <Logo />
-        <Profile />
-        <ListWrapper>
-          <Ul isPrimary={true}>
-            <Li>
-              <NavLink to="/posts">
-                <Category>POSTS</Category>
-              </NavLink>
-            </Li>
-            <Ul isPrimary={false}>
-              {tags.map(({tag, totalCount}) => (
-                <Li key={tag}>
-                  <NavLink to={tag === 'ALL' ? '/posts' : `/posts?tag=${tag}`}>
-                    <Circle
-                      isSelected={
-                        pathname?.includes('/posts') && tag === selectedTag
-                      }
-                    />
-                    <Tag>{tag} <TotalCount>{totalCount}</TotalCount></Tag>
-                  </NavLink>
-                </Li>
-              ))}
-            </Ul>
-          </Ul>
-        </ListWrapper>
+        <Header />
+        <TagsSection
+          pathname={pathname}
+          tags={tags}
+          selectedTag={selectedTag}
+          onClose={onClose}
+        />
       </Wrapper>
       <Overlay onClick={onClose} />
     </OverlayWrapper>
@@ -79,20 +60,16 @@ const OverlayWrapper = styled.div<{ isMobileGNBOpen: boolean }>`
 `;
 
 const Overlay = styled.div`
+  background: rgba(0, 0, 0, 0.3);
   flex: 1;
-`;
-
-const ListWrapper = styled.div`
-  width: 200px;
 `;
 
 const Wrapper = styled.nav<{ isMobileGNBOpen: boolean }>`
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 260px;
   height: 100vh;
-  padding: 4rem 0 2.4rem;
+  padding: 3.6rem 22px 2.4rem;
   position: sticky;
   overflow-x: hidden;
   @media (max-width: 767px) {
@@ -104,51 +81,5 @@ const Wrapper = styled.nav<{ isMobileGNBOpen: boolean }>`
   @media (min-width: 768px) {
     top: 0;
   }
-  background-color: ${LIGHT_BLUE};
-`;
-
-const Ul = styled.ul<{ isPrimary: boolean }>`
-  padding-left: ${(props) => (props.isPrimary ? '0' : '20px')};
-  margin-bottom: 2rem;
-  list-style-type: none;
-`;
-
-const Li = styled.li`
-  margin-bottom: 0.8rem;
-`;
-
-const NavLink = styled(Link)`
-  box-shadow: none;
-  color: inherit;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-`;
-
-const Category = styled.p`
-  margin: 0;
-  font-size: 1.8rem;
-  color: ${BLACK};
-  font-weight: 600;
-`;
-
-const Tag = styled.p`
-  margin: 0;
-  font-size: 1.6rem;
-  color: ${BLACK};
-`;
-
-const TotalCount = styled.strong`
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: ${NAVY};
-`;
-
-const Circle = styled.div<{ isSelected: boolean }>`
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  margin-right: 12px;
-  background-color: ${(props) => (props.isSelected ? BLUE : WHITE)};
-  border: 0.1rem solid ${BLUE};
+  background-color: ${WHITE};
 `;

@@ -13,8 +13,6 @@ export default function Logo() {
         boxShadow: `none`,
         color: `inherit`,
         textDecoration: `none`,
-        alignSelf: 'center',
-        marginRight: '0.8rem'
       }}
       to="/"
     >
@@ -31,10 +29,11 @@ export default function Logo() {
 
 const Wrapper = styled.div`
   display: flex;
+  align-self: center;
   align-items: flex-end;
   flex: 1;
-  margin-left: 4px;
-  margin-bottom: 24px;
+  width: fit-content;
+  margin: 0 auto;
 `;
 
 const NameWrapper = styled.div`

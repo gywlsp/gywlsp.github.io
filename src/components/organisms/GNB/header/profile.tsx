@@ -29,9 +29,8 @@ export default function Profile() {
 const Wrapper = styled.div`
   display: flex;
   align-items: flex-end;
-  padding: 0.2rem 0 0.4rem;
-  width: 200px;
-  margin-bottom: 2rem;
+  margin-top: 1.2rem;
+  padding-bottom: 0.4rem;
 `;
 
 const P = styled.p`
