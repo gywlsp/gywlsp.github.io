@@ -25,7 +25,7 @@ function GHeader({ onMobileGNBOpen }: GHeaderProps) {
         <Img src="/images/logo.svg" width="2.8rem" alt="logo" />
       </Link>
       <Button onClick={onMobileGNBOpen}>
-        <HamburgerIcon style={{ width: '2.6rem', height: '2.6rem' }} />
+        <HamburgerIcon style={{ width: '3.2rem', height: '3.2rem' }} />
       </Button>
     </Wrapper>
   );
