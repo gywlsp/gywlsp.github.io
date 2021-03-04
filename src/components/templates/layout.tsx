@@ -1,4 +1,4 @@
-import React, { useState, ReactChild } from 'react';
+import React, { useState, ReactNode, ReactNodeArray } from 'react';
 import styled from 'styled-components';
 
 import GNB from 'src/components/organisms/GNB';
@@ -7,11 +7,12 @@ import ScrollToTopButton from '../atoms/buttons/scroll-to-top';
 
 export type LayoutProps = {
   pathname: string;
-  children: ReactChild;
+  children: ReactNode | ReactNodeArray;
   selectedTag?: string;
+  tags: {tag: string, totalCount: number}[];
 };
 
-function Layout({ pathname, children, selectedTag }) {
+function Layout({ pathname, children, tags, selectedTag }: LayoutProps) {
   const [isMobileGNBOpen, setMobileGNBOpen] = useState(false);
 
   const toggleMobileGNBOpen = (open: boolean) => () => setMobileGNBOpen(open);
@@ -21,6 +22,7 @@ function Layout({ pathname, children, selectedTag }) {
       <GNB
         {...{
           pathname,
+          tags,
           selectedTag,
           isMobileGNBOpen,
           onClose: toggleMobileGNBOpen(false),

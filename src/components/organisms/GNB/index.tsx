@@ -10,18 +10,18 @@ import {
   LIGHT_BLUE,
   BLUE,
   MIDDLE_GREY,
+  NAVY
 } from 'src/constants/colors';
 
 export type GNBProps = {
   pathname: string;
+  tags: {tag: string, totalCount: number}[];
   selectedTag?: string;
   isMobileGNBOpen: boolean;
   onClose: () => void;
 };
 
-const TAG_LIST = ['ALL', 'Javascript', 'Algorithm', 'React', 'React Native'];
-
-function GNB({ selectedTag, pathname, isMobileGNBOpen, onClose }: GNBProps) {
+function GNB({ tags, selectedTag, pathname, isMobileGNBOpen, onClose }: GNBProps) {
   useEffect(() => {
     onClose();
   }, [selectedTag]);
@@ -41,7 +41,7 @@ function GNB({ selectedTag, pathname, isMobileGNBOpen, onClose }: GNBProps) {
               </NavLink>
             </Li>
             <Ul isPrimary={false}>
-              {TAG_LIST.map((tag) => (
+              {tags.map(({tag, totalCount}) => (
                 <Li key={tag}>
                   <NavLink to={tag === 'ALL' ? '/posts' : `/posts?tag=${tag}`}>
                     <Circle
@@ -49,7 +49,7 @@ function GNB({ selectedTag, pathname, isMobileGNBOpen, onClose }: GNBProps) {
                         pathname?.includes('/posts') && tag === selectedTag
                       }
                     />
-                    <Tag>{tag}</Tag>
+                    <Tag>{tag} <TotalCount>{totalCount}</TotalCount></Tag>
                   </NavLink>
                 </Li>
               ))}
@@ -136,6 +136,12 @@ const Tag = styled.p`
   margin: 0;
   font-size: 1.6rem;
   color: ${BLACK};
+`;
+
+const TotalCount = styled.strong`
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: ${NAVY};
 `;
 
 const Circle = styled.div<{ isSelected: boolean }>`

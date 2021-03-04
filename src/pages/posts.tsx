@@ -10,11 +10,12 @@ import { BLUE } from 'src/constants/colors';
 
 function PostsPage({ data, location, search }) {
   const posts = data?.allMarkdownRemark.edges;
+  const tags = data.allMarkdownRemark.group;
 
   const { tag } = search;
 
   return (
-    <Layout selectedTag={tag || 'ALL'} pathname={location.pathname}>
+    <Layout selectedTag={tag || 'ALL'} pathname={location.pathname} tags={tags}>
       <SEO title="posts" />
       <PageTitle>
         POSTS<strong style={{ color: BLUE }}>{tag ? ` - ${tag}` : ''}</strong>
@@ -46,6 +47,10 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      group(field: frontmatter___tags) {
+        tag: fieldValue
+        totalCount
+      }
       edges {
         node {
           excerpt

@@ -13,6 +13,7 @@ import { Tag } from 'src/components/atoms';
 import { MIDDLE_GREY, BLACK, LIGHT_GREY } from 'src/constants/colors';
 
 function BlogPostTemplate({ data, pageContext, location }) {
+  const tags = data.allMarkdownRemark.group;
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
 
@@ -31,7 +32,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
   });
 
   return (
-    <Layout selectedTag={undefined} pathname={location.pathname}>
+    <Layout selectedTag={null} pathname={location.pathname} tags={tags}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -99,6 +100,12 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         siteUrl
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      group(field: frontmatter___tags) {
+        tag: fieldValue
+        totalCount
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

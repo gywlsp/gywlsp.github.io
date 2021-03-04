@@ -13,10 +13,11 @@ import ChevronRightIcon from 'src/assets/icon/chevron/right';
 import withLocation from 'src/withLocation';
 
 function MainPage({ data, location }) {
-  const posts = data.allMarkdownRemark.edges.slice(0, 8);
+  const recentPosts = data.allMarkdownRemark.edges.slice(0, 8);
+  const tags = data.allMarkdownRemark.group;
 
   return (
-    <Layout selectedTag="ALL" pathname={location.pathname}>
+    <Layout selectedTag="ALL" pathname={location.pathname} tags={tags}>
       <SEO title="main" />
       <AboutMe />
       <Row>
@@ -26,7 +27,7 @@ function MainPage({ data, location }) {
         </Link>
       </Row>
       <HorizontalScrollable>
-        {posts.map(({ node }) => (
+        {recentPosts.map(({ node }) => (
           <PostPreviewCardSmall
             key={JSON.stringify(node)}
             {...node}
@@ -47,7 +48,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {  
+      group(field: frontmatter___tags) {
+        tag: fieldValue
+        totalCount
+      }
       edges {
         node {
           excerpt
