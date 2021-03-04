@@ -6,7 +6,7 @@ import withLocation from 'src/withLocation';
 import Layout from 'src/components/templates/layout';
 import SEO from 'src/components/templates/seo';
 import PostPreviewCard from 'src/components/molecules/post-card/preview';
-import { BLUE } from 'src/constants/colors';
+import { POINT_BLUE } from 'src/constants/colors';
 
 function PostsPage({ data, location, search }) {
   const posts = data?.allMarkdownRemark.edges;
@@ -18,7 +18,7 @@ function PostsPage({ data, location, search }) {
     <Layout selectedTag={tag || 'ALL'} pathname={location.pathname} tags={tags}>
       <SEO title="posts" />
       <PageTitle>
-        POSTS<strong style={{ color: BLUE }}>{tag ? ` - ${tag}` : ''}</strong>
+        POSTS<strong style={{ color: POINT_BLUE }}>{tag ? ` - ${tag}` : ''}</strong>
       </PageTitle>
       <PostsWrapper>
         {posts
