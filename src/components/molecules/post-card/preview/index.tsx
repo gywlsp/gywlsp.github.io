@@ -75,10 +75,11 @@ const Wrapper = styled(Link)`
 `;
 
 const Title = styled.p`
+  width: 100%;
+  height: 5.4rem;
   margin: 0;
   font-size: 1.8rem;
   font-weight: 700;
-  width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
