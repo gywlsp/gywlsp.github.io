@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import Tag from './tag';
+import {Tag} from 'src/components/atoms';
 import { BLACK, WHITE, POINT_BLUE, SKY_BLUE } from 'src/constants/colors';
 
 export type GNBTagsSectionProps = {
@@ -25,11 +25,11 @@ function GNBTagsSection({
   return (
     <Wrapper>
       <NavLink to="/posts">
-        <Category>TAGS</Category>
+        <Title>POSTS</Title>
       </NavLink>
       <Row>
-        {tags.map(({ tag }) => (
-          <Tag name={tag} isSelected={pathname?.includes('/posts') && tag === selectedTag}/>
+        {tags.map(({ tag, totalCount }) => (
+          <Tag name={tag} count={totalCount} isSelected={pathname?.includes('/posts') && tag === selectedTag}/>
         ))}
       </Row>
     </Wrapper>
@@ -59,7 +59,7 @@ const NavLink = styled(Link)`
   margin-bottom: 0.8rem;
 `;
 
-const Category = styled.p`
+const Title = styled.p`
   margin: 0;
   font-size: 1.6rem;
   color: ${BLACK};

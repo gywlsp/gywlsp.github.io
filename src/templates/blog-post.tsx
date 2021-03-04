@@ -53,7 +53,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
           <H1>{post.frontmatter.title}</H1>
           <Row>
             {post.frontmatter.tags.map((tag) => (
-              <Tag key={tag} title={tag} />
+              <Tag key={tag} name={tag} />
             ))}
           </Row>
           <Row>

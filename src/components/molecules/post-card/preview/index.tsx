@@ -43,7 +43,7 @@ function PostPreviewCard({
       <Title>{title || fields.slug}</Title>
       <Row>
         {tags?.map((tag) => (
-          <Tag key={tag} title={tag} />
+          <Tag key={tag} name={tag} />
         ))}
       </Row>
       <Small>{moment(date).format('YYYY.MM.DD')}</Small>
