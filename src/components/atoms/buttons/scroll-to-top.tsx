@@ -17,9 +17,9 @@ export default function ScrollToTopButton() {
 }
 
 const Wrapper = styled.button`
-  position: fixed;
+  position: sticky;
+  left: calc(100% - 1.6rem);
   bottom: 1.6rem;
-  right: 1.6rem;
   display: flex;
   justify-content: center;
   align-items: center;
