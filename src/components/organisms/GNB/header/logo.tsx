@@ -17,7 +17,7 @@ export default function Logo() {
     >
       <Wrapper>
         <Circle>
-          <Img src="/images/logo.svg" width="52px" alt="logo" />
+          <Img src="/images/logo.svg" width="48px" alt="logo" />
         </Circle>
         <NameWrapper>
           <Kor>
@@ -41,8 +41,8 @@ const Wrapper = styled.div`
 `;
 
 const Circle = styled.div`
-  width: 92px;
-  height: 92px;
+  width: 90px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
