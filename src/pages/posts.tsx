@@ -32,6 +32,9 @@ function PostsPage({ data, location, search }) {
               thumbnail={node.frontmatter.thumbnail?.childImageSharp.fluid}
             />
           ))}
+        {[...Array(posts.length % 4)].map(() => (
+          <Blank />
+        ))}
       </PostsWrapper>
     </Layout>
   );
@@ -88,4 +91,14 @@ const PostsWrapper = styled.div`
   flex-flow: row wrap;
   justify-content: space-between;
   width: 100%;
+`;
+
+const Blank = styled.div`
+  height: 0.1rem;
+  @media (max-width: 1679px) {
+    display: none;
+  }
+  @media (min-width: 1680px) {
+    width: 22%;
+  }
 `;

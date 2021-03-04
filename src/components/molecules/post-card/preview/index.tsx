@@ -66,6 +66,9 @@ const Wrapper = styled(Link)`
   @media (min-width: 1152px) {
     width: 48%;
   }
+  @media (min-width: 1680px) {
+    width: 22%;
+  }
 `;
 
 const Title = styled.p`
