@@ -63,8 +63,7 @@ const Wrapper = styled(Link)`
   width: 100%;
   overflow: hidden;
   color: ${BLACK};
-  @media (min-width: 1280px) {
-    min-width: 392px;
+  @media (min-width: 1152px) {
     width: 48%;
   }
 `;
