@@ -29,6 +29,7 @@ const Wrapper = styled(Link)`
 `;
 
 const P = styled.p<{ isSelected: boolean }>`
+  white-space: pre;
   margin: 0rem;
   margin-right: 0.4rem;
   padding: 0.2rem 0.6rem;
