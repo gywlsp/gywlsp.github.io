@@ -4,7 +4,7 @@ import { MDXProvider } from '@mdx-js/react';
 
 import { Img as AtomImage } from 'src/components/atoms';
 import AboutMeMd from 'src/contents/about-me.mdx';
-import { POINT_BLUE, SKY_BLUE } from 'src/constants/colors';
+import { LIGHT_BLUE, POINT_BLUE, SKY_BLUE } from 'src/constants/colors';
 
 export default function AboutMe() {
   return (
@@ -18,7 +18,8 @@ export default function AboutMe() {
       }}
     >
       <Wrapper>
-        <AtomImage src="/images/logo.svg" width="4rem" alt="logo" />
+        <Circle>
+        <AtomImage src="/images/logo.svg" width="3.2rem" alt="logo" /></Circle>
         <TitleWrapper>
           <Title>사이다 데브-로그</Title>
           <Description>
@@ -37,7 +38,18 @@ const Wrapper = styled.div`
   margin-bottom: 2rem;
 `;
 
+const Circle = styled.div`
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color ${LIGHT_BLUE};
+`;
+
 const TitleWrapper = styled.div`
+  flex: 1;
   margin-left: 0.8rem;
 `;
 
@@ -45,7 +57,7 @@ const Title = styled.h1`
   margin: 0;
   margin-bottom: 0.2rem;
   font-family: 'paybooc-Bold';
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 `;
 
 const Description = styled.p`

@@ -3,10 +3,9 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import { Img } from 'src/components/atoms';
-
+import { LIGHT_BLUE } from 'src/constants/colors';
 
 export default function Logo() {
-
   return (
     <Link
       style={{
@@ -17,10 +16,15 @@ export default function Logo() {
       to="/"
     >
       <Wrapper>
-        <Img src="/images/logo.svg" width="72px" alt="logo" />
+        <Circle>
+          <Img src="/images/logo.svg" width="52px" alt="logo" />
+        </Circle>
         <NameWrapper>
-          <Kor>사이다<br />데브-로그</Kor>
-          <Eng>CIDER DEVLOG</Eng>
+          <Kor>
+            사이다
+            <br />
+            데브-로그
+          </Kor>
         </NameWrapper>
       </Wrapper>
     </Link>
@@ -30,10 +34,20 @@ export default function Logo() {
 const Wrapper = styled.div`
   display: flex;
   align-self: center;
-  align-items: flex-end;
+  align-items: center;
   flex: 1;
   width: fit-content;
   margin: 0 auto;
+`;
+
+const Circle = styled.div`
+  width: 92px;
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color ${LIGHT_BLUE};
 `;
 
 const NameWrapper = styled.div`
