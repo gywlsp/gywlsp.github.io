@@ -47,6 +47,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
           {JSON.stringify(schemaOrgJSONLD)}
         </script>
       </SEO>
+      <PostWrapper>
       <Article>
         <header>
           <H1>{post.frontmatter.title}</H1>
@@ -88,6 +89,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
         {previous && <ContextPostCard type="previous" {...previous} />}
       </ContextWrapper>
       <Utterances repo="gywlsp/blog-comments" />
+      </PostWrapper>
     </Layout>
   );
 }
@@ -132,8 +134,15 @@ export const pageQuery = graphql`
   }
 `;
 
+const PostWrapper = styled.div`
+  width: calc(100% - 260px - 1.6rem);
+  @media (max-width: 1400px) {
+    width: 100%;
+  }
+`;
+
 const Article = styled.article`
-  flex: 1;
+flex: 1;
 `;
 
 const H1 = styled.h1`

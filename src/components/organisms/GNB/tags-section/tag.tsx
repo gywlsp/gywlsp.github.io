@@ -30,6 +30,11 @@ const TagWrapper = styled.div<{ isSelected: boolean }>`
   padding: 0.2rem 0.6rem;
   font-size: 1.2rem;
   font-weight: 500;
+  @media (max-width: 481px) {
+    html {
+      font-size: 1.4rem;
+    }
+  }
   ${({ isSelected }) =>
     isSelected
       ? `

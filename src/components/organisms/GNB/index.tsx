@@ -46,7 +46,7 @@ function GNB({
 export default React.memo(GNB);
 
 const OverlayWrapper = styled.div<{ isMobileGNBOpen: boolean }>`
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     display: flex;
     flex: 1 0 auto;
     width: 100%;
@@ -68,18 +68,16 @@ const Wrapper = styled.nav<{ isMobileGNBOpen: boolean }>`
   display: flex;
   flex-direction: column;
   width: 260px;
-  height: 100vh;
+  height: 100%;
   padding: 3.6rem 22px 2.4rem;
   position: sticky;
   overflow-x: hidden;
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     z-index: 9999;
-    padding-top: 6rem;
+    top: 0;
+    padding-top: 4.4rem;
     ${(props) => !props.isMobileGNBOpen && `display: none;`}
     box-shadow: 2px 0 2px -2px ${MIDDLE_GREY};
-  }
-  @media (min-width: 768px) {
-    top: 0;
   }
   background-color: ${WHITE};
 `;

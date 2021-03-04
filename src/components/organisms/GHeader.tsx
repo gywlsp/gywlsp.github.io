@@ -44,7 +44,7 @@ const Wrapper = styled.header`
   top: 0;
   width: 100%;
   z-index: 100;
-  @media (min-width: 768px) {
+  @media (min-width: 1025px) {
     display: none;
   }
   background-color: ${WHITE};

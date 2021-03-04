@@ -21,10 +21,6 @@ function Layout({ pathname, children, tags, selectedTag }: LayoutProps) {
   return (
     <Wrapper>
       <GHeader onMobileGNBOpen={toggleMobileGNBOpen(true)} />
-      <Main>
-        {children}
-        <ScrollToTopButton />
-      </Main>
       <GNB
         {...{
           pathname,
@@ -34,6 +30,10 @@ function Layout({ pathname, children, tags, selectedTag }: LayoutProps) {
           onClose: toggleMobileGNBOpen(false),
         }}
       />
+      <Main>
+        {children}
+        <ScrollToTopButton />
+      </Main>
     </Wrapper>
   );
 }
@@ -46,7 +46,8 @@ const Wrapper = styled.div`
   min-height: 100vh;
   padding: 4rem 32px;
   background-color: ${LIGHT_BLUE};
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
+    background-color: ${WHITE};
     padding: 0;
   }
 `;
@@ -56,12 +57,12 @@ const Main = styled.main`
   width: calc(100% - 260px - 1.6rem);
   min-height: 100vh;
   padding: 3.6rem 3rem;
-  margin-right: 1.2rem;
+  margin-left: 1.2rem;
   background-color: ${WHITE};
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     width: 100%;
     padding: 2rem 1.6rem;
     margin-top: 6rem;
-    margin-right: 0;
+    margin-left: 0;
   }
 `;
