@@ -43,22 +43,18 @@ export default function ContextPostCard({
   );
 }
 
-const Wrapper = styled(Link) <{ type: ContextType }>`
-  box-shadow: none;
-  text-decoration: none;
+const Wrapper = styled(Link)<{ type: ContextType }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   padding: 2rem;
+  ${(props) =>
+    props.type === 'previous' ? 'margin-right: auto' : 'margin-left: auto'};
   background-color: ${LIGHT_BLUE};
-  ${props => props.type === "previous" ? "margin-right: auto" : "margin-left: auto"};
+  box-shadow: none;
+  text-decoration: none;
   margin-bottom: 1.2rem;
-  @media (max-width: 1499px) {
-    width: 100%;
-  }
-  @media (min-width: 1500px) {
-    width: 48%;
-  }
 `;
 
 const Circle = styled.div`
