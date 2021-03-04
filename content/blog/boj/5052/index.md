@@ -2,10 +2,10 @@
 title: '백준 5052번 전화번호 목록 - node.js'
 date: '2021-02-23T15:03:19+00:00'
 description: '백준 5052번 전화번호 목록을 javascript로 풀이하는 글입니다.'
-tags: ['Javascript', 'Algorithm']
+tags: ['백준', '알고리즘','Javascript', '정렬']
 thumbnail: 'boj_5052.png'
 ---
-> 이 글은 백준 5052번 구간 합 구하기를 풀이한다. [문제 링크](https://www.acmicpc.net/problem/5052)
+> 이 글은 백준 5052번 전화번호 목록 풀이한다. [문제 링크](https://www.acmicpc.net/problem/5052)
 코드는 javascript로 작성하였다.
 
 # 문제

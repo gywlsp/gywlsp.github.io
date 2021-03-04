@@ -2,7 +2,7 @@
 title: 'Javascript로 upper bound, lower bound 구하기'
 date: '2021-02-28T02:23:40+00:00'
 description: '이 글은 Javascript를 이용해 정렬된 배열에서 특정 수의 lower bound, upper bound를 구하는 방법에 대해 설명한다.'
-tags: ['Algorithm', 'Javascript']
+tags: ['알고리즘', 'Javascript']
 thumbnail: 'algorithm2.png'
 ---
 

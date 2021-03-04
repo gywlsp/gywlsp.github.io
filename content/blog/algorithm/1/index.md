@@ -2,7 +2,7 @@
 title: '이진 검색 트리와 힙'
 date: '2021-02-23T00:39:19+00:00'
 description: '이 글은 이진 검색 트리와 힙에 대해 설명한다.'
-tags: ['Algorithm']
+tags: ['알고리즘']
 thumbnail: 'algorithm_1_0.png'
 ---
 

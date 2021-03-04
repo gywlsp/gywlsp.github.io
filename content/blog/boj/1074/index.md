@@ -2,7 +2,7 @@
 title: '백준 1074번 Z - node.js'
 date: '2020-09-09T11:00:00+00:00'
 description: '백준 1074번 문제 Z를 javascript로 풀이하는 글입니다.'
-tags: ['Javascript', 'Algorithm']
+tags: ['백준', '알고리즘','Javascript', '분할정복']
 thumbnail: 'boj_1074.png'
 ---
 
