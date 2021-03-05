@@ -64,6 +64,5 @@ const Main = styled.main`
     padding: 2rem 1.6rem;
     margin-top: 6rem;
     margin-left: 0;
-    min-height: 100vh;
   }
 `;
