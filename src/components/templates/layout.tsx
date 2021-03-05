@@ -55,7 +55,7 @@ const Wrapper = styled.div`
 const Main = styled.main`
   position: relative;
   width: calc(100% - 260px - 1.6rem);
-  min-height: 100vh;
+  min-height: calc(100vh - 8rem);
   padding: 3.6rem 3rem;
   margin-left: 1.2rem;
   background-color: ${WHITE};
@@ -64,5 +64,6 @@ const Main = styled.main`
     padding: 2rem 1.6rem;
     margin-top: 6rem;
     margin-left: 0;
+    min-height: 100vh;
   }
 `;
