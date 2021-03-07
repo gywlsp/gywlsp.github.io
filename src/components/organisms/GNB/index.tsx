@@ -25,11 +25,9 @@ function GNB({
     onClose();
   }, [selectedTag]);
 
-  const right = isMobileGNBOpen ? '0' : '100vw';
-
   return (
-    <OverlayWrapper isMobileGNBOpen={isMobileGNBOpen} style={{ right }}>
-      <Wrapper id="GNB" isMobileGNBOpen={isMobileGNBOpen} style={{ right }}>
+    <OverlayWrapper isMobileGNBOpen={isMobileGNBOpen} onClick={onClose}>
+      <Wrapper id="GNB" isMobileGNBOpen={isMobileGNBOpen}>
         <Header />
         <TagsSection
           pathname={pathname}
@@ -38,7 +36,6 @@ function GNB({
           onClose={onClose}
         />
       </Wrapper>
-      <Overlay onClick={onClose} />
     </OverlayWrapper>
   );
 }
@@ -47,37 +44,37 @@ export default React.memo(GNB);
 
 const OverlayWrapper = styled.div<{ isMobileGNBOpen: boolean }>`
   @media (max-width: 1024px) {
+    position: fixed;
+    z-index: 999;
     display: flex;
     flex: 1 0 auto;
     width: 100%;
-    height: ${(props) => (props.isMobileGNBOpen ? '100vh' : 'auto')};
-    z-index: 999;
+    ${(props) =>
+      props.isMobileGNBOpen
+        ? 'height: 100vh; background-color: rgba(0, 0, 0, 0.3)'
+        : 'height: auto; background-color: rgba(0, 0, 0, 0)'};
+    transition: background-color 0.3s;
     overflowx: auto;
-    position: fixed;
     outline: 0;
-    transition: right 0.3s ease-out;
   }
 `;
 
-const Overlay = styled.div`
-  background: rgba(0, 0, 0, 0.3);
-  flex: 1;
-`;
-
 const Wrapper = styled.nav<{ isMobileGNBOpen: boolean }>`
+  position: sticky;
   display: flex;
   flex-direction: column;
   width: 260px;
   height: 100%;
   padding: 3.6rem 22px 2.4rem;
-  position: sticky;
+  background-color: ${WHITE};
   overflow-x: hidden;
   @media (max-width: 1024px) {
-    z-index: 9999;
+    position: fixed;
     top: 0;
+    ${(props) => (props.isMobileGNBOpen ? `left: 0;` : `left: -260px;`)}
+    transition: left 0.3s ease-out;
+    z-index: 9999;
     padding-top: 4.4rem;
-    ${(props) => !props.isMobileGNBOpen && `display: none;`}
     box-shadow: 2px 0 2px -2px ${MIDDLE_GREY};
   }
-  background-color: ${WHITE};
 `;
