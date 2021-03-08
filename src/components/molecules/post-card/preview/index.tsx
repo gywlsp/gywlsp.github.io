@@ -70,7 +70,7 @@ const Wrapper = styled(Link)`
     width: 48%;
   }
   @media (min-width: 1680px) {
-    width: 22%;
+    width: 31%;
   }
 `;
 
