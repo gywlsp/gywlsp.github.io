@@ -149,7 +149,7 @@ const H1 = styled.h1`
   && {
     margin: 0;
     margin-bottom: 0.8rem;
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
 `;
 
