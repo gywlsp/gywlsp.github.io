@@ -33,12 +33,10 @@ const P = styled.p<{ isSelected: boolean }>`
   margin: 0rem;
   margin-right: 0.4rem;
   padding: 0.2rem 0.6rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   @media (max-width: 481px) {
-    html {
-      font-size: 1.4rem;
-    }
+    font-size: 1.2rem;
   }
   ${({ isSelected }) =>
     isSelected
