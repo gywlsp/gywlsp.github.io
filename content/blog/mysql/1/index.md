@@ -1,5 +1,5 @@
 ---
-title: '프로그래머스 SQL 고득점 KIT - SELECT'
+title: 'MySQL order by를 이용한 데이터 다중 정렬'
 date: '2021-03-12T07:20:44+00:00'
 description: '이 글은 MySQL에서 order by 명령어를 어떻게 사용하는지에 대해 설명한다. '
 tags: ['MySQL']
