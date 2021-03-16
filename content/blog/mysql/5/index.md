@@ -36,7 +36,7 @@ thumbnail: 'mysql_5.png'
 
 **<u>Inner join</u>**은 **결합 조건을 만족하는 데이터만 선택**해 두 테이블을 결합한다. MySQL에서는 `join` 명령어를 이용해 inner join을 구현할 수 있다. 
 
-따라서 inner join을 이용해 `residents`, `animals` 테이블에서 **주인 이름과 반려동물 이름 조합**들을 출력할 수 있다.
+inner join을 이용해 `residents`, `animals` 테이블에서 **주인 이름과 반려동물 이름 조합**들을 출력할 수 있다.
 
 ```sql
 select residents.name as owner_name, animals.name as pet_name
@@ -94,7 +94,7 @@ on animals.id = residents.pet_id;
 
 **<u>Full Outer Join</u>**은 **두 테이블의 데이터를 모두 선택**하고, **결합 조건에 따라 데이터를 매칭한다. 이때 매칭되는 데이터가 없는 경우 그 값을 null로 표시**한다. full outer join 결과는 **두 테이블의 합집합** 결과와 같다. MySQL에서는 full outer join을 구현하기 위한 명령어를 기본적으로 제공하지 않기 때문에 **left join과 right join의 합집합을 구해 full outer join의 값을 얻을 수 있다**.
 
-full outer join을 이용하면 `residents`, `animals` 테이블에서 **전체 거주민 이름과 전체 동물 이름**을 출력할 수 있다. 이때 **주인-반려동물 관계는 한 row에 출력되고 주인이나 반려동물이 없는 경우 null로 표시**된다.
+full outer join을 이용해 `residents`, `animals` 테이블에서 **전체 거주민 이름과 전체 동물 이름**을 출력할 수 있다. 이때 **주인-반려동물 관계는 한 row에 출력되고 주인이나 반려동물이 없는 경우 null로 표시**된다.
 
 ```sql
 select residents.name as resident_name, animals.name as animal_name
