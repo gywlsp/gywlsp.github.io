@@ -1,4 +1,5 @@
 import React, { createRef, useLayoutEffect } from 'react';
+import styled from 'styled-components';
 
 export interface IUtterancesProps {
   repo: string;
@@ -26,5 +27,12 @@ export default function Utterances({ repo }: IUtterancesProps) {
     containerRef.current!.appendChild(utterances);
   }, [repo]);
 
-  return <div ref={containerRef} />;
+  return <Div ref={containerRef} />;
 }
+
+const Div = styled.div`
+  width: calc(100% - 260px - 1.6rem);
+  @media (max-width: 1400px) {
+    width: 100%;
+  }
+`;
