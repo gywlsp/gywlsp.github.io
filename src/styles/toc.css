@@ -1,0 +1,25 @@
+.tableOfContent a {
+    color: #999;
+}
+
+.tableOfContent ul {
+    padding-inline-start: 0;
+}
+
+.tableOfContent ul > li {
+    font-size: 1.2rem;
+}
+
+.tableOfContent ul p {
+    margin: 0;
+    margin-bottom: 0.4rem;
+}
+
+.tableOfContent li {
+    list-style-type: none;
+    margin-bottom: 0.4rem;
+}
+
+.tableOfContent li li {
+    margin-left: 1.2rem;
+}
