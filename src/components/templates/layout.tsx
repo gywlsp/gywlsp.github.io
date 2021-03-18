@@ -62,7 +62,7 @@ const Main = styled.main`
   @media (max-width: 1024px) {
     width: 100%;
     padding: 2rem 1.6rem;
-    margin-top: 6rem;
+    margin-top: 5.2rem;
     margin-left: 0;
   }
 `;

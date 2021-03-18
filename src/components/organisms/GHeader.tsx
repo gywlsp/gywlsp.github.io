@@ -6,14 +6,17 @@ import HamburgerIcon from 'src/assets/icon/hamburger';
 import { Img } from '../atoms';
 import { WHITE } from 'src/constants/colors';
 
+import { useScrollDirection } from 'src/hooks/utils';
+
 export type GHeaderProps = {
   onMobileGNBOpen: () => void;
 };
 
 function GHeader({ onMobileGNBOpen }: GHeaderProps) {
+  const scrollDirection = useScrollDirection('up');
 
   return (
-    <Wrapper>
+    <Wrapper showHeader={scrollDirection==='up'}>
       <Link
         style={{
           boxShadow: `none`,
@@ -22,10 +25,10 @@ function GHeader({ onMobileGNBOpen }: GHeaderProps) {
         }}
         to="/"
       >
-        <Img src="/images/logo.svg" width="2.8rem" alt="logo" />
+        <Img src="/images/logo.svg" width="2.4rem" alt="logo" />
       </Link>
       <Button onClick={onMobileGNBOpen}>
-        <HamburgerIcon style={{ width: '3.2rem', height: '3.2rem' }} />
+        <HamburgerIcon style={{ width: '2.8rem', height: '2.8rem' }} />
       </Button>
     </Wrapper>
   );
@@ -33,15 +36,16 @@ function GHeader({ onMobileGNBOpen }: GHeaderProps) {
 
 export default React.memo(GHeader);
 
-const Wrapper = styled.header`
+const Wrapper = styled.header<{showHeader: boolean}>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  height: 6.4rem;
+  height: 5.2rem;
   position: fixed;
+  top: ${({showHeader})=>(showHeader? 0: '-5.2rem')};
   left: 0;
-  top: 0;
+  transition: all 0.5s;
   width: 100%;
   z-index: 100;
   @media (min-width: 1025px) {
