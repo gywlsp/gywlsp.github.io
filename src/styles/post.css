@@ -37,6 +37,12 @@
   text-shadow: 0 0 transparent;
 }
 
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em 0.2em;
+  font-weight: 400;
+  background-color: #F1F2F6;
+}
+
 .postContents ol {
   margin-left: 1.75rem;
   margin-right: 0;
