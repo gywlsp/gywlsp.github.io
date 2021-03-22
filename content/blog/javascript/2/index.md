@@ -38,7 +38,7 @@ try {
 	throw new exception("fake exception");
 } catch(err) {
 	var test = "can you see me";
-	console.log(err instanceof ReferenceError); //true	
+	console.log(err instanceof ReferenceError === true); //true	
 }
 console.log(test === "can you see me"); //true
 console.log(typeof err === "undefined"); //true
@@ -51,7 +51,7 @@ with({inScope: "You can't see me"}) {
 	console.log(inScope === "You can't see me"); //true
 }
 console.log(typeof inScope === "undefined") //true
-console.log(notInScope === "But you can see") //true
+console.log(notInScope === "But you can see me") //true
 ```
 
 +) [with 구문](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/with)은 자바스크립트 구문 중 `eval` 구문과 함께 사용하지 말아야 할 구문 중 하나이다.
