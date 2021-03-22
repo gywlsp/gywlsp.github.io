@@ -124,7 +124,7 @@ fiveAdder(3); //5(inClosure) + 3(adder) === 8
 이제 8번 줄의 `fiveAdder(3)`이 호출되면, 위의 스코프 체인에서 `inClosure`는 5를 가지고, 함수 A의 파라미터 `adder`로 들어온 값이 3을 더하여 8이라는 값이 반환된다.
 
 ```jsx
-var threeAdder = sum(3); //inClosure = 5 and return function
+var threeAdder = sum(3); //inClosure = 3 and return function
 ```
 
 이번에 다시 `threeAdder`를 호출하게 되면 어떻게 될까? 위의 함수 A에 대한 스코프 체인에 영향을 미쳐서 `inClosure` 변수의 값을 3으로 덮어쓸 것 같지만 그렇지 않다.
