@@ -19,7 +19,8 @@ export default function AboutMe() {
     >
       <Wrapper>
         <Circle>
-        <AtomImage src="/images/logo.svg" width="3.2rem" alt="logo" /></Circle>
+          <AtomImage src="/images/logo.svg" width="3.2rem" alt="logo" />
+        </Circle>
         <TitleWrapper>
           <Title>사이다 데브-로그</Title>
           <Description>

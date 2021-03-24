@@ -2,7 +2,7 @@
 title: '백준 1929번 소수 구하기 - node.js'
 date: '2021-03-08T16:43:57+00:00'
 description: '백준 1929번 소수 구하기를 javascript로 풀이하는 글입니다.'
-tags: ['백준','Javascript', '소수판정']
+tags: ['백준', 'Javascript', '소수판정']
 thumbnail: 'boj_1929.png'
 ---
 
@@ -62,9 +62,9 @@ thumbnail: 'boj_1929.png'
 1. **2부터 N까지의 모든 자연수를 나열한다.**
 2. **남은 수 중에서 아직 처리하지 않은 가장 작은 수 i를 찾는다.**
 3. **남은 수 중에서 i의 배수를 모두 제거한다. (i는 제거하지 않는다.)**
-4. **더 이상 반복할 수 없을 때까지 2번과 3번의 과정을 반복한다.** 
+4. **더 이상 반복할 수 없을 때까지 2번과 3번의 과정을 반복한다.**
 
-이 문제는 M이상 N이하의 수들의 소수 여부를 출력하면 되기 때문에, 1번에서 2부터가 아니라 **<u>M부터 소수인지 판별</u>**하면 된다. 그리고 **<u>3번 과정에 위에서 언급한 개선된 소수 판별 알고리즘을 적용</u>**하면 **시간복잡도가 O(N^(3/2))**가 되어 시간 내에 문제를 풀 수 있다. 
+이 문제는 M이상 N이하의 수들의 소수 여부를 출력하면 되기 때문에, 1번에서 2부터가 아니라 **<u>M부터 소수인지 판별</u>**하면 된다. 그리고 **<u>3번 과정에 위에서 언급한 개선된 소수 판별 알고리즘을 적용</u>**하면 **시간복잡도가 O(N^(3/2))**가 되어 시간 내에 문제를 풀 수 있다.
 
 ## 구현
 
@@ -73,14 +73,14 @@ thumbnail: 'boj_1929.png'
 ```jsx
 const input = [];
 
-const strToNumArr = (str) => str.split(" ").map(Number);
+const strToNumArr = (str) => str.split(' ').map(Number);
 
-require("readline")
+require('readline')
   .createInterface(process.stdin, process.stdout)
-  .on("line", function (line) {
+  .on('line', function (line) {
     input.push(line.trim());
   })
-  .on("close", function () {
+  .on('close', function () {
     const [M, N] = strToNumArr(input[0]);
     const isPrimeNumber = Array(N + 1).fill(true);
     isPrimeNumber[1] = false;
@@ -101,6 +101,6 @@ require("readline")
         results.push(n);
       }
     }
-    console.log(results.join("\n"));
+    console.log(results.join('\n'));
   });
 ```

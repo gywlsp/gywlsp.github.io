@@ -2,11 +2,12 @@
 title: '백준 5052번 전화번호 목록 - node.js'
 date: '2021-02-23T15:03:19+00:00'
 description: '백준 5052번 전화번호 목록을 javascript로 풀이하는 글입니다.'
-tags: ['백준','Javascript', '정렬']
+tags: ['백준', 'Javascript', '정렬']
 thumbnail: 'boj_5052.png'
 ---
+
 > 이 글은 백준 5052번 전화번호 목록 풀이한다. [문제 링크](https://www.acmicpc.net/problem/5052)
-코드는 javascript로 작성하였다.
+> 코드는 javascript로 작성하였다.
 
 # 문제
 
@@ -57,7 +58,7 @@ YES
 
 ## 접근
 
-전화번호 목록의 일관성을 파악하기 위해, 한 번호가 다른 번호의 접두어인 경우가 있는지 확인해야 한다. **목록에 동일한 전화번호가 없기 때문에 입력으로 받은 번호들을 문자열 오름차순으로 정렬하여 확인**하려 했다. 
+전화번호 목록의 일관성을 파악하기 위해, 한 번호가 다른 번호의 접두어인 경우가 있는지 확인해야 한다. **목록에 동일한 전화번호가 없기 때문에 입력으로 받은 번호들을 문자열 오름차순으로 정렬하여 확인**하려 했다.
 
 ## 알고리즘
 
@@ -72,7 +73,7 @@ YES
 ```
 11
 112
-113 
+113
 ```
 
 ## 구현
@@ -82,22 +83,22 @@ YES
 ```jsx
 const input = [];
 
-require("readline")
+require('readline')
   .createInterface(process.stdin, process.stdout)
-  .on("line", function (line) {
+  .on('line', function (line) {
     input.push(line.trim());
   })
-  .on("close", function () {
+  .on('close', function () {
     let inputIndex = 0;
     let t = Number(input[inputIndex++]);
     while (t--) {
       const N = Number(input[inputIndex++]);
       const sortedNumbers = [...Array(N)].map(() => input[inputIndex++]).sort();
       let prevNumLength = 0,
-        result = "YES";
+        result = 'YES';
       for (let i = 0; i < N; i++) {
         if (sortedNumbers[i].slice(0, prevNumLength) === sortedNumbers[i - 1]) {
-          result = "NO";
+          result = 'NO';
           break;
         }
         prevNumLength = sortedNumbers[i].length;

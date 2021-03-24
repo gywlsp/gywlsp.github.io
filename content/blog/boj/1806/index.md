@@ -2,7 +2,7 @@
 title: '백준 1806번 부분합 - node.js'
 date: '2021-03-05T11:49:10+00:00'
 description: '백준 1806번 부분합을 풀이하는 글입니다.'
-tags: ['백준','Javascript', '투포인터']
+tags: ['백준', 'Javascript', '투포인터']
 thumbnail: 'boj_1806.png'
 ---
 
@@ -62,14 +62,14 @@ thumbnail: 'boj_1806.png'
 ```jsx
 const input = [];
 const INF = 987654321;
-const strToNumArr = (str) => str.split(" ").map(Number);
+const strToNumArr = (str) => str.split(' ').map(Number);
 
-require("readline")
+require('readline')
   .createInterface(process.stdin, process.stdout)
-  .on("line", function (line) {
+  .on('line', function (line) {
     input.push(line.trim());
   })
-  .on("close", function () {
+  .on('close', function () {
     const [N, S] = strToNumArr(input[0]);
     const numList = strToNumArr(input[1]);
     let minLen = INF;

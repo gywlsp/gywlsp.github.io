@@ -6,7 +6,7 @@ import { WHITE, POINT_BLUE, SKY_BLUE } from 'src/constants/colors';
 
 export type TagProps = { name: string; isSelected?: boolean; count?: number };
 
-function Tag({ name, isSelected=false, count }: TagProps) {
+function Tag({ name, isSelected = false, count }: TagProps) {
   return (
     <Wrapper to={name === 'ALL' ? '/posts' : `/posts?tag=${name}`}>
       <P isSelected={isSelected}>

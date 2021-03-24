@@ -2,7 +2,7 @@
 title: '백준 9095번 1,2,3 더하기 - node.js'
 date: '2020-11-18T06:24:16+00:00'
 description: '백준 9095번 1,2,3 더하기를 javascript로 풀이하는 글입니다.'
-tags: ['백준','Javascript', 'DP']
+tags: ['백준', 'Javascript', 'DP']
 thumbnail: 'boj_9095.png'
 ---
 

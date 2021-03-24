@@ -19,7 +19,7 @@ thumbnail: 'algorithm2.png'
 - **<u>중간 지점 mid 위치의 값이 k보다 작을 때:</u>** mid가 lower bound가 될 수 없으므로, 더 큰 값을 찾기 위해 뒷 구간 **[mid+1, end]에 대해 이 과정을 반복**한다.
 - **<u>그 외의 경우:</u>** mid가 lower bound 값이 될 수 있으므로, **결과 변수에 기존 값과 mid를 비교해 더 작은 값을 저장**하고, lower bound가 될 수 있는 더 작은 값이 있는지 파악하기 위해 앞 **구간 [start, mid-1]에 대해 이 과정을 반복**한다.
 
-위 알고리즘은 **재귀, 반복문** 2가지 방법으로 다음과 같이 구현할 수 있다. 
+위 알고리즘은 **재귀, 반복문** 2가지 방법으로 다음과 같이 구현할 수 있다.
 
 ```jsx
 const numList = [1, 2, 3, 3, 3, 4, 4, 5];
@@ -57,7 +57,7 @@ const lowerBound2 = (start, end, key) => {
 };
 
 lowerBound1(0, numList.length - 1, 3);
-lowerBound2(0, numList.length - 1,3);
+lowerBound2(0, numList.length - 1, 3);
 console.log(result1, result2);
 ```
 
@@ -68,7 +68,7 @@ console.log(result1, result2);
 - **<u>중간 지점 mid 위치의 값이 k 이하일 때:</u>** mid가 upper bound가 될 수 없으므로, 더 큰 값을 찾기 위해 뒷 구간 **[mid+1, end]에 대해 이 과정을 반복**한다.
 - **<u>그 외의 경우:</u>** mid가 lower bound 값이 될 수 있으므로, **결과 변수에 기존 값과 mid를 비교해 더 작은 값을 저장**하고, upper bound가 될 수 있는 더 작은 값이 있는지 파악하기 위해 앞 구간 **[start, mid-1]에 대해 이 과정을 반복**한다.
 
-위 알고리즘은 **재귀, 반복문** 2가지 방법으로 다음과 같이 구현할 수 있다. 
+위 알고리즘은 **재귀, 반복문** 2가지 방법으로 다음과 같이 구현할 수 있다.
 
 ```jsx
 const numList = [1, 2, 3, 3, 3, 4, 4, 5];

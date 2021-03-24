@@ -2,11 +2,11 @@
 title: '백준 2042번 구간 합 구하기 - node.js'
 date: '2021-02-23T13:21:24+00:00'
 description: '백준 2042번 구간 합 구하기를 javascript로 풀이하는 글입니다.'
-tags: ['백준','Javascript', '세그먼트트리']
+tags: ['백준', 'Javascript', '세그먼트트리']
 thumbnail: 'boj_2042.png'
 ---
 
-> 이 글은 [백준 2042번 구간 합 구하기]((https://www.acmicpc.net/problem/2042))를 풀이한다. 코드는 javascript로 작성하였다.
+> 이 글은 [백준 2042번 구간 합 구하기](<(https://www.acmicpc.net/problem/2042)>)를 풀이한다. 코드는 javascript로 작성하였다.
 
 # 문제
 
@@ -76,7 +76,7 @@ thumbnail: 'boj_2042.png'
 
 ### [2] 구간 합 출력
 
-구간 트리에서 원하는 구간의 숫자 합을 어떻게 구할 수 있을까? 다음 그림은 예제 입력 1에서 2번 노드부터 5번 노드까지의 합을 어떻게 구하는지 나타낸 그림이다. 문제에서는 노드 번호가 1번부터 시작하는데, 필자는 0번부터 시작하도록 구현했기 때문에 1번 노드부터 4번 노드까지의 합을 구하면 된다. **[1, 4] 구간을 <u>구간 트리의 노드들이 나타내는 구간들로 최소한으로 나누면</u> [1, 1], [2, 2], [3, 4]**이다. **뒤의 <u>세 구간의 구간합을 더하면</u> [1, 4]의 구간합을 구할 수 있다.** 
+구간 트리에서 원하는 구간의 숫자 합을 어떻게 구할 수 있을까? 다음 그림은 예제 입력 1에서 2번 노드부터 5번 노드까지의 합을 어떻게 구하는지 나타낸 그림이다. 문제에서는 노드 번호가 1번부터 시작하는데, 필자는 0번부터 시작하도록 구현했기 때문에 1번 노드부터 4번 노드까지의 합을 구하면 된다. **[1, 4] 구간을 <u>구간 트리의 노드들이 나타내는 구간들로 최소한으로 나누면</u> [1, 1], [2, 2], [3, 4]**이다. **뒤의 <u>세 구간의 구간합을 더하면</u> [1, 4]의 구간합을 구할 수 있다.**
 
 ![boj_2042_3.png](boj_2042_3.png)
 
@@ -109,7 +109,7 @@ thumbnail: 'boj_2042.png'
 ```jsx
 const input = [];
 
-const strToNumArr = (str) => str.split(" ").map(Number);
+const strToNumArr = (str) => str.split(' ').map(Number);
 
 class RangeSumTree {
   constructor(numbers) {
@@ -124,17 +124,16 @@ class RangeSumTree {
     }
     const mid = Math.floor((rangeStart + rangeEnd) / 2);
     const leftRangeSum = this.init(numbers, nodeIndex * 2 + 1, rangeStart, mid);
-    const rightRangeSum = this.init(numbers, nodeIndex * 2 + 2, mid + 1, rangeEnd);
+    const rightRangeSum = this.init(
+      numbers,
+      nodeIndex * 2 + 2,
+      mid + 1,
+      rangeEnd
+    );
     return (this.rangeSum[nodeIndex] = leftRangeSum + rightRangeSum);
   };
 
-  query = (
-    from,
-    to,
-    nodeIndex = 0,
-    rangeStart = 0,
-    rangeEnd = this.n - 1
-  ) => {
+  query = (from, to, nodeIndex = 0, rangeStart = 0, rangeEnd = this.n - 1) => {
     if (from > rangeEnd || to < rangeStart) {
       return 0;
     }
@@ -191,12 +190,12 @@ class RangeSumTree {
   };
 }
 
-require("readline")
+require('readline')
   .createInterface(process.stdin, process.stdout)
-  .on("line", function (line) {
+  .on('line', function (line) {
     input.push(line.trim());
   })
-  .on("close", function () {
+  .on('close', function () {
     let inputIndex = 0;
     const [N, M, K] = strToNumArr(input[inputIndex++]);
     const numbers = [...Array(N)].map(() => Number(input[inputIndex++]));
@@ -212,7 +211,7 @@ require("readline")
       }
       result.push(rangeSumTree.query(b - 1, c - 1));
     }
-    console.log(result.join("\n"));
+    console.log(result.join('\n'));
   });
 ```
 
@@ -221,7 +220,7 @@ require("readline")
 ```jsx
 const input = [];
 
-const strToNumArr = (str) => str.split(" ").map(Number);
+const strToNumArr = (str) => str.split(' ').map(Number);
 
 //구간 별 숫자 합을 저장하는 트리
 class RangeSumTree {
@@ -237,7 +236,7 @@ class RangeSumTree {
   }
 
   //nodeIndex번 노드가 나타내는 숫자 범위는 rangeStart ~ rangeEnd
-  //해당 구간의 숫자 합을 반환. 
+  //해당 구간의 숫자 합을 반환.
   init = (numbers, nodeIndex = 0, rangeStart = 0, rangeEnd = this.n - 1) => {
     //노드가 나타내는 범위의 시작과 끝이 같으면
     if (rangeStart === rangeEnd) {
@@ -248,20 +247,19 @@ class RangeSumTree {
     //아니면 해당 구간을 반으로 나눠 해당 구간의 숫자의 합을 재귀적으로 구함.
     const mid = Math.floor((rangeStart + rangeEnd) / 2);
     const leftRangeSum = this.init(numbers, nodeIndex * 2 + 1, rangeStart, mid);
-    const rightRangeSum = this.init(numbers, nodeIndex * 2 + 2, mid + 1, rangeEnd);
+    const rightRangeSum = this.init(
+      numbers,
+      nodeIndex * 2 + 2,
+      mid + 1,
+      rangeEnd
+    );
     return (this.rangeSum[nodeIndex] = leftRangeSum + rightRangeSum);
   };
 
   //합을 구하고자 하는 구간의 범위는 from ~ to
   //nodeIndex번 노드가 나타내는 숫자 범위는 rangeStart ~ rangeEnd
   //rangeStart ~ rangeEnd, from ~ to의 교집합 구간의 숫자 합 반환
-  query = (
-    from,
-    to,
-    nodeIndex = 0,
-    rangeStart = 0,
-    rangeEnd = this.n - 1
-  ) => {
+  query = (from, to, nodeIndex = 0, rangeStart = 0, rangeEnd = this.n - 1) => {
     //구하고자 하는 구간이 노드가 나타내는 범위 밖일 때
     if (from > rangeEnd || to < rangeStart) {
       return 0;
@@ -332,12 +330,12 @@ class RangeSumTree {
   };
 }
 
-require("readline")
+require('readline')
   .createInterface(process.stdin, process.stdout)
-  .on("line", function (line) {
+  .on('line', function (line) {
     input.push(line.trim());
   })
-  .on("close", function () {
+  .on('close', function () {
     let inputIndex = 0;
     const [N, M, K] = strToNumArr(input[inputIndex++]);
     const numbers = [...Array(N)].map(() => Number(input[inputIndex++]));
@@ -353,6 +351,6 @@ require("readline")
       }
       result.push(rangeSumTree.query(b - 1, c - 1));
     }
-    console.log(result.join("\n"));
+    console.log(result.join('\n'));
   });
 ```

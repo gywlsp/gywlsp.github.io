@@ -18,7 +18,8 @@ function PostsPage({ data, location, search }) {
     <Layout selectedTag={tag || 'ALL'} pathname={location.pathname} tags={tags}>
       <SEO title="posts" />
       <PageTitle>
-        POSTS<strong style={{ color: POINT_BLUE }}>{tag ? ` - ${tag}` : ''}</strong>
+        POSTS
+        <strong style={{ color: POINT_BLUE }}>{tag ? ` - ${tag}` : ''}</strong>
       </PageTitle>
       <PostsWrapper>
         {posts

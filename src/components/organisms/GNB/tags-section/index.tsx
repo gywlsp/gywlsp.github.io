@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import {Tag} from 'src/components/atoms';
+import { Tag } from 'src/components/atoms';
 import { BLACK, WHITE, POINT_BLUE, SKY_BLUE } from 'src/constants/colors';
 
 export type GNBTagsSectionProps = {
@@ -29,7 +29,11 @@ function GNBTagsSection({
       </NavLink>
       <Row>
         {tags.map(({ tag, totalCount }) => (
-          <Tag name={tag} count={totalCount} isSelected={pathname?.includes('/posts') && tag === selectedTag}/>
+          <Tag
+            name={tag}
+            count={totalCount}
+            isSelected={pathname?.includes('/posts') && tag === selectedTag}
+          />
         ))}
       </Row>
     </Wrapper>

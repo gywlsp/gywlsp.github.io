@@ -11,7 +11,10 @@ export default function ScrollToTopButton() {
 
   return (
     <Wrapper onClick={handleClick}>
-      <ChevronUpIcon style={{ width: '1.6rem', height: '1.6rem' }} fill={BLUE} />
+      <ChevronUpIcon
+        style={{ width: '1.6rem', height: '1.6rem' }}
+        fill={BLUE}
+      />
     </Wrapper>
   );
 }

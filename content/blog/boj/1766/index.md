@@ -2,7 +2,7 @@
 title: '백준 1766번 문제집 - node.js'
 date: '2021-03-08T04:18:47+00:00'
 description: '백준 1766번 문제집을 javascript로 풀이하는 글입니다.'
-tags: ['백준','Javascript', '그래프', '위상정렬', '우선순위큐']
+tags: ['백준', 'Javascript', '그래프', '위상정렬', '우선순위큐']
 thumbnail: 'boj_1766.png'
 ---
 
@@ -53,19 +53,19 @@ thumbnail: 'boj_1766.png'
 
 # 풀이
 
-어떻게 주어진 일부 문제의 순서를 지키면서 쉬운 문제부터 풀 수 있을까? **<u>문제의 순서에 맞게 수를 정렬하려면 위상 정렬을 이용</u>**하면 된다. 위상 정렬 결과는 다음 과정에서 각 노드가 큐에 들어온 순서이다. 
+어떻게 주어진 일부 문제의 순서를 지키면서 쉬운 문제부터 풀 수 있을까? **<u>문제의 순서에 맞게 수를 정렬하려면 위상 정렬을 이용</u>**하면 된다. 위상 정렬 결과는 다음 과정에서 각 노드가 큐에 들어온 순서이다.
 
 1. **진입 차수가 0인 모든 노드를 큐에 넣는다**
 2. **큐가 빌 때까지 다음 과정을 반복한다.**
-    1. **큐에서 원소를 꺼내 해당 노드에서 나가는 간선을 그래프에서 제거한다.**
-    2. **새롭게 진입 차수가 0이 된 노드를 큐에 넣는다.**
+   1. **큐에서 원소를 꺼내 해당 노드에서 나가는 간선을 그래프에서 제거한다.**
+   2. **새롭게 진입 차수가 0이 된 노드를 큐에 넣는다.**
 
 **<u>주어진 문제 순서를 지키면서 쉬운 문제를 풀려면, 위 과정에서 큐를 우선순위 큐로 대체</u>**하면 된다. 문제의 번호가 클수록 어려운 문제이기 때문에, **<u>우선순위 큐를 최소 힙으로 구현</u>해 앞 번호(난이도가 낮은) 문제가 먼저 나오도록 구현**하면 된다. 이를 적용해 다음 과정에서 **각 노드가 우선순위 큐에 들어온 순서를 파악**하면 된다.
 
 1. **진입 차수가 0인 모든 노드(문제)를 우선순위 큐에 넣는다**
 2. **큐가 빌 때까지 다음 과정을 반복한다.**
-    1. **큐에서 원소를 꺼내 해당 노드에서 나가는 간선을 그래프에서 제거한다.**
-    2. **새롭게 진입 차수가 0이 된 노드를 우선순위 큐에 넣는다.**
+   1. **큐에서 원소를 꺼내 해당 노드에서 나가는 간선을 그래프에서 제거한다.**
+   2. **새롭게 진입 차수가 0이 된 노드를 우선순위 큐에 넣는다.**
 
 ## 구현
 
@@ -74,7 +74,7 @@ thumbnail: 'boj_1766.png'
 ```jsx
 const input = [];
 
-const strToNumArr = (str) => str.split(" ").map(Number);
+const strToNumArr = (str) => str.split(' ').map(Number);
 
 class MinHeap {
   constructor() {
@@ -133,12 +133,12 @@ class MinHeap {
   };
 }
 
-require("readline")
+require('readline')
   .createInterface(process.stdin, process.stdout)
-  .on("line", function (line) {
+  .on('line', function (line) {
     input.push(line.trim());
   })
-  .on("close", function () {
+  .on('close', function () {
     const [N, M] = strToNumArr(input.shift());
     const graph = [];
     const inDegrees = Array(N + 1).fill(0);
@@ -171,7 +171,7 @@ require("readline")
       });
     }
 
-    console.log(result.join(" "));
+    console.log(result.join(' '));
   });
 ```
 

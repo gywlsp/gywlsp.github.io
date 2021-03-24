@@ -2,7 +2,7 @@
 title: '백준 1931번 회의실 배정 - node.js'
 date: '2021-02-17T00:31:17+00:00'
 description: '백준 1931번 회의실 배정을 풀이하는 글입니다.'
-tags: ['백준','Javascript', '그리디', '정렬']
+tags: ['백준', 'Javascript', '그리디', '정렬']
 thumbnail: 'boj_1931.png'
 ---
 
@@ -69,11 +69,11 @@ thumbnail: 'boj_1931.png'
 ## 알고리즘
 
 - 회의를 다음과 같은 순서로 정렬한다.
-    1. **먼저 끝나는 회의**
-    2. 끝나는 시간이 같다면, **먼저 시작하는 회의**
+  1. **먼저 끝나는 회의**
+  2. 끝나는 시간이 같다면, **먼저 시작하는 회의**
 - 정렬된 회의 목록을 순서대로 돌며 다음 과정을 반복한다.
-    - 회의가 전에 진행된 회의가 끝나기 전에 시작되면 다음으로
-    - 아니면 회의 진행
+  - 회의가 전에 진행된 회의가 끝나기 전에 시작되면 다음으로
+  - 아니면 회의 진행
 
 ### 트러블 슈팅
 
@@ -93,14 +93,14 @@ thumbnail: 'boj_1931.png'
 const input = [];
 
 const strToNumArr = (str) =>
-  str.split(" ").map((numString) => Number(numString));
+  str.split(' ').map((numString) => Number(numString));
 
-require("readline")
+require('readline')
   .createInterface(process.stdin, process.stdout)
-  .on("line", function (line) {
+  .on('line', function (line) {
     input.push(line.trim());
   })
-  .on("close", function () {
+  .on('close', function () {
     const N = Number(input.shift());
     //회의를 다음 순서대로 정렬
     //1) 먼저 끝나는 회의

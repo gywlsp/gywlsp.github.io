@@ -2,9 +2,10 @@
 title: '백준 5639번 이진검색트리 - node.js'
 date: '2021-02-21T07:02:53+00:00'
 description: '백준 5639번 이진검색트리를 javascript로 풀이하는 글입니다.'
-tags: ['백준','Javascript', '트리']
+tags: ['백준', 'Javascript', '트리']
 thumbnail: 'boj_5639.png'
 ---
+
 > 이 글은 [백준 5639 이진검색트리](https://www.acmicpc.net/problem/5639)를 풀이한다. 알고리즘은 javascript로 구현하였다.
 
 # 문제
@@ -73,14 +74,13 @@ thumbnail: 'boj_5639.png'
 (루트)(왼쪽 서브트리를 구성하는 노드들)(오른쪽 서브트리를 구성하는 노드들)
 = (루트)(루트보다 작은 노드들)(루트보다 큰 노드들)
 ```
-    
 
 **트리 전위 순회 결과를 후위 순회 결과로 바꾸기 위해 어떻게 해야 할까?**
 
-후위 순회는 다음과 같은 방법으로 트리를 순회한다. 
+후위 순회는 다음과 같은 방법으로 트리를 순회한다.
 
 1. 왼쪽 서브 트리를 후위 순회한다.
-2. 오른쪽 서브 트리를 후위 순회한다. 
+2. 오른쪽 서브 트리를 후위 순회한다.
 3. 노드를 방문한다.
 
 따라서 다음 과정을 반복하면 된다.
@@ -88,7 +88,7 @@ thumbnail: 'boj_5639.png'
 1. **트리 전위 순회 결과를 루트, 왼쪽 서브트리, 오른쪽 서브트리로 나눈다,**
 2. **왼쪽 서브 트리에 대해 이 과정을 반복한다.**
 3. **오른쪽 서브 트리에 대해 이 과정을 반복한다.**
-4. **루트를 방문한다.** 
+4. **루트를 방문한다.**
 
 ## 트러블 슈팅
 
@@ -105,12 +105,12 @@ const input = [];
 const stack = [];
 const result = [];
 
-require("readline")
+require('readline')
   .createInterface(process.stdin, process.stdout)
-  .on("line", function (line) {
+  .on('line', function (line) {
     input.push(Number(line.trim()));
   })
-  .on("close", function () {
+  .on('close', function () {
     //전위 순회 결과 배열의 시작, 끝 인덱스 삽입
     stack.push([0, input.length - 1]);
     while (stack.length) {
@@ -143,6 +143,6 @@ require("readline")
       //while문에서 이 과정 반복하면 후위 순회 결과 완성
       result.unshift(input[start]);
     }
-    console.log(result.join("\n"));
+    console.log(result.join('\n'));
   });
 ```

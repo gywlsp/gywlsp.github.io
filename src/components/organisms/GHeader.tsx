@@ -16,12 +16,12 @@ function GHeader({ onMobileGNBOpen }: GHeaderProps) {
   const scrollDirection = useScrollDirection('up');
 
   return (
-    <Wrapper showHeader={scrollDirection==='up'}>
+    <Wrapper showHeader={scrollDirection === 'up'}>
       <Link
         style={{
           boxShadow: `none`,
           color: `inherit`,
-          textDecoration: `none`
+          textDecoration: `none`,
         }}
         to="/"
       >
@@ -36,14 +36,14 @@ function GHeader({ onMobileGNBOpen }: GHeaderProps) {
 
 export default React.memo(GHeader);
 
-const Wrapper = styled.header<{showHeader: boolean}>`
+const Wrapper = styled.header<{ showHeader: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
   height: 5.2rem;
   position: fixed;
-  top: ${({showHeader})=>(showHeader? 0: '-5.2rem')};
+  top: ${({ showHeader }) => (showHeader ? 0 : '-5.2rem')};
   left: 0;
   transition: all 0.5s;
   width: 100%;

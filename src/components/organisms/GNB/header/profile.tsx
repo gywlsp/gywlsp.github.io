@@ -6,24 +6,26 @@ import { BLACK } from 'src/constants/colors';
 import MailIcon from 'src/assets/icon/mail';
 
 export default function Profile() {
-    return (
-        <Wrapper>
-            <P><strong>박효진</strong> (@gywlsp)</P>
-            <A href="mailto:gywls517@gmail.com" title="Email">
-                <MailIcon
-                    style={{ width: '18px', height: '18px', marginRight: '8px' }}
-                />
-            </A>
-            <A href="https://github.com/gywlsp" title="Github" target="_blank">
-                <Img
-                    src="https://github.githubassets.com/favicons/favicon.svg"
-                    alt="github"
-                    width="18px"
-                    height="18px"
-                />
-            </A>
-        </Wrapper>
-    );
+  return (
+    <Wrapper>
+      <P>
+        <strong>박효진</strong> (@gywlsp)
+      </P>
+      <A href="mailto:gywls517@gmail.com" title="Email">
+        <MailIcon
+          style={{ width: '18px', height: '18px', marginRight: '8px' }}
+        />
+      </A>
+      <A href="https://github.com/gywlsp" title="Github" target="_blank">
+        <Img
+          src="https://github.githubassets.com/favicons/favicon.svg"
+          alt="github"
+          width="18px"
+          height="18px"
+        />
+      </A>
+    </Wrapper>
+  );
 }
 
 const Wrapper = styled.div`

@@ -57,7 +57,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [`.mdx`]
+        extensions: [`.mdx`],
       },
     },
     `gatsby-transformer-sharp`,
@@ -85,7 +85,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [
-          "G-L85J9BWD42", // Google Analytics / GA
+          'G-L85J9BWD42', // Google Analytics / GA
         ],
       },
     },

@@ -2,7 +2,7 @@
 title: '백준 2252번 줄 세우기 - node.js'
 date: '2021-03-08T03:39:34+00:00'
 description: '백준 2252번 줄 세우기를 javascript로 풀이하는 글입니다.'
-tags: ['백준','Javascript', '그래프', '위상정렬']
+tags: ['백준', 'Javascript', '그래프', '위상정렬']
 thumbnail: 'boj_2252.png'
 ---
 
@@ -45,16 +45,16 @@ thumbnail: 'boj_2252.png'
 
 # 풀이
 
-이 문제는 선수과목을 고려한 학습 순서 결정 문제와 유사하다. 해당 문제는 위상 정렬을 이용하는 대표적인 예시이다. 따라서 이 문제도 **<u>위상 정렬을 이용</u>**해 답을 구할 수 있다. 
+이 문제는 선수과목을 고려한 학습 순서 결정 문제와 유사하다. 해당 문제는 위상 정렬을 이용하는 대표적인 예시이다. 따라서 이 문제도 **<u>위상 정렬을 이용</u>**해 답을 구할 수 있다.
 
 ### 위상 정렬
 
-위상 정렬이란, **사이클이 없는 방향 그래프의 모든 노드를 방향성에 거스르지 않도록 순서대로 나열**하는 것을 의미한다. 다음 과정에서 **<u>각 노드가 큐에 들어온 순서가 곧 위상 정렬을 수행한 결과</u>**이다. 
+위상 정렬이란, **사이클이 없는 방향 그래프의 모든 노드를 방향성에 거스르지 않도록 순서대로 나열**하는 것을 의미한다. 다음 과정에서 **<u>각 노드가 큐에 들어온 순서가 곧 위상 정렬을 수행한 결과</u>**이다.
 
 1. **진입 차수가 0인 모든 노드를 큐에 넣는다**
 2. **큐가 빌 때까지 다음 과정을 반복한다.**
-    1. **큐에서 원소를 꺼내 해당 노드에서 나가는 간선을 그래프에서 제거한다.**
-    2. **새롭게 진입 차수가 0이 된 노드를 큐에 넣는다.**
+   1. **큐에서 원소를 꺼내 해당 노드에서 나가는 간선을 그래프에서 제거한다.**
+   2. **새롭게 진입 차수가 0이 된 노드를 큐에 넣는다.**
 
 ## 구현
 
@@ -63,14 +63,14 @@ thumbnail: 'boj_2252.png'
 ```jsx
 const input = [];
 
-const strToNumArr = (str) => str.split(" ").map(Number);
+const strToNumArr = (str) => str.split(' ').map(Number);
 
-require("readline")
+require('readline')
   .createInterface(process.stdin, process.stdout)
-  .on("line", function (line) {
+  .on('line', function (line) {
     input.push(line.trim());
   })
-  .on("close", function () {
+  .on('close', function () {
     const [N, M] = strToNumArr(input.shift());
     const graph = [];
     for (let i = 0; i <= N; i++) {
@@ -86,9 +86,9 @@ require("readline")
 
     const queue = [];
     for (let n = 1; n <= N; n++) {
-        if (!inDegrees[n]) {
-          queue.push(n);
-        }
+      if (!inDegrees[n]) {
+        queue.push(n);
+      }
     }
 
     const result = [];
@@ -103,7 +103,7 @@ require("readline")
       });
     }
 
-    console.log(result.join(" "));
+    console.log(result.join(' '));
   });
 ```
 

@@ -24,7 +24,6 @@ select count(distinct age) from Blackpink;
 select distinct age from Blackpink;
 ```
 
-
 ![mysql_3_2](mysql_3_2.png)
 
 ![mysql_3_3](mysql_3_3.png)
@@ -51,7 +50,6 @@ select sum(age) from Blackpink;
 -- 멤버들의 나이 평균
 select avg(age) from Blackpink;
 ```
-
 
 ![mysql_3_5](mysql_3_5.png)
 

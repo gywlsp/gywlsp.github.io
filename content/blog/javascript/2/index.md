@@ -16,7 +16,7 @@ thumbnail: 'javascript_2.png'
 
 ### let이 등장하기 이전
 
-ES6 문법에 `let`이 추가되기 전, 자바스크립트는 다른 언어와는 달리 일반적인 블록 스코프를 따르지 않았다. **<u>다음 구문들을 사용할 때에만 스코프가 생성</u>**되었다. 
+ES6 문법에 `let`이 추가되기 전, 자바스크립트는 다른 언어와는 달리 일반적인 블록 스코프를 따르지 않았다. **<u>다음 구문들을 사용할 때에만 스코프가 생성</u>**되었다.
 
 - `function`
 - `with`
@@ -27,31 +27,31 @@ ES6 문법에 `let`이 추가되기 전, 자바스크립트는 다른 언어와�
 ```jsx
 //function 구문
 function foo() {
-	var a = "hi";
+  var a = 'hi';
 }
-console.log(typeof a === "undefined"); //true
+console.log(typeof a === 'undefined'); //true
 ```
 
 ```jsx
 //catch 구문
 try {
-	throw new exception("fake exception");
-} catch(err) {
-	var test = "can you see me";
-	console.log(err instanceof ReferenceError === true); //true	
+  throw new exception('fake exception');
+} catch (err) {
+  var test = 'can you see me';
+  console.log(err instanceof ReferenceError === true); //true
 }
-console.log(test === "can you see me"); //true
-console.log(typeof err === "undefined"); //true
+console.log(test === 'can you see me'); //true
+console.log(typeof err === 'undefined'); //true
 ```
 
 ```jsx
 //with 구문
-with({inScope: "You can't see me"}) {
-	var notInScope = "But you can see me";
-	console.log(inScope === "You can't see me"); //true
+with ({ inScope: "You can't see me" }) {
+  var notInScope = 'But you can see me';
+  console.log(inScope === "You can't see me"); //true
 }
-console.log(typeof inScope === "undefined") //true
-console.log(notInScope === "But you can see me") //true
+console.log(typeof inScope === 'undefined'); //true
+console.log(notInScope === 'But you can see me'); //true
 ```
 
 +) [with 구문](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/with)은 자바스크립트 구문 중 `eval` 구문과 함께 사용하지 말아야 할 구문 중 하나이다.
@@ -89,10 +89,10 @@ console.log(y); //1
 
 ```jsx
 function sum(base) {
-	var inClosure = base;
-	return function(adder) {
-		return inClosure + adder;
-	}
+  var inClosure = base;
+  return function (adder) {
+    return inClosure + adder;
+  };
 }
 var fiveAdder = sum(5); //inClosure = 5 and return function
 fiveAdder(3); //5(inClosure) + 3(adder) === 8
@@ -113,9 +113,9 @@ var fiveAdder = sum(5); //inClosure = 5 and return function
 
 ![javascript_2_2](javascript_2_2.png)
 
-위의 스코프 템플릿에서 `fiveAdder`는 실제로 사용하게 되는 함수 A를 할당받게 되어 오른쪽의 A 함수를 가지고 있게 된다. 그리고 **<u>A가 반환될 때는 위와 같이 스코프 체인을 생성</u>하여 fiveAdder 함수가 호출될 때 이 스코프 체인을 사용**하게 된다. **`fiveAdder`에서 할당받는 함수 A는 3번 줄에서 반환되고 있는 익명 함수**이다. 
+위의 스코프 템플릿에서 `fiveAdder`는 실제로 사용하게 되는 함수 A를 할당받게 되어 오른쪽의 A 함수를 가지고 있게 된다. 그리고 **<u>A가 반환될 때는 위와 같이 스코프 체인을 생성</u>하여 fiveAdder 함수가 호출될 때 이 스코프 체인을 사용**하게 된다. **`fiveAdder`에서 할당받는 함수 A는 3번 줄에서 반환되고 있는 익명 함수**이다.
 
-이제부터 `fiveAdder`**를 통해 함수를 호출하게 되면 위의 스코프 체인을 따르게 된다**. 그림만 살펴보면 순환 구조로 되어있는 것 같지만, 모든 스코프 체인은 글로벌 영역에서 끝난다. 그리고 **글로벌 영역에서 `fiveAdder`가 가지고 있는 것**은 다시 A를 참조하는 스코프 체인이 아니라 **<u>함수 A에 대한 레퍼런스</u>**, C언어로 말하자면 포인터를 가지고 있는 것이다. **Javascript에서는 함수가 [Function 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function)**이기 때문이다. 이 함수 A가 사용하는 **스코프 체인은 함수 A를 가리키는 레퍼런스가 사라질 때까지 계속 남아있게 되어 <u>스코프가 계속 유지</u>**된다. 
+이제부터 `fiveAdder`**를 통해 함수를 호출하게 되면 위의 스코프 체인을 따르게 된다**. 그림만 살펴보면 순환 구조로 되어있는 것 같지만, 모든 스코프 체인은 글로벌 영역에서 끝난다. 그리고 **글로벌 영역에서 `fiveAdder`가 가지고 있는 것**은 다시 A를 참조하는 스코프 체인이 아니라 **<u>함수 A에 대한 레퍼런스</u>**, C언어로 말하자면 포인터를 가지고 있는 것이다. **Javascript에서는 함수가 [Function 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function)**이기 때문이다. 이 함수 A가 사용하는 **스코프 체인은 함수 A를 가리키는 레퍼런스가 사라질 때까지 계속 남아있게 되어 <u>스코프가 계속 유지</u>**된다.
 
 ```jsx
 fiveAdder(3); //5(inClosure) + 3(adder) === 8

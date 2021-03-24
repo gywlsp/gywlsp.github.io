@@ -40,6 +40,7 @@
 :not(pre) > code[class*="language-"] {
   padding: 0.1em 0.2em;
   font-weight: 400;
+  color: #D84169;
   background-color: #F1F2F6;
 }
 

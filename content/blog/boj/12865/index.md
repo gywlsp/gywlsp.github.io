@@ -2,7 +2,7 @@
 title: '백준 12865번 평범한 배낭 - node.js'
 date: '2021-03-10T09:24:35+00:00'
 description: '백준 12865번 평범한 배낭을 풀이하는 글입니다.'
-tags: ['백준','Javascript', 'DP']
+tags: ['백준', 'Javascript', 'DP']
 thumbnail: 'boj_12865.png'
 ---
 
@@ -54,15 +54,15 @@ thumbnail: 'boj_12865.png'
 최대 K만큼의 무게를 담을 수 있는 배낭에 물건을 넣을 때, 물건들의 가치 최대 합을 어떻게 구할 수 있을까? 무게 순서대로 물건을 담는 그리디 알고리즘을 이용해 답을 구할 수 있다고 생각할 수도 있지만, 그럴 수 없다. 다음 반례들에서 이를 확인할 수 있다.
 
 1. 10kg 무게를 버틸 수 있는 가방에 물건의 무게가 작은 순서대로 물건을 넣을 때 → 오답: 6, 정답 : 10
-    - 1kg, 가치 1
-    - 2kg, 가치 1
-    - 3kg, 가치 2
-    - 4kg, 가치 2
-    - 5kg, 가치 10
+   - 1kg, 가치 1
+   - 2kg, 가치 1
+   - 3kg, 가치 2
+   - 4kg, 가치 2
+   - 5kg, 가치 10
 2. 10kg 무게를 버틸 수 있는 가방에 무게가 큰 순서대로 물건을 넣을 때 → 오답: 10, 정답: 14
-    - 10kg, 가치 10
-    - 2kg, 가치 5
-    - 1kg, 가치 9
+   - 10kg, 가치 10
+   - 2kg, 가치 5
+   - 1kg, 가치 9
 
 물건을 넣는 **모든 경우의 수를 따져야 답을 구할 수 있다**. 어떤 물건은 배낭에 넣을 수도 넣지 않을 수도 있기 때문에, 배낭에 N개의 물건 중 몇 개를 선택해 넣는 경우는 2^N가지이다. 그러나 N이 클 때 시간 내에 2^N가지 경우를 확인할 수 없다.
 
@@ -71,12 +71,12 @@ thumbnail: 'boj_12865.png'
 - **<u>집합 A가 n번 물건을 포함하지 않는다면</u>, A는 n-1번까지의 물건들 중에서 최적으로 고른 부분집합과 같다.**
 - **<u>집합 A가 n번 물건을 포함한다면</u>, A는 n-1번까지의 물건들 중에서 최적으로 고른 부분집합에 n번 물건을 넣은 것과 같다. (다만 n번 물건의 무게를 넣어도 무게가 K 이하일 때에만 n번 물건을 넣을 수 있다.)**
 
-`maxVSum[n][k]`를 **<u>n번까지의 물건들 중 최적으로 고른 물건들</u>(무게 합이 k 이하이면서 가치 합이 최대인)의 가치 합**이라고 하면, 위의 내용을 참고해 다음과 같은 점화식을 쓸 수 있다. 
+`maxVSum[n][k]`를 **<u>n번까지의 물건들 중 최적으로 고른 물건들</u>(무게 합이 k 이하이면서 가치 합이 최대인)의 가치 합**이라고 하면, 위의 내용을 참고해 다음과 같은 점화식을 쓸 수 있다.
 
 - **n번 물건의 무게가 배낭의 무게 한도보다 무거워 넣을 수 없을 때: `maxVSum[n][k] = maxVSum[n-1][k]`**
 - **그 외: `maxVSum[n][k] = Max(maxVSum[n-1][k], maxVSum[n-1][k-weight] + value)`**
 
-**n=1, k=0부터 n=N, k=K까지 이 과정을 반복**하면 maxVSum[N][K]를 구할 수 있고 이것이 답이다. 이 과정의 **시간복잡도는 O(NK)**이기 때문에 입력의 크기가 최대일 때에도 시간 내에 문제를 풀 수 있다. 
+**n=1, k=0부터 n=N, k=K까지 이 과정을 반복**하면 maxVSum[N][k]를 구할 수 있고 이것이 답이다. 이 과정의 **시간복잡도는 O(NK)**이기 때문에 입력의 크기가 최대일 때에도 시간 내에 문제를 풀 수 있다.
 
 ## 구현
 
@@ -85,17 +85,17 @@ thumbnail: 'boj_12865.png'
 ```jsx
 const input = [];
 
-const strToNumArr = (str) => str.split(" ").map(Number);
+const strToNumArr = (str) => str.split(' ').map(Number);
 
-require("readline")
+require('readline')
   .createInterface(process.stdin, process.stdout)
-  .on("line", function (line) {
+  .on('line', function (line) {
     input.push(line.trim());
   })
-  .on("close", function () {
+  .on('close', function () {
     const [N, K] = strToNumArr(input.shift());
     const items = input.map((str) => strToNumArr(str));
-		//물건 번호 맞추기 위해 맨 앞에 null 넣음
+    //물건 번호 맞추기 위해 맨 앞에 null 넣음
     items.unshift(undefined);
 
     //maxVSum[n][k]: n번까지의 물건들 중 몇 개를 골라,

@@ -2,7 +2,7 @@
 title: '백준 7576번 토마토 - node.js'
 date: '2021-03-02T06:59:11+00:00'
 description: '백준 7576번 토마토를 풀이하는 글입니다.'
-tags: ['백준','Javascript', '그래프', 'BFS']
+tags: ['백준', 'Javascript', '그래프', 'BFS']
 thumbnail: 'boj_7576.png'
 ---
 
@@ -73,23 +73,23 @@ thumbnail: 'boj_7576.png'
 ```jsx
 const input = [];
 
-const strToNumArr = (str) => str.split(" ").map(Number);
+const strToNumArr = (str) => str.split(' ').map(Number);
 const drList = [1, -1, 0, 0];
 const dcList = [0, 0, 1, -1];
 
-require("readline")
+require('readline')
   .createInterface(process.stdin, process.stdout)
-  .on("line", function (line) {
+  .on('line', function (line) {
     input.push(line.trim());
   })
-  .on("close", function () {
+  .on('close', function () {
     const [C, R] = strToNumArr(input.shift());
     let tomatoCount = C * R,
       ripeCount = 0;
 
     let prevRipeList = [];
     const box = input.map((str, r) =>
-      str.split(" ").map((state, c) => {
+      str.split(' ').map((state, c) => {
         const ret = Number(state);
         if (ret === -1) {
           tomatoCount--;
@@ -134,7 +134,7 @@ require("readline")
       prevRipeList = Array.from(newRipeSet);
       newRipeSet.clear();
     }
-    
+
     console.log(ripeCount === tomatoCount ? t : -1);
   });
 ```
@@ -144,17 +144,17 @@ require("readline")
 ```jsx
 const input = [];
 
-const strToNumArr = (str) => str.split(" ").map(Number);
+const strToNumArr = (str) => str.split(' ').map(Number);
 //인접 토마토 위치 계산에 활용
 const drList = [1, -1, 0, 0];
 const dcList = [0, 0, 1, -1];
 
-require("readline")
+require('readline')
   .createInterface(process.stdin, process.stdout)
-  .on("line", function (line) {
+  .on('line', function (line) {
     input.push(line.trim());
   })
-  .on("close", function () {
+  .on('close', function () {
     //M(가로 칸의 수) = C(열의 개수)
     //N(세로 칸의 수) = R(행의 개수)
     const [C, R] = strToNumArr(input.shift());
@@ -166,7 +166,7 @@ require("readline")
     let prevRipeList = [];
     //창고 입력 저장
     const box = input.map((str, r) =>
-      str.split(" ").map((state, c) => {
+      str.split(' ').map((state, c) => {
         const ret = Number(state);
         if (ret === -1) {
           tomatoCount--;
@@ -223,7 +223,7 @@ require("readline")
       //새로 익은 토마토 담는 Set 비우기
       newRipeSet.clear();
     }
-    
+
     //익은 토마토의 개수가 입력의 토마토 개수와 같다면 다 익은 것이므로 t,
     //아니면 다 익을 수 없는 상태이므로 -1을 출력
     console.log(ripeCount === tomatoCount ? t : -1);
