@@ -78,7 +78,7 @@
     "clean": "gatsby clean",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "tsc": "tsc",
-    "test": "yarn lint && yarn tsc",
+    "test": "yarn format && yarn lint && yarn tsc",
     "deploy": "gatsby build && gh-pages -d public -b master"
   }
 }
