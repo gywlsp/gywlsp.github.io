@@ -1,12 +1,12 @@
 ---
-title: 'Javascript 스코프와 클로저'
+title: 'JavaScript 스코프와 클로저'
 date: '2021-03-22T13:08:22+00:00'
-description: '이 글은 Javascript의 동작을 이해하는 데에 필수적인 개념, 스코프와 클로저에 대해 설명한다.'
-tags: ['Javascript']
+description: '이 글은 JavaScript의 동작을 이해하는 데에 필수적인 개념, 스코프와 클로저에 대해 설명한다.'
+tags: ['JavaScript']
 thumbnail: 'javascript_2.png'
 ---
 
-> 이 글은 Javascript의 동작을 이해하는 데에 필수적인 개념, 스코프와 클로저에 대해 설명한다. [MDN 클로저 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures)와 책 속깊은 Javascript의 내용의 일부를 요약, 정리하여 글을 작성했다.
+> 이 글은 JavaScript의 동작을 이해하는 데에 필수적인 개념, 스코프와 클로저에 대해 설명한다. [MDN 클로저 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures)와 책 속깊은 JavaScript의 내용의 일부를 요약, 정리하여 글을 작성했다.
 
 # 스코프란?
 
@@ -115,7 +115,7 @@ var fiveAdder = sum(5); //inClosure = 5 and return function
 
 위의 스코프 템플릿에서 `fiveAdder`는 실제로 사용하게 되는 함수 A를 할당받게 되어 오른쪽의 A 함수를 가지고 있게 된다. 그리고 **<u>A가 반환될 때는 위와 같이 스코프 체인을 생성</u>하여 fiveAdder 함수가 호출될 때 이 스코프 체인을 사용**하게 된다. **`fiveAdder`에서 할당받는 함수 A는 3번 줄에서 반환되고 있는 익명 함수**이다.
 
-이제부터 `fiveAdder`**를 통해 함수를 호출하게 되면 위의 스코프 체인을 따르게 된다**. 그림만 살펴보면 순환 구조로 되어있는 것 같지만, 모든 스코프 체인은 글로벌 영역에서 끝난다. 그리고 **글로벌 영역에서 `fiveAdder`가 가지고 있는 것**은 다시 A를 참조하는 스코프 체인이 아니라 **<u>함수 A에 대한 레퍼런스</u>**, C언어로 말하자면 포인터를 가지고 있는 것이다. **Javascript에서는 함수가 [Function 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function)**이기 때문이다. 이 함수 A가 사용하는 **스코프 체인은 함수 A를 가리키는 레퍼런스가 사라질 때까지 계속 남아있게 되어 <u>스코프가 계속 유지</u>**된다.
+이제부터 `fiveAdder`**를 통해 함수를 호출하게 되면 위의 스코프 체인을 따르게 된다**. 그림만 살펴보면 순환 구조로 되어있는 것 같지만, 모든 스코프 체인은 글로벌 영역에서 끝난다. 그리고 **글로벌 영역에서 `fiveAdder`가 가지고 있는 것**은 다시 A를 참조하는 스코프 체인이 아니라 **<u>함수 A에 대한 레퍼런스</u>**, C언어로 말하자면 포인터를 가지고 있는 것이다. **JavaScript에서는 함수가 [Function 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function)**이기 때문이다. 이 함수 A가 사용하는 **스코프 체인은 함수 A를 가리키는 레퍼런스가 사라질 때까지 계속 남아있게 되어 <u>스코프가 계속 유지</u>**된다.
 
 ```jsx
 fiveAdder(3); //5(inClosure) + 3(adder) === 8

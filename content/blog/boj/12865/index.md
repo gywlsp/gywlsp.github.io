@@ -2,7 +2,7 @@
 title: '백준 12865번 평범한 배낭 - node.js'
 date: '2021-03-10T09:24:35+00:00'
 description: '백준 12865번 평범한 배낭을 풀이하는 글입니다.'
-tags: ['백준', 'Javascript', 'DP']
+tags: ['백준', 'JavaScript', 'DP']
 thumbnail: 'boj_12865.png'
 ---
 

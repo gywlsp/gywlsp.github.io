@@ -2,7 +2,7 @@
 title: '백준 1929번 소수 구하기 - node.js'
 date: '2021-03-08T16:43:57+00:00'
 description: '백준 1929번 소수 구하기를 javascript로 풀이하는 글입니다.'
-tags: ['백준', 'Javascript', '소수판정']
+tags: ['백준', 'JavaScript', '소수판정']
 thumbnail: 'boj_1929.png'
 ---
 

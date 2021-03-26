@@ -2,7 +2,7 @@
 title: '백준 1806번 부분합 - node.js'
 date: '2021-03-05T11:49:10+00:00'
 description: '백준 1806번 부분합을 풀이하는 글입니다.'
-tags: ['백준', 'Javascript', '투포인터']
+tags: ['백준', 'JavaScript', '투포인터']
 thumbnail: 'boj_1806.png'
 ---
 

@@ -2,7 +2,7 @@
 title: '백준 1697번 숨바꼭질 - node.js'
 date: '2021-03-02T01:32:08+00:00'
 description: '백준 1697번 숨바꼭질을 풀이하는 글입니다.'
-tags: ['백준', 'Javascript', '그래프', 'BFS']
+tags: ['백준', 'JavaScript', '그래프', 'BFS']
 thumbnail: 'boj_1697.png'
 ---
 

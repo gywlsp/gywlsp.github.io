@@ -1,12 +1,12 @@
 ---
-title: 'Javascript로 upper bound, lower bound 구하기'
+title: 'JavaScript로 upper bound, lower bound 구하기'
 date: '2021-02-28T02:23:40+00:00'
-description: '이 글은 Javascript를 이용해 정렬된 배열에서 특정 수의 lower bound, upper bound를 구하는 방법에 대해 설명한다.'
-tags: ['알고리즘', 'Javascript']
+description: '이 글은 JavaScript를 이용해 정렬된 배열에서 특정 수의 lower bound, upper bound를 구하는 방법에 대해 설명한다.'
+tags: ['알고리즘', 'JavaScript']
 thumbnail: 'algorithm2.png'
 ---
 
-> 이 글은 Javascript를 이용해 정렬된 배열에서 특정 수의 lower bound, upper bound를 구하는 방법에 대해 설명한다.
+> 이 글은 JavaScript를 이용해 정렬된 배열에서 특정 수의 lower bound, upper bound를 구하는 방법에 대해 설명한다.
 
 **이진 탐색 알고리즘(binary search algorithm)**은 오름차순으로 정렬된 배열에서 특정한 값의 위치를 찾는 알고리즘이다. **Upper bound, Lower bound 알고리즘은 이진 탐색에서 파생**된 것으로, 이진탐색과 마찬가지로 배열 안의 숫자들이 **오름차순으로 정렬되어 있을 때 이용할 수 있다**. **<u>k의 Lower bound는 배열에서 원하는 값 k 이상의 수가 처음으로 나오는 위치</u>이고, <u>k의 Upper bound는 k를 초과하는 수가 처음으로 나오는 위치</u>이다.**
 

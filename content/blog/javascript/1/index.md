@@ -1,8 +1,8 @@
 ---
-title: 'Javascript 변수 선언 방법과 호이스팅'
+title: 'JavaScript 변수 선언 방법과 호이스팅'
 date: '2021-03-17T14:05:14+00:00'
 description: '이 글은 javascript에서 변수를 선언하는 방법과 호이스팅에 대해 설명한다.'
-tags: ['Javascript']
+tags: ['JavaScript']
 thumbnail: 'javascript_1.png'
 ---
 
@@ -10,7 +10,7 @@ thumbnail: 'javascript_1.png'
 
 # 변수 선언
 
-Javascript에는 세가지 변수 선언 방법이 있다. 세 방법을 간단하게 요약하면 다음과 같다.
+JavaScript에는 세가지 변수 선언 방법이 있다. 세 방법을 간단하게 요약하면 다음과 같다.
 
 - `var`: **<u>function-scoped, globally-scoped</u> 변수를 선언하고 초깃값을 설정**할 수 있다.
 - `let`: **<u>block-scoped</u> 변수를 선언하고 초깃값을 설정**할 수 있다.
@@ -22,7 +22,7 @@ Javascript에는 세가지 변수 선언 방법이 있다. 세 방법을 간단�
 - **<u>function-scoped variable</u>(지역변수)**: 함수 내에서 선언된 변수는 해당 함수 내에서만 사용할 수 있다.
 - **<u>block-scoped local variable</u>**: 블록 내에서 선언된 변수는 해당 블록과 하위 블록 내에서만 사용할 수 있다.블록의 범위는 중괄호 쌍`{}`으로 구분된다.
 
-ES6 이전의 Javascript(var를 이용한 변수 선언)에는 블록 스코프가 존재하지 않고, 블록 내에서 선언된 변수는 블록이 있는 함수(혹은 전역 범위)에 국한된다.
+ES6 이전의 JavaScript(var를 이용한 변수 선언)에는 블록 스코프가 존재하지 않고, 블록 내에서 선언된 변수는 블록이 있는 함수(혹은 전역 범위)에 국한된다.
 
 # var
 
@@ -94,7 +94,7 @@ console.log(number); // 42
 
 # 호이스팅
 
-Javascript의 특이한 점은 **변수, 함수, 클래스 선언이 스코프 상단으로 끌어올려진다**는 점이고, 이 동작은 **<u>호이스팅</u>**이라고 불린다. Javascript 엔진은 코드를 실행하면 실행하기 직전 컴파일 단계(Just-In-Time Compilation)에서 함수와 변수 선언을 스캔하며 변수, 함수, 클래스 선언들을 **<u>Lexical Environment</u>**에 추가한다. 그래서 그들은 소스 코드에서 실제로 선언되기 전에도 참조될 수 있다.
+JavaScript의 특이한 점은 **변수, 함수, 클래스 선언이 스코프 상단으로 끌어올려진다**는 점이고, 이 동작은 **<u>호이스팅</u>**이라고 불린다. JavaScript 엔진은 코드를 실행하면 실행하기 직전 컴파일 단계(Just-In-Time Compilation)에서 함수와 변수 선언을 스캔하며 변수, 함수, 클래스 선언들을 **<u>Lexical Environment</u>**에 추가한다. 그래서 그들은 소스 코드에서 실제로 선언되기 전에도 참조될 수 있다.
 
 Lexical Environment는 **식별자-변수값 쌍을 가지고 있는 자료구조**이다. 여기에서 **식별자는 변수 또는 함수의 이름**이고, **변수 값은 변수가 담고 있는 원시 값이나 오브젝트 참조(주소)**를 뜻한다. 다음은 lexical environment가 개념적으로 어떻게 구성되는지를 나타낸다.
 
@@ -116,7 +116,7 @@ console.log(a); // undefined
 var a = 3;
 ```
 
-위 코드를 실행하면 3이 아니라 undefined가 출력된다. 이는 Javascript 엔진이 **<u>`var`로 선언된 변수를 찾아 선언을 lexical environment에 넣으면서 값을 `undefined`로 초기화</u>**하기 때문이다. 그후 변수가 선언된 위치에서 값을 할당한다면 그때 `undefined`가 다른 값으로 대체된다. 위 예제에서 변수 `a`에 `3`이 할당되기 전까지의 lexical environment를 나타내면 다음과 같다.
+위 코드를 실행하면 3이 아니라 undefined가 출력된다. 이는 JavaScript 엔진이 **<u>`var`로 선언된 변수를 찾아 선언을 lexical environment에 넣으면서 값을 `undefined`로 초기화</u>**하기 때문이다. 그후 변수가 선언된 위치에서 값을 할당한다면 그때 `undefined`가 다른 값으로 대체된다. 위 예제에서 변수 `a`에 `3`이 할당되기 전까지의 lexical environment를 나타내면 다음과 같다.
 
 ```jsx
 LexicalEnvironment = {
@@ -131,7 +131,7 @@ console.log(a); //ReferenceError: a is not defined
 let a = 3;
 ```
 
-위 코드를 실행하면 `ReferenceError`가 발생한다. 이는 Javascript가 **<u>`let`, `const`로 선언된 변수를 선언만 끌어올리고 값을 초기화하지 않기 때문</u>**이다. Javascript 엔진은 `var`로 선언된 변수와 달리 `let`, `const`로 선언된 변수를 찾아 lexical environment에 넣으면서 값을 초기화하지 않는다. 따라서 변수 선언 위치보다 앞에서 해당 변수를 참조하면 `ReferenceError` 결과를 얻게 된다. 블록 내에서 변수 선언이 처리되기 전까지를 **<u>tdz(temporal dead zone)</u>**라고 부른다.  
+위 코드를 실행하면 `ReferenceError`가 발생한다. 이는 JavaScript가 **<u>`let`, `const`로 선언된 변수를 선언만 끌어올리고 값을 초기화하지 않기 때문</u>**이다. JavaScript 엔진은 `var`로 선언된 변수와 달리 `let`, `const`로 선언된 변수를 찾아 lexical environment에 넣으면서 값을 초기화하지 않는다. 따라서 변수 선언 위치보다 앞에서 해당 변수를 참조하면 `ReferenceError` 결과를 얻게 된다. 블록 내에서 변수 선언이 처리되기 전까지를 **<u>tdz(temporal dead zone)</u>**라고 부른다.  
 `let` 변수가 선언된 위치에서도 변수에 할당한 값을 찾을 수 없을 때에는 `undefined`를 할당한다. `const` 변수의 경우 선언과 초깃값 설정이 동시에 이루어져야 하기 때문에 초깃값이 없다면 오류를 반환한다. 위 예제에서 변수 `a`에 `3`이 할당되기 전까지의 lexical environment를 나타내면 다음과 같다.
 
 ```jsx
@@ -167,12 +167,12 @@ var helloWorld = function () {
 
 # var 사용을 지양하자
 
-**<u>`var` 대신 `let`을 사용</u>하는 게 좋다.** Javascript에서는 동일한 스코프 내에서 var를 이용해 같은 이름의 변수를 여러 번 선언해도 이름이 같다면 동일한 변수를 가리킨다. 이는 수많은 버그의 원인이 될 수 있다. `let`이 블록 단위로 스코프를 지정하기 때문에 버그를 발생시킬 확률이 낮다.
+**<u>`var` 대신 `let`을 사용</u>하는 게 좋다.** JavaScript에서는 동일한 스코프 내에서 var를 이용해 같은 이름의 변수를 여러 번 선언해도 이름이 같다면 동일한 변수를 가리킨다. 이는 수많은 버그의 원인이 될 수 있다. `let`이 블록 단위로 스코프를 지정하기 때문에 버그를 발생시킬 확률이 낮다.
 
 다음 글들의 내용 일부를 발췌, 번역, 요약해서 글을 작성했습니다.
 
-- [Javascript Grammar and Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types)
-- [Javascript var](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
-- [Javascript let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
-- [Javascript const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
-- [Hoisting in Modern Javascript](https://blog.bitsrc.io/hoisting-in-modern-javascript-let-const-and-var-b290405adfda)
+- [JavaScript Grammar and Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types)
+- [JavaScript var](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+- [JavaScript let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+- [JavaScript const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+- [Hoisting in Modern JavaScript](https://blog.bitsrc.io/hoisting-in-modern-javascript-let-const-and-var-b290405adfda)

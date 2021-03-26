@@ -2,7 +2,7 @@
 title: '백준 2252번 줄 세우기 - node.js'
 date: '2021-03-08T03:39:34+00:00'
 description: '백준 2252번 줄 세우기를 javascript로 풀이하는 글입니다.'
-tags: ['백준', 'Javascript', '그래프', '위상정렬']
+tags: ['백준', 'JavaScript', '그래프', '위상정렬']
 thumbnail: 'boj_2252.png'
 ---
 

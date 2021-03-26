@@ -10,9 +10,9 @@ thumbnail: 'guide_1.png'
 
 JSX 안에는 중괄호를 이용해서 표현식을 포함할 수 있다.
 
-그 안에 **Javascript의 논리 연산자 `&&`를 사용하면 다른 방법보다 쉽고 간결하게 엘리먼트를 조건부로 넣을 수 있다.**
+그 안에 **JavaScript의 논리 연산자 `&&`를 사용하면 다른 방법보다 쉽고 간결하게 엘리먼트를 조건부로 넣을 수 있다.**
 
-Javascript에서 **`true && expression`**은 항상 **`expression`**으로 평가되고, **`false && expression`**은 항상 **`false`**로 평가된다.
+JavaScript에서 **`true && expression`**은 항상 **`expression`**으로 평가되고, **`false && expression`**은 항상 **`false`**로 평가된다.
 
 따라서 **`&&` 뒤의 엘리먼트는 조건이 `true`일 때 출력**이 된다. 조건이 `false`라면 React는 무시한다.
 

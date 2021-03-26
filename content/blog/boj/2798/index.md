@@ -2,7 +2,7 @@
 title: '백준 2798번 블랙잭 - node.js'
 date: '2020-11-24T13:48:20+00:00'
 description: '백준 2798번 블랙잭을 풀이하는 글입니다.'
-tags: ['백준', 'Javascript', '브루트포스']
+tags: ['백준', 'JavaScript', '브루트포스']
 thumbnail: 'boj_2798.png'
 ---
 

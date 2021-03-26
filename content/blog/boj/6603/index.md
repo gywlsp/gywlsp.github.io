@@ -2,7 +2,7 @@
 title: '백준 6603번 로또 - node.js'
 date: '2020-09-16T04:10:50+00:00'
 description: '백준 6603번 문제 로또를 javascript로 풀이하는 글입니다.'
-tags: ['백준', 'Javascript', '재귀']
+tags: ['백준', 'JavaScript', '재귀']
 thumbnail: 'boj_6603.png'
 ---
 

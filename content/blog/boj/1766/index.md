@@ -2,7 +2,7 @@
 title: '백준 1766번 문제집 - node.js'
 date: '2021-03-08T04:18:47+00:00'
 description: '백준 1766번 문제집을 javascript로 풀이하는 글입니다.'
-tags: ['백준', 'Javascript', '그래프', '위상정렬', '우선순위큐']
+tags: ['백준', 'JavaScript', '그래프', '위상정렬', '우선순위큐']
 thumbnail: 'boj_1766.png'
 ---
 

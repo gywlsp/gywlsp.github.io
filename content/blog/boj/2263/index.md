@@ -2,7 +2,7 @@
 title: '백준 2263번 트리의 순회 - node.js'
 date: '2021-03-06T14:27:58+00:00'
 description: '백준 2263번 트리의 순회를 javascript로 풀이하는 글입니다.'
-tags: ['백준', 'Javascript', '트리', '재귀']
+tags: ['백준', 'JavaScript', '트리', '재귀']
 thumbnail: 'boj_2263.png'
 ---
 
