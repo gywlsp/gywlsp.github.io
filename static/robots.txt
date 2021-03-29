@@ -1,2 +1,4 @@
 User-agent: *
-Disallow:
+
+ALLOW: /
+sitemap: https://www.gywlsp.github.io/sitemap.xml
