@@ -1,5 +1,6 @@
 import React, { useState, ReactNode, ReactNodeArray } from 'react';
 import styled from 'styled-components';
+import { StaticQuery, graphql } from 'gatsby';
 
 import GNB from 'src/components/organisms/GNB';
 import GHeader from '../organisms/GHeader';
@@ -10,35 +11,49 @@ export type LayoutProps = {
   pathname: string;
   children: ReactNode | ReactNodeArray;
   selectedTag?: string;
-  tags: { tag: string; totalCount: number }[];
 };
 
-function Layout({ pathname, children, tags, selectedTag }: LayoutProps) {
+function Layout({ pathname, children, selectedTag = 'ALL' }: LayoutProps) {
   const [isMobileGNBOpen, setMobileGNBOpen] = useState(false);
-
   const toggleMobileGNBOpen = (open: boolean) => () => setMobileGNBOpen(open);
 
   return (
-    <Wrapper>
-      <GHeader onMobileGNBOpen={toggleMobileGNBOpen(true)} />
-      <GNB
-        {...{
-          pathname,
-          tags,
-          selectedTag,
-          isMobileGNBOpen,
-          onClose: toggleMobileGNBOpen(false),
-        }}
-      />
-      <Main>
-        {children}
-        <ScrollToTopButton />
-      </Main>
-    </Wrapper>
+    <StaticQuery
+      query={layoutQuery}
+      render={(data) => (
+        <Wrapper>
+          <GHeader onMobileGNBOpen={toggleMobileGNBOpen(true)} />
+          <GNB
+            {...{
+              pathname,
+              tags: data.allMarkdownRemark.group,
+              selectedTag,
+              isMobileGNBOpen,
+              onClose: toggleMobileGNBOpen(false),
+            }}
+          />
+          <Main>
+            {children}
+            <ScrollToTopButton />
+          </Main>
+        </Wrapper>
+      )}
+    />
   );
 }
 
 export default React.memo(Layout);
+
+const layoutQuery = graphql`
+  query HeadingQuery {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      group(field: frontmatter___tags) {
+        tag: fieldValue
+        totalCount
+      }
+    }
+  }
+`;
 
 const Wrapper = styled.div`
   display: flex;

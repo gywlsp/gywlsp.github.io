@@ -9,7 +9,6 @@ import Nav from './nav';
 import Utterances from 'src/components/organisms/utterances';
 
 function BlogPostTemplate({ data, pageContext, location }) {
-  const tags = data.allMarkdownRemark.group;
   const post = data.markdownRemark;
 
   const { fields, frontmatter, excerpt } = post;
@@ -27,7 +26,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
   });
 
   return (
-    <Layout selectedTag={null} pathname={location.pathname} tags={tags}>
+    <Layout pathname={location.pathname}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -57,14 +56,7 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
-        title
         siteUrl
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      group(field: frontmatter___tags) {
-        tag: fieldValue
-        totalCount
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

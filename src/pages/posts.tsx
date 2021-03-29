@@ -10,12 +10,10 @@ import { POINT_BLUE } from 'src/constants/colors';
 
 function PostsPage({ data, location, search }) {
   const posts = data?.allMarkdownRemark.edges;
-  const tags = data.allMarkdownRemark.group;
-
   const { tag } = search;
 
   return (
-    <Layout selectedTag={tag || 'ALL'} pathname={location.pathname} tags={tags}>
+    <Layout selectedTag={tag} pathname={location.pathname}>
       <SEO title="posts" />
       <PageTitle>
         POSTS
@@ -45,16 +43,7 @@ export default withLocation(React.memo(PostsPage));
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      group(field: frontmatter___tags) {
-        tag: fieldValue
-        totalCount
-      }
       edges {
         node {
           excerpt

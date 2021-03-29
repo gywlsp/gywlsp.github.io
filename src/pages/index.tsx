@@ -14,10 +14,8 @@ import withLocation from 'src/withLocation';
 
 function MainPage({ data, location }) {
   const recentPosts = data.allMarkdownRemark.edges.slice(0, 8);
-  const tags = data.allMarkdownRemark.group;
-
   return (
-    <Layout selectedTag="ALL" pathname={location.pathname} tags={tags}>
+    <Layout pathname={location.pathname}>
       <SEO title="main" />
       <AboutMe />
       <Row>
@@ -43,16 +41,7 @@ export default withLocation(React.memo(MainPage));
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      group(field: frontmatter___tags) {
-        tag: fieldValue
-        totalCount
-      }
       edges {
         node {
           excerpt
