@@ -3,7 +3,7 @@ module.exports = {
     title: `사이다 데브로그 CIDER DEVLOG`,
     author: {
       name: `박효진 (@gywlsp)`,
-      summary: `이화여자대학교에서 컴퓨터공학을 배우고 있는 23살 대학생입니다.`,
+      summary: `개발은 재밌어 ➿`,
     },
     description: `사이다 데브로그 CIDER DEVLOG :: gywlsp dev blog`,
     siteUrl: `https://gywlsp.github.io/`,
@@ -64,6 +64,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-feed`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
