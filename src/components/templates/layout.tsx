@@ -59,7 +59,7 @@ const Wrapper = styled.div`
   display: flex;
   width: 100%;
   min-height: 100vh;
-  padding: 4rem 32px;
+  padding: 3.6rem 3rem;
   background-color: ${LIGHT_BLUE};
   @media (max-width: 1024px) {
     background-color: ${WHITE};

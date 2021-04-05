@@ -4,13 +4,17 @@ import styled from 'styled-components';
 import ChevronUpIcon from 'src/assets/icon/chevron/up';
 import { BLUE, WHITE } from 'src/constants/colors';
 
+import { useScrollY } from 'src/hooks/utils';
+
 export default function ScrollToTopButton() {
+  const scrollY = useScrollY();
+
   const handleClick = () => {
     window.scrollTo(0, 0);
   };
 
   return (
-    <Wrapper onClick={handleClick}>
+    <Wrapper showButton={scrollY > 100} onClick={handleClick}>
       <ChevronUpIcon
         style={{ width: '1.6rem', height: '1.6rem' }}
         fill={BLUE}
@@ -19,12 +23,11 @@ export default function ScrollToTopButton() {
   );
 }
 
-const Wrapper = styled.button`
-  position: sticky;
-  top: calc(100% - 5.6rem);
-  right: 1.6rem;
-  left: calc(100% - 1.6rem);
+const Wrapper = styled.button<{ showButton: boolean }>`
+  position: fixed;
+  right: ${({ showButton }) => (showButton ? '1.6rem' : '-4.8rem')};
   bottom: 1.6rem;
+  transition: all 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
