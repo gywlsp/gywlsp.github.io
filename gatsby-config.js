@@ -49,6 +49,12 @@ module.exports = {
               isIconAfterHeader: true,
             },
           },
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+            },
+          },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
