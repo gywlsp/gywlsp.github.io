@@ -6,7 +6,7 @@ import withLocation from 'src/withLocation';
 import Layout from 'src/components/templates/layout';
 import SEO from 'src/components/templates/seo';
 import PostPreviewCard from 'src/components/molecules/post-card/preview';
-import { POINT_BLUE } from 'src/constants/colors';
+import { SKY_BLUE } from 'src/constants/colors';
 
 function PostsPage({ data, location, search }) {
   const posts = data?.allMarkdownRemark.edges;
@@ -17,7 +17,7 @@ function PostsPage({ data, location, search }) {
       <SEO title="posts" />
       <PageTitle>
         POSTS
-        <strong style={{ color: POINT_BLUE }}>{tag ? ` - ${tag}` : ''}</strong>
+        <Tag>{tag ? ` #${tag}` : ''}</Tag>
       </PageTitle>
       <PostsWrapper>
         {posts
@@ -91,4 +91,8 @@ const Blank = styled.div`
   @media (min-width: 1680px) {
     width: 22%;
   }
+`;
+
+const Tag = styled.strong`
+  color: ${SKY_BLUE};
 `;
