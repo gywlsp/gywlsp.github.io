@@ -6,7 +6,7 @@ import withLocation from 'src/withLocation';
 import Layout from 'src/components/templates/layout';
 import SEO from 'src/components/templates/seo';
 import PostPreviewCard from 'src/components/molecules/post-card/preview';
-import { SKY_BLUE } from 'src/constants/colors';
+import { POINT_BLUE } from 'src/constants/colors';
 
 function PostsPage({ data, location, search }) {
   const posts = data?.allMarkdownRemark.edges;
@@ -94,5 +94,5 @@ const Blank = styled.div`
 `;
 
 const Tag = styled.strong`
-  color: ${SKY_BLUE};
+  color: ${POINT_BLUE};
 `;
