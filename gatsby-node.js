@@ -36,8 +36,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   posts.forEach((post, index) => {
     const { slug } = post.node.fields;
-    const previous = posts[index + 1]?.node;
-    const next = posts[index - 1]?.node;
+    const previous = posts[index + 1] ? posts[index + 1].node : null;
+    const next = posts[index - 1] ? posts[index - 1].node : null;
 
     createPage({
       path: slug,
