@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import moment from 'moment';
 
 import TableOfContents from './toc';
-import Bio from 'src/components/bio';
+import Bio from 'src/components/molecules/bio';
 import { Tag } from 'src/components/atoms';
 import { MIDDLE_GREY, BLACK, LIGHT_GREY } from 'src/constants/colors';
 
@@ -33,18 +33,17 @@ function BlogPostTemplateContent({
       const autoLinkHeaders = document.querySelectorAll(
         '.anchor-header'
       ) as NodeListOf<HTMLAnchorElement>;
-      let prevHeaderHref;
+
       for (let i = 0; i < autoLinkHeaders.length; i++) {
         const header = autoLinkHeaders[i];
         const isLast = i === autoLinkHeaders.length - 1;
         const { top: autoLinkHeaderTop } = header.getBoundingClientRect();
 
         if (autoLinkHeaderTop <= 10 && !isLast) {
-          prevHeaderHref = header.href;
           continue;
         }
         const headerHref =
-          autoLinkHeaderTop > 10 ? prevHeaderHref : header.href;
+          autoLinkHeaderTop > 10 ? autoLinkHeaders[i - 1]?.href : header.href;
         setcurrentHeaderHref(headerHref?.replace(window.location.origin, ''));
         break;
       }
