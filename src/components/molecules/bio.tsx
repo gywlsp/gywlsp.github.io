@@ -1,15 +1,8 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react';
 import styled from 'styled-components';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 
-import { Img } from './atoms';
+import { Img } from '../atoms';
 import { BLACK } from 'src/constants/colors';
 
 export default function Bio() {
