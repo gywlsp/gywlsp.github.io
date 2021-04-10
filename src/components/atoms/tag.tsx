@@ -48,5 +48,10 @@ const P = styled.p<{ isSelected: boolean }>`
   color: ${POINT_BLUE};
   background-color: ${WHITE};
   border: 0.1rem solid ${SKY_BLUE};`}
+  &: hover {
+    background-color: ${SKY_BLUE};
+    color: ${WHITE};
+  }
+  transition: all 0.3s;
   border-radius: 0.4rem;
 `;
