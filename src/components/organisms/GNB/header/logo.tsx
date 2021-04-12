@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { Img } from 'src/components/atoms';
+import LogoIcon from 'src/assets/icon/logo';
 import { LIGHT_BLUE } from 'src/constants/colors';
 
 export default function Logo() {
@@ -17,7 +17,7 @@ export default function Logo() {
     >
       <Wrapper>
         <Circle>
-          <Img src="/images/logo.svg" width="48px" alt="logo" />
+          <LogoIcon style={{ width: '3.2rem', height: '7rem' }} />
         </Circle>
         <NameWrapper>
           <Kor>

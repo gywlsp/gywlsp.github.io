@@ -1,5 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 291 425">
-    <image xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASMAAAGpCAYAAADGC1CTAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+import React from 'react';
+
+import { IconProps } from './icons';
+
+export default function LogoIcon({ style = {} }: IconProps) {
+  return (
+    <svg
+      style={{ width: '29.1rem', height: '42.5rem', ...style }}
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 291 425"
+    >
+      <image
+        xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASMAAAGpCAYAAADGC1CTAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAA
 CXBIWXMAAAsTAAALEwEAmpwYAABpwUlEQVR42u2deXxU5b3/398zkwXCEvZdUBBR3FBUZEsCWOtS
 tbXYWn/trb2ttyqQCVq73jZtb+2ikiBWe+29vd1tpba2VlsrMBNAREURFRcWEVmUPSwJWWbO9/fH
@@ -478,5 +490,8 @@ N63pTkH9KAL2yPi2uD0EGAwyBGQQaF+gD1CMp4ZmaQKtBWpBDqB6ANiP6B5EdmOzB8vejcguYnk7
 OVr4rrHj5C5GjHKdO1b2pMnugcSKEC0iGigiqAWo5KGxPJA8IBjfSQvEi3WJKhAFaUTtJmyrCWKN
 5EkdatVx1DrCoL51ftZtN3Q+/j+OIC4ifTJGUwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMC0wOS0x
 M1QwNjoyNjo0MCswMjowMKdlVLQAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjAtMDktMTNUMDY6MjY6
-NDArMDI6MDDWOOwIAAAAAElFTkSuQmCC" />
-</svg>
+NDArMDI6MDDWOOwIAAAAAElFTkSuQmCC"
+      />
+    </svg>
+  );
+}

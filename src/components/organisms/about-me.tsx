@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { MDXProvider } from '@mdx-js/react';
 
-import { Img as AtomImage } from 'src/components/atoms';
 import AboutMeMd from 'src/contents/about-me.mdx';
+import LogoIcon from 'src/assets/icon/logo';
 import { LIGHT_BLUE, POINT_BLUE, SKY_BLUE } from 'src/constants/colors';
 
 export default function AboutMe() {
@@ -19,7 +19,7 @@ export default function AboutMe() {
     >
       <Wrapper>
         <Circle>
-          <AtomImage src="/images/logo.svg" width="3.2rem" alt="logo" />
+          <LogoIcon style={{ width: '3.2rem', height: '5.4rem' }} />
         </Circle>
         <TitleWrapper>
           <Title>사이다 데브-로그</Title>

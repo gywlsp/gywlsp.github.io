@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 import HamburgerIcon from 'src/assets/icon/hamburger';
-import { Img } from '../atoms';
+import LogoIcon from 'src/assets/icon/logo';
 import { WHITE } from 'src/constants/colors';
 
 import { useScrollDirection } from 'src/hooks/utils';
@@ -25,7 +25,7 @@ function GHeader({ onMobileGNBOpen }: GHeaderProps) {
         }}
         to="/"
       >
-        <Img src="/images/logo.svg" width="2.4rem" alt="logo" />
+        <LogoIcon style={{ width: '2.4rem', height: '3.6rem' }} />
       </Link>
       <Button onClick={onMobileGNBOpen}>
         <HamburgerIcon style={{ width: '2.8rem', height: '2.8rem' }} />
