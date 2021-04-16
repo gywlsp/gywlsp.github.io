@@ -17,7 +17,7 @@ export default function Logo() {
     >
       <Wrapper>
         <Circle>
-          <LogoIcon style={{ width: '3.2rem', height: '7rem' }} />
+          <LogoIcon style={{ width: '48px', height: '70px' }} />
         </Circle>
         <NameWrapper>
           <Kor>
