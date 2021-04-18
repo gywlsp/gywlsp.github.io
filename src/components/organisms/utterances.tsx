@@ -24,7 +24,7 @@ export default function Utterances({ repo }: IUtterancesProps) {
       utterances.setAttribute(key, value);
     });
 
-    containerRef.current!.appendChild(utterances);
+    containerRef?.current?.appendChild(utterances);
   }, [repo]);
 
   return <Div ref={containerRef} />;
