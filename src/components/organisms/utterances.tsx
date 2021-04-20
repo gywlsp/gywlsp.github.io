@@ -1,4 +1,4 @@
-import React, { createRef, useLayoutEffect } from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import styled from 'styled-components';
 
 export interface IUtterancesProps {
@@ -6,7 +6,7 @@ export interface IUtterancesProps {
 }
 
 export default function Utterances({ repo }: IUtterancesProps) {
-  const containerRef = createRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLDivElement>();
   useLayoutEffect(() => {
     const utterances = document.createElement('script');
 
