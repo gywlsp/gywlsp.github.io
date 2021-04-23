@@ -1,14 +1,14 @@
 import React, { useRef, useLayoutEffect } from 'react';
 import styled from 'styled-components';
 
-export interface IUtterancesProps {
+export interface ICommentSectionProps {
   repo: string;
 }
 
-export default function Utterances({ repo }: IUtterancesProps) {
+export default function CommentSection({ repo }: ICommentSectionProps) {
   const containerRef = useRef<HTMLDivElement>();
   useLayoutEffect(() => {
-    const utterances = document.createElement('script');
+    const scriptElement = document.createElement('script');
 
     const attributes = {
       src: 'https://utteranc.es/client.js',
@@ -21,10 +21,10 @@ export default function Utterances({ repo }: IUtterancesProps) {
     };
 
     Object.entries(attributes).forEach(([key, value]) => {
-      utterances.setAttribute(key, value);
+      scriptElement.setAttribute(key, value);
     });
 
-    containerRef?.current?.appendChild(utterances);
+    containerRef?.current?.appendChild(scriptElement);
   }, [repo]);
 
   return <Div ref={containerRef} />;

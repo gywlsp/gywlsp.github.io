@@ -6,7 +6,7 @@ import Layout from 'src/components/templates/layout';
 import SEO, { getSchemaOrgJSONLD } from 'src/components/templates/seo';
 import Content from './content';
 import Nav from './nav';
-import Utterances from 'src/components/organisms/utterances';
+import CommentSection from 'src/components/organisms/comment-section';
 
 function BlogPostTemplate({ data, pageContext, location }) {
   const post = data.markdownRemark;
@@ -44,7 +44,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
       <Wrapper>
         <Content {...post} />
         <Nav {...pageContext} />
-        <Utterances repo="gywlsp/blog-comments" />
+        <CommentSection repo="gywlsp/blog-comments" />
       </Wrapper>
     </Layout>
   );
