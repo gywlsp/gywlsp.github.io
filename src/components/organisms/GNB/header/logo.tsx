@@ -19,13 +19,11 @@ export default function Logo() {
         <Circle>
           <LogoIcon style={{ width: '48px', height: '70px' }} />
         </Circle>
-        <NameWrapper>
-          <Kor>
-            사이다
-            <br />
-            데브-로그
-          </Kor>
-        </NameWrapper>
+        <P>
+          사이다
+          <br />
+          데브-로그
+        </P>
       </Wrapper>
     </Link>
   );
@@ -50,19 +48,11 @@ const Circle = styled.div`
   background-color ${LIGHT_BLUE};
 `;
 
-const NameWrapper = styled.div`
-  margin-left: 12px;
-`;
-
-const Kor = styled.p`
+const P = styled.p`
   margin: 0;
+  margin-left: 12px;
   font-size: 24px;
   font-family: 'paybooc-Bold';
   margin-bottom: 2px;
   color: #202020;
-`;
-
-const Eng = styled.p`
-  font-size: 18px;
-  margin: 0px;
 `;
