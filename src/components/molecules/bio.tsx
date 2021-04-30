@@ -5,7 +5,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import { Img } from '../atoms';
 import { BLACK } from 'src/constants/colors';
 
-export default function Bio() {
+function Bio() {
   const data = useStaticQuery(graphql`
     query BioQuery {
       site {
@@ -20,6 +20,7 @@ export default function Bio() {
   `);
 
   const { author } = data.site.siteMetadata;
+
   return (
     <Wrapper>
       <Img
@@ -42,6 +43,8 @@ export default function Bio() {
     </Wrapper>
   );
 }
+
+export default React.memo(Bio);
 
 const Wrapper = styled.div`
   box-shadow: none;
