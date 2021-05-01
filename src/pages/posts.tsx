@@ -9,8 +9,10 @@ import PostPreviewCard from 'src/components/molecules/post-card/preview';
 import { POINT_BLUE } from 'src/constants/colors';
 
 function PostsPage({ data, location, search }) {
-  const posts = data?.allMarkdownRemark.edges;
   const { tag } = search;
+  const posts = data?.allMarkdownRemark.edges.filter(
+    ({ node }) => !tag || node.frontmatter.tags?.includes(tag)
+  );
 
   return (
     <Layout selectedTag={tag} pathname={location.pathname}>
@@ -20,17 +22,13 @@ function PostsPage({ data, location, search }) {
         <Tag>{tag ? ` #${tag}` : ''}</Tag>
       </PageTitle>
       <PostsWrapper>
-        {posts
-          .filter(({ node }) =>
-            tag ? node.frontmatter.tags?.includes(tag) : true
-          )
-          .map(({ node }) => (
-            <PostPreviewCard
-              key={JSON.stringify(node)}
-              {...node}
-              thumbnail={node.frontmatter.thumbnail?.childImageSharp.fluid}
-            />
-          ))}
+        {posts.map(({ node }) => (
+          <PostPreviewCard
+            key={JSON.stringify(node)}
+            {...node}
+            thumbnail={node.frontmatter.thumbnail?.childImageSharp.fluid}
+          />
+        ))}
         {[...Array(posts.length % 4)].map(() => (
           <Blank />
         ))}
