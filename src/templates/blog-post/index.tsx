@@ -14,6 +14,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
   const { fields, frontmatter, excerpt } = post;
   const { slug } = fields;
   const { title, description, date, thumbnail } = frontmatter;
+
   const url = `${data.site.siteMetadata.siteUrl}${slug}`;
   const image = thumbnail.childImageSharp.fluid.src;
 
