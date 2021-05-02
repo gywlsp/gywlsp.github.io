@@ -13,7 +13,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
 
   const { fields, frontmatter, excerpt } = post;
   const { slug } = fields;
-  const { title, date, thumbnail } = frontmatter;
+  const { title, description, date, thumbnail } = frontmatter;
   const url = `${data.site.siteMetadata.siteUrl}${slug}`;
   const image = thumbnail.childImageSharp.fluid.src;
 
@@ -28,8 +28,8 @@ function BlogPostTemplate({ data, pageContext, location }) {
   return (
     <Layout pathname={location.pathname}>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={title}
+        description={description || excerpt}
         meta={[
           { name: 'image', content: image },
           { name: 'og:image', content: image },
