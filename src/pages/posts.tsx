@@ -29,7 +29,7 @@ function PostsPage({ data, location, search }) {
             thumbnail={node.frontmatter.thumbnail?.childImageSharp.fluid}
           />
         ))}
-        {[...Array(posts.length % 4)].map(() => (
+        {[...Array(3 - (posts.length % 3))].map(() => (
           <Blank />
         ))}
       </PostsWrapper>
