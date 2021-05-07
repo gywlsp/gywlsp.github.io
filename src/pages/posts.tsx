@@ -87,7 +87,7 @@ const Blank = styled.div`
     display: none;
   }
   @media (min-width: 1680px) {
-    width: 22%;
+    width: 31%;
   }
 `;
 
