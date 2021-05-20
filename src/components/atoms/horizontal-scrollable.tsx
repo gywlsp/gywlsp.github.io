@@ -23,7 +23,6 @@ export default function HorizontalScrollable({
 
 const Wrapper = styled.nav`
   display: flex;
-  flex-direction: row;
   align-items: center;
   width: 100%;
   white-space: nowrap;
@@ -51,8 +50,5 @@ const Wrapper = styled.nav`
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
-  width: fit-content;
-  height: fit-content;
 `;
