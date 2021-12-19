@@ -59,6 +59,7 @@ const Title = styled.h1`
   margin-bottom: 0.2rem;
   font-family: 'paybooc-Bold';
   font-size: 1.6rem;
+  color: ${POINT_BLUE};
 `;
 
 const Description = styled.p`

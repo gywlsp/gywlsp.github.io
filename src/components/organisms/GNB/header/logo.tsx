@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import LogoIcon from 'src/assets/icon/logo';
-import { LIGHT_BLUE } from 'src/constants/colors';
+import { LIGHT_BLUE, POINT_BLUE } from 'src/constants/colors';
 
 export default function Logo() {
   return (
@@ -54,5 +54,5 @@ const P = styled.p`
   font-size: 24px;
   font-family: 'paybooc-Bold';
   margin-bottom: 2px;
-  color: #202020;
+  color: ${POINT_BLUE};
 `;
