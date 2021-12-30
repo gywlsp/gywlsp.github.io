@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
@@ -46,7 +46,7 @@ function PostPreviewCard({
           <Tag key={tag} name={tag} />
         ))}
       </Row>
-      <Small>{moment(date).format('YYYY.MM.DD')}</Small>
+      <Small>{dayjs(date).format('YYYY.MM.DD')}</Small>
     </Wrapper>
   );
 }

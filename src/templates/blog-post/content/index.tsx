@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 import styled from 'styled-components';
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 import TableOfContents from './toc';
 import Bio from 'src/components/molecules/bio';
@@ -29,7 +29,7 @@ function BlogPostTemplateContent({
   const { thumbnail, title, tags, date } = frontmatter;
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (event) => {
       const autoLinkHeaders = document.querySelectorAll(
         '.anchor-header'
       ) as NodeListOf<HTMLAnchorElement>;
@@ -69,7 +69,7 @@ function BlogPostTemplateContent({
             <StyledLink to="/">
               <Name>박효진 (@gywlsp)</Name>
             </StyledLink>
-            <Date>{moment(date).format('YYYY년 MM월 DD일')}</Date>
+            <Date>{dayjs(date).format('YYYY년 MM월 DD일')}</Date>
           </Row>
           <Image
             fluid={thumbnail.childImageSharp.fluid}
