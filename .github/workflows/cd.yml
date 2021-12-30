@@ -66,6 +66,6 @@ jobs:
 
       - name: gh-page deploy
         if: matrix.node-version == '12.x'
-13      uses: enriikke/gatsby-gh-pages-action@v2
-14      with:
-15        access-token: ${{ secrets.GH_TOKEN }}
+        uses: enriikke/gatsby-gh-pages-action@v2
+        with:
+          access-token: ${{ secrets.GH_TOKEN }}
