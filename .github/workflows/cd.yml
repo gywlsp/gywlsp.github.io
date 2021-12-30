@@ -68,6 +68,6 @@ jobs:
         if: matrix.node-version == '12.x'
         uses: maxheld83/ghpages@v0.3.0
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_PAT: ${{ secrets.GH_PAT }}
           BUILD_DIR: 'public/'
