@@ -66,8 +66,6 @@ jobs:
 
       - name: gh-page deploy
         if: matrix.node-version == '12.x'
-        uses: maxheld83/ghpages@v0.3.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_PAT: ${{ secrets.GH_PAT }}
-          BUILD_DIR: 'public/'
+13      uses: enriikke/gatsby-gh-pages-action@v2
+14      with:
+15        access-token: ${{ secrets.GH_TOKEN }}
