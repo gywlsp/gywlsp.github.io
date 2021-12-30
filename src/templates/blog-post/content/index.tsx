@@ -29,7 +29,7 @@ function BlogPostTemplateContent({
   const { thumbnail, title, tags, date } = frontmatter;
 
   useEffect(() => {
-    const handleScroll = (event) => {
+    const handleScroll = () => {
       const autoLinkHeaders = document.querySelectorAll(
         '.anchor-header'
       ) as NodeListOf<HTMLAnchorElement>;
