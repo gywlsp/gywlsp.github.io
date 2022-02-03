@@ -13,7 +13,7 @@
   margin-bottom: 1.75rem;
 }
 
-.postContents p img {
+.postContents img {
   max-width: 100%;
 }
 
@@ -37,11 +37,11 @@
   text-shadow: 0 0 transparent;
 }
 
-:not(pre) > code[class*="language-"] {
+:not(pre) > code[class*='language-'] {
   padding: 0.1em 0.2em;
   font-weight: 400;
-  color: #D84169;
-  background-color: #F1F2F6;
+  color: #d84169;
+  background-color: #f1f2f6;
 }
 
 .postContents ol {
@@ -87,6 +87,12 @@
 .postContents ul li ul {
   list-style-image: none;
   list-style: circle;
+}
+
+.postContents ol li ul li {
+  list-style-image: none;
+  list-style: circle;
+  padding-left: 0.2rem;
 }
 
 .postContents li {
