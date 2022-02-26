@@ -35,9 +35,14 @@ function Bio() {
       <P>
         <strong>{author.name}</strong>
         <br />
-        EWHA. W. UNIV. CSE 18
+        Front-end Developer
         <br />
-        FRONT-END DEVELOPER
+        <a
+          target="_blank"
+          href="https://gywlsp.notion.site/gywlsp/gywlsp-8073dc1ab1d346dfa75bdef108e88783"
+        >
+          About ME ✨
+        </a>
         <br />
       </P>
     </Wrapper>
