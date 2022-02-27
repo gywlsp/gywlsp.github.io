@@ -75,6 +75,7 @@ function BlogPostTemplateContent({
             fluid={thumbnail.childImageSharp.fluid}
             style={{
               width: '80%',
+              maxWidth: '800px',
               height: 'auto',
               objectFit: 'cover',
               margin: '0.8rem auto 2.4rem',
