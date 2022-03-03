@@ -3,7 +3,7 @@ title: 'JavaScript의 비동기 처리 동작 방식'
 date: '2022-02-21T12:59:34+00:00'
 description: '이 글은 동기 처리와 비동기 처리의 차이, JavaScript의 비동기 처리를 가능하게 해주는 태스크 큐와 이벤트 루프에 대해 설명한다.'
 tags: ['JavaScript']
-thumbnail: 'javascript_4.png'
+thumbnail: '../thumbnail.png'
 ---
 
 > 이 글은 **동기 처리와 비동기 처리**의 차이, JavaScript의 비동기 처리를 가능하게 해주는 **태스크 큐와 이벤트 루프**에 대해 설명한다.

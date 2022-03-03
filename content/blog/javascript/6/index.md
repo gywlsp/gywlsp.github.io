@@ -3,7 +3,7 @@ title: 'JavaScript 이벤트 전파와 위임'
 date: '2022-02-27T08:18:20+00:00'
 description: '이 글은 JavaScript의 이벤트 전파와 위임에 관해 설명한다.'
 tags: ['JavaScript']
-thumbnail: 'javascript_6.png'
+thumbnail: '../thumbnail.png'
 ---
 
 # 이벤트 전파

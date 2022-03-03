@@ -3,7 +3,7 @@ title: 'JavaScript 변수와 상수, 원시 값과 객체의 차이'
 date: '2022-02-03T12:15:10+00:00'
 description: '이 글은 JavaScript 변수와 상수, 원시값과 객체의 차이에 대해 설명한다.'
 tags: ['JavaScript']
-thumbnail: 'javascript_3.png'
+thumbnail: '../thumbnail.png'
 ---
 
 # 변수 vs 상수

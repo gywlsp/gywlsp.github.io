@@ -3,7 +3,7 @@ title: 'JavaScript의 실행 컨텍스트'
 date: '2022-02-27T01:50:11+00:00'
 description: '이 글은 JavaScript의 실행 컨텍스트에 관해 설명한다.'
 tags: ['JavaScript']
-thumbnail: 'javascript_5.png'
+thumbnail: '../thumbnail.png'
 ---
 
 # 실행 컨텍스트란?

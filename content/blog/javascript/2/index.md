@@ -3,7 +3,7 @@ title: 'JavaScript 스코프와 클로저'
 date: '2021-03-22T13:08:22+00:00'
 description: '이 글은 JavaScript의 동작을 이해하는 데에 필수적인 개념, 스코프와 클로저에 대해 설명한다.'
 tags: ['JavaScript']
-thumbnail: 'javascript_2.png'
+thumbnail: '../thumbnail.png'
 ---
 
 > 이 글은 JavaScript의 동작을 이해하는 데에 필수적인 개념, 스코프와 클로저에 대해 설명한다. [MDN 클로저 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures)와 책 속깊은 JavaScript의 내용의 일부를 요약, 정리하여 글을 작성했다.
