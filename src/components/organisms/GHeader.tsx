@@ -43,8 +43,9 @@ const Wrapper = styled.header<{ showHeader: boolean }>`
   padding: 0 2rem;
   height: 5.2rem;
   position: fixed;
-  top: ${({ showHeader }) => (showHeader ? 0 : '-5.2rem')};
+  top: 0;
   left: 0;
+  transform: translate(0, ${({ showHeader }) => (showHeader ? 0 : '-5.2rem')});
   transition: all 0.5s;
   width: 100%;
   z-index: 100;
