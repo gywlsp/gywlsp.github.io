@@ -25,8 +25,9 @@ export default function ScrollToTopButton() {
 
 const Wrapper = styled.button<{ showButton: boolean }>`
   position: fixed;
-  right: ${({ showButton }) => (showButton ? '1.6rem' : '-4.8rem')};
+  right: 1.6rem;
   bottom: 1.6rem;
+  transform: translate(${({ showButton }) => (showButton ? 0 : '6rem')});
   transition: all 0.3s;
   display: flex;
   justify-content: center;
