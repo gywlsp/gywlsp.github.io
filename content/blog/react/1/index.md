@@ -3,7 +3,7 @@ title: 'React에서 논리 연산자로 조건부 렌더링할 때의 주의사�
 date: '2020-11-29T11:53:53+00:00'
 description: '이 글은 React, React Native에서 논리 연산자로 조건부 렌더링할 때 주의사항에 대해 설명하는 글입니다.'
 tags: ['React', 'ReactNative']
-thumbnail: 'guide_1.png'
+thumbnail: '../thumbnail.png'
 ---
 
 > **이 글은 React, React Native에서 논리 연산자로 조건부 렌더링할 때 주의사항에 대해 설명한다.**

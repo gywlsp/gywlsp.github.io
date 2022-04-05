@@ -3,7 +3,7 @@ title: '[React] 리액트 컴포넌트를 만들 때 고려해야 할 것들'
 date: '2020-12-06T13:12:48+00:00'
 description: '이 글은 React 컴포넌트를 만들 때 고려해야 할 사항들에 대해 설명합니다.'
 tags: ['React']
-thumbnail: 'guide_2.png'
+thumbnail: '../thumbnail.png'
 ---
 
 > **이 글은 React 컴포넌트를 만들 때 고려해야할 사항들에 대해 설명한다.**

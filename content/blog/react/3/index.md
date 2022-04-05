@@ -3,7 +3,7 @@ title: 'React hooks(1) - useState, useEffect'
 date: '2021-05-08T13:09:47+00:00'
 description: '이 글은 React의 대표적인 hook useState, useEffect에 대해 설명한다.'
 tags: ['React']
-thumbnail: 'react_3.png'
+thumbnail: '../thumbnail.png'
 ---
 
 > **이 글은 React의 대표적인 hook useState, useEffect에 대해 설명한다.**
