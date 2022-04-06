@@ -71,8 +71,11 @@ const Wrapper = styled.nav<{ isMobileGNBOpen: boolean }>`
   @media (max-width: 1024px) {
     position: fixed;
     top: 0;
-    ${(props) => (props.isMobileGNBOpen ? `left: 0;` : `left: -260px;`)}
-    transition: left 0.3s ease-out;
+    left: 0;
+    transform: translate(
+      ${({ isMobileGNBOpen }) => (isMobileGNBOpen ? 0 : '-260px')}
+    );
+    transition: all 0.3s;
     z-index: 9999;
     padding-top: 4.4rem;
     box-shadow: 2px 0 2px -2px ${MIDDLE_GREY};
