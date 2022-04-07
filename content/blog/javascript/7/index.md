@@ -40,7 +40,7 @@ suzi.__proto__.getName(); // undefined
 Person.prototype === suzi.__proto__; // true
 ```
 
-그러나 여기에서 `this._name`이 ‘Suzi’가 아니라 `undefined`로 출력되었다. 그 이유는 함수를 메서드 방식으로 호출했기 때문에, `this`가 `suzi`가 아닌 `suzi.__proto__`(메서드명 바로 앞의 객체)가 되기 때문이다. 그리고 프로토타입 객체 내부에 `name` property를 추가한 것이 아니기 때문에 `undefined`가 출력된다.
+그러나 여기에서 `this._name`이 ‘수지’가 아니라 `undefined`로 출력되었다. 그 이유는 함수를 메서드 방식으로 호출했기 때문에, `this`가 `suzi`가 아닌 `suzi.__proto__`(메서드명 바로 앞의 객체)가 되기 때문이다. 그리고 프로토타입 객체 내부에 `name` property를 추가한 것이 아니기 때문에 `undefined`가 출력된다.
 
 `this`가 인스턴스가 되도록 하기 위해서는, `__proto__` 없이 곧바로 메서드를 쓰면 된다. `__proto__`는 생략 가능한 프로퍼티이기 때문에, `__proto__`를 생략하더라도 Constructor의 `prototype` 내부의 메서드를 자신의 메서드인 것처럼 호출할 수 있다. 평소에 JavaScript를 사용했던 개발자라면 배열을 담은 변수의 `length` 프로퍼티를 이용하거나 `concat`, `push`, `forEach` 등의 메서드를 호출해본 경험이 있을 것이다. 이것은 앞서 말했듯 `__proto__` 프로퍼티가 생략 가능하도록 설계되어있어 인스턴스가 [표준 내장 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects)의 메서드 및 속성을 자신의 것처럼 호출할 수 있었던 것이다.
 
